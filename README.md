@@ -1,4 +1,4 @@
-# classico-pyhton-project
+# classico-project
 'Classico', big data proejct using Python and ReactJS
 
 ## 프로젝트 환경
