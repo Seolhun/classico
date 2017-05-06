@@ -1,1 +1,20 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/front/node_modules
+
+# testing
+/front/coverage
+
+# production
+/front/build
+
+# misc
+/.DS_Store
+/front/.DS_Store
+/front/.env
+/front/npm-debug.log*
+/front/yarn-debug.log*
+/front/yarn-error.log*
+
 
