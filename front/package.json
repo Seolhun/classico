@@ -1,0 +1,29 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.16.1",
+    "bootstrap-sass": "^3.3.7",
+    "jquery": "^3.2.1",
+    "node-sass": "^4.5.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "react-scripts": "0.9.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "build-css": "node-sass --include-path scss src/scss/pages/*.scss public/css/index.min.css --output-style compressed",
+    "build-app-css": "node-sass --include-path scss src/scss/common/app.scss public/css/app.min.css",
+    "build-js": "uglifyjs ./src/js/common/bootstrap.min.js ./src/js/common/clipboard.min.js ./src/js/pages/*.js -o ./public/js/index.min.js",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "watch-app-css": "nodemon -e scss -x \"npm run build-app-css\"",
+    "watch-js": "nodemon -e js --watch src/js -x \"npm run build-js\"",
+    "watch": "npm run watch-css & npm run watch-app-css & npm run watch-js"
+  }
+}
