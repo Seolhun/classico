@@ -5,7 +5,7 @@
   - Production Server : EC2
   - IDE : IntelliJ
   - Back-end Language : Python 3.6
-  - Back-end : Django 1.11
+  - Back-end Framework : Django 1.11
   - Front-end : ReactJS + Redux
 
 ## Member 
