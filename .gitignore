@@ -1,20 +1,20 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
-/front/node_modules
+/classico_front/node_modules
 
 # testing
-/front/coverage
+/classico_front/coverage
 
 # production
-/front/build
+/classico_front/build
 
 # misc
 /.DS_Store
-/front/.DS_Store
-/front/.env
-/front/npm-debug.log*
-/front/yarn-debug.log*
-/front/yarn-error.log*
+/classico_front/.DS_Store
+/classico_front/.env
+/classico_front/npm-debug.log*
+/classico_front/yarn-debug.log*
+/classico_front/yarn-error.log*
 
 
