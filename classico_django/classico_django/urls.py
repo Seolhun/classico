@@ -1,4 +1,4 @@
-"""classico_admin URL Configuration
+"""classico_django URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -13,9 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
-from . import views
+from django.conf.urls import url
+from django.contrib import admin
+from django.conf.urls import include
+from classico_app import views
 
 urlpatterns = [
-    url(r'^$', views.post_list, name='post_list'),
+    #Domain Main index
+    url(r'^$', views.index, name='index'),
+    #App URL include
+    url(r'^news/', include('classico_app.urls')),
+    url(r'^admin/', admin.site.urls),
 ]
