@@ -1,26 +1,23 @@
 # Classico-Django
 
-## What is this?
-    
-    This Module is REST API Server using Python3 & Django. That will perform dealing with request from client, producing data from django server.
+
+## What is this?    
+    This Module is REST API Server using spring-boot. That will perform dealing with request from client, producing data from django server.
 
 
 ## Function
-`Caching`, `Security`, `User Managing`, `Swagger`, `REST`, 
+`Data management`, `News REST API`
 
 
 ## Needs
-
-`Pyhon3`, `Django 1.11` 
+`Python3.6`, `Django 1.11` 
 
 
 ## How to run?
 
 
 
-
 ### Environment
-    
 - OS : 
     
 - Docker :
