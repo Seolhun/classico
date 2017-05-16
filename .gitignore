@@ -83,3 +83,9 @@ fabric.properties
 .idea/sonarlint
 
 # End of https://www.gitignore.io/api/jetbrains
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+classico_django/classico_admin/__pycache__/
+classico_django/news/__pycache__/
+classico_django/news/migrations/__pycache__/
