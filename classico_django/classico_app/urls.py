@@ -1,7 +1,6 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from classico_app import views
 
-
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^index/', views.board_index, name='board_index'),
 ]
