@@ -13,18 +13,24 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
 from django.contrib import admin
-from django.conf.urls import include
+from django.conf.urls import include, url
 from classico_app import views
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(title='Pastebin API')
 
 urlpatterns = [
+    #App ADMIN URL
+    url(r'^admin/', admin.site.urls),
+
     #Domain Main index
     url(r'^$', views.index, name='index'),
 
     #App URL include
-    url(r'^news/', include('classico_app.urls')),
+    url(r'^board/', include('classico_app.urls')),
 
-    #App ADMIN URL
-    url(r'^admin/', admin.site.urls),
+
+    url(r'^rest-swagger/', schema_view),
+    url(r'^rest-api/', include('rest_framework.urls')),
 ]
