@@ -21,7 +21,10 @@ from classico_app import views
 urlpatterns = [
     #Domain Main index
     url(r'^$', views.index, name='index'),
+
     #App URL include
     url(r'^news/', include('classico_app.urls')),
+
+    #App ADMIN URL
     url(r'^admin/', admin.site.urls),
 ]
