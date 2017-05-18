@@ -1,10 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Topic(models.Model):
     id = models.BigAutoField(primary_key=True)
     topic_name = models.CharField(max_length=255, unique=True)
-    createdBy = models.ForeignKey('auth.user')
+    createdBy = models.ForeignKey(User)
     createdDate = models.DateTimeField(auto_created=True, auto_now=True)
     
     def __str__(self):
@@ -35,8 +36,8 @@ class Board(models.Model):
     subject = models.CharField(max_length=200)
     content = models.TextField(max_length=255)
     hits = models.IntegerField()
-    createdBy = models.ForeignKey('auth.user')
+    createdBy = models.ForeignKey(User)
     createdDate = models.DateTimeField(auto_created=True, auto_now=True)
 
     def __str__(self):
-        return self.id
+        return self.subject
