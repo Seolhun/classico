@@ -10,10 +10,10 @@ class Detail extends Component {
                     <div className="row">
                         <ol className="breadcrumb col-md-10 col-xs-12 bread-nav detail-1">
                             <li className="active">
-                                <a className="btn btn-ss-g-alt btn-xs" itemprop="applicationSubCategory" href="/business-intelligence">Business Intelligence</a>
+                                <a className="btn btn-ss-g-alt btn-xs" href="/business-intelligence">Business Intelligence</a>
                             </li>
                             <li>
-                                <a itemprop="applicationCategory" href="/analytics">Analytics</a>
+                                <a href="/analytics">Analytics</a>
                             </li>
                             <li>
                                 <a href="/utilities">Utilities</a>
@@ -24,17 +24,17 @@ class Detail extends Component {
                         <div className="row">
                             <div className="col-md-9 col-xs-12">
                                 <div className="sp-service-logo col-md-2 col-xs-12">
-                                    <a target="_blank" href="https://github.com/hashedin/squealy"><img alt="image" src="https://img.stackshare.io/service/6951/no-img-open-source.png" /></a>
+                                    <a target="_blank" href="https://github.com/hashedin/squealy"><img alt="see yourself" src="https://img.stackshare.io/service/6951/no-img-open-source.png" /></a>
                                 </div>
                                 <div className="service-wrap">
                                     <div className="col-md-10 col-xs-12">
-                                        <a target="_blank" itemprop="name" href="https://github.com/hashedin/squealy">SQueaLy</a>
+                                        <a target="_blank" href="https://github.com/hashedin/squealy">SQueaLy</a>
                                         <a className="source-code-link" href="https://github.com/hashedin/squealy" target="_blank">
                                             <span className="hint--top" data-align="left" data-hint="Open Source" />
                                         </a>
                                     </div>
                                     <div className="col-md-10 col-xs-12">
-                                        <span itemprop="alternativeHeadline">Fast track analytics for business</span>
+                                        <span>Fast track analytics for business</span>
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@ class Detail extends Component {
                                         <div className="row mga0">
                                             <div className="pd28">
                                                 <div id="service-description">
-                                                    <span itemprop="about">SQueaLy is an open-source, self-deployable application for developers. It is a micro service for business intelligence and analytics which uses SQL queries to generate reporting APIs with fine-grained security.</span>
+                                                    <span>SQueaLy is an open-source, self-deployable application for developers. It is a micro service for business intelligence and analytics which uses SQL queries to generate reporting APIs with fine-grained security.</span>
                                                 </div>
                                                 <div id="reasons">
                                                     <div className="section-title">
@@ -99,10 +99,10 @@ class Detail extends Component {
                                                                 <div className="add-reason-title">
                                                                     Add a one-liner
                                                                 </div>
-                                                                <form className="new_reason" id="new_reason" action="/reasons" accept-charset="UTF-8" data-remote="true" method="post">
+                                                                <form className="new_reason">
                                                                     <input name="utf8" type="hidden" value="✓" />
                                                                     <div className="hint--top" data-align="left" data-hint="eg &quot;Easy setup&quot;, &quot;Great customer support&quot;, or &quot;GitHub integration&quot;" id="reason-input">
-                                                                        <input className="form-control new-reason-text" data-behavior="submit_on_enter" placeholder="Why do you like using SQueaLy?" style="width:280px" maxlength="55" required="required" size="55" type="text" name="reason[text]" id="reason_text" />
+                                                                        <input className="form-control new-reason-text" placeholder="Why do you like using SQueaLy?" maxLength="55" required="required" size="55" type="text" name="reason[text]" id="reason_text" />
                                                                         <span className="counter">55</span>
                                                                         <br />
                                                                         <div id="btn-responsive">

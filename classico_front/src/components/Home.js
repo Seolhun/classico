@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class Home extends Component {
   render () {
     return (
-        <div className="row" className="bgwhite">
+        <div className="row bgwhite">
             <div className="tab-content mgt30" id="trending-tabs">
                 <div className="tab-pane in active" id="ajax-content">
                     <div className="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0">
@@ -24,7 +25,7 @@ class Home extends Component {
                                         <div className="col-md-7 col-md-offset-0 col-sm-7 col-sm-offset-0 col-xs-8 col-xs-offset-0">
                                             <a href="https://stackshare.io/lets-encrypt" className="pointer"></a>
                                             <div className="heigt66">
-                                                <a href="https://stackshare.io/lets-encrypt" className="pointer">
+                                                <Link to="/test" className="pointer">
                                                     <div id="service-card-trending">
                                                         <span id="service-name-trending">Let's Encrypt</span>
                                                         <span className="hint--top"></span>                                                        
@@ -46,7 +47,7 @@ class Home extends Component {
                                                             <span className="sub-category">Certificate Authority</span>
                                                         </li>
                                                     </ol>
-                                                </a>
+                                                </Link>
                                                 <div className="hidden-md hidden-lg hidden-sm">
                                                     <a href="https://stackshare.io/lets-encrypt" className="pointer"></a><a className="btn btn-ss-g btn-xs hint--top visit-web" data-hint="https://letsencrypt.org" data-align="left" href="https://letsencrypt.org/">Visit Website</a></div>
                                             </div>
