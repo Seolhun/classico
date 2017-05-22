@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-{% load staticfiles %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Classico App Page</title>
-    <link rel="stylesheet" href="{% static "css/app.css" %}"/>
-</head>
-<body>
-    <h1>Hello this is index.html!!</h1>
-    <button class="btn-u btn-u-blue">파랭이</button>
-    <h5>{{ insert_me }}</h5>
-    <img src="{% static "img/yeosu.jpg" %}" alt="Oh OH" width="500" height="300">
-</body>
-</html>
+{% extends "classico_app/base.html" %}
+{% block body_block %}
+    {% load staticfiles %}
+    <div class="jumbotron">
+        <h1>Hello this is index.html!!</h1>
+        <button class="btn-u btn-u-blue">파랭이</button>
+        <h5>{{ insert_me }}</h5>
+        <img src="{% static "img/yeosu.jpg" %}" alt="Oh OH" width="500" height="300">
+    </div>
+    <div>
+        {# Best Way #}
+        <a href="classico_app/index/">Board Index</a>
+
+        {# Match url name not url value   #}
+        <a href="{% url 'classico_app:boardlist' %}">Board List</a>
+    </div>
+{% endblock %}

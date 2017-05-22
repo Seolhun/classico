@@ -7,7 +7,7 @@ class Topic(models.Model):
     topic_name = models.CharField(max_length=255, unique=True)
     createdBy = models.ForeignKey(User)
     createdDate = models.DateTimeField(auto_created=True, auto_now=True)
-    
+
     def __str__(self):
         return self.topic_name
 
@@ -15,9 +15,9 @@ class Topic(models.Model):
 class WebPage(models.Model):
     id = models.BigAutoField(primary_key=True)
     topic = models.ForeignKey(Topic)
-    name = models.CharField(max_length= 255, unique=True)
+    name = models.CharField(max_length=255, unique=True)
     url = models.URLField(unique=True)
-    
+
     def __str__(self):
         return self.name
 
@@ -41,3 +41,15 @@ class Board(models.Model):
 
     def __str__(self):
         return self.subject
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User)
+
+    # add additional info
+    profile_site = models.URLField(blank=True)
+    profile_pics = models.ImageField(upload_to="profile_pics", blank=True)
+    createdDate = models.DateTimeField(auto_created=True, auto_now=True)
+
+    def __str__(self):
+        return self.user.username

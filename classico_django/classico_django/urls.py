@@ -21,16 +21,18 @@ from rest_framework_swagger.views import get_swagger_view
 schema_view = get_swagger_view(title='Pastebin API')
 
 urlpatterns = [
-    #App ADMIN URL
-    url(r'^admin/', admin.site.urls),
-
-    #Domain Main index
+    # Domain Main index
     url(r'^$', views.index, name='index'),
 
-    #App URL include
-    url(r'^board/', include('classico_app.urls')),
+    # App ADMIN URL
+    url(r'^admin/', admin.site.urls),
+
+    url(r'^register/', views.register, name='register'),
+
+    # App URL include
+    url(r'^classico_app/', include('classico_app.urls')),
 
 
-    url(r'^rest-swagger/', schema_view),
+    url(r'^rest-swagger/', schema_view, name='rest-swagger'),
     url(r'^rest-api/', include('rest_framework.urls')),
 ]
