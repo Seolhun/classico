@@ -1,5 +1,6 @@
 from django.contrib import admin
-from classico_app.models import WebPage,Topic,AccessRecord,Board,UserProfile
+from classico_app.models import UserProfile
+from classico_board.models import WebPage,Topic,AccessRecord,Board
 
 # Register your models here.
 admin.site.register(AccessRecord)
