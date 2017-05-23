@@ -1,31 +1,14 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from django.template.loader import get_template
-
-from classico_app.models import Board
 from classico_app.forms import UserForm, UserProfileForm
 
-
-def index(request):
-    my_dict = {'insert_me': "Now I am coming from classico_app/index.html"}
-    return render(request, 'classico_app/index.html', context=my_dict)
-
-
-def board_index(request):
-    return HttpResponse("board_index : Hello. Board.API")
-
-
-def board_list(request):
-    template = get_template('classico_app/board_list.html')
-    my_dict = {'board_list': Board.objects.all()}
-
-    return HttpResponse(template.render(my_dict))
+from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponseRedirect, HttpResponse
+from django.core.urlresolvers import reverse
+from django.contrib.auth.decorators import login_required
 
 
 def register(request):
-
     registered = False
-
     if request.method == "POST":
         user_form = UserForm(data=request.POST)
         profile_form = UserProfileForm(data=request.POST)
@@ -52,4 +35,8 @@ def register(request):
         user_form = UserForm()
         profile_form = UserProfileForm()
 
-    return render(request, 'classico_app/register.html', {'user_form' : user_form, 'profile_form' : profile_form, 'registered' : registered})
+    return render(request, 'classico_app/user/register.html', {'user_form' : user_form, 'profile_form' : profile_form, 'registered' : registered})
+
+
+def index(request):
+    return None

@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'rest_framework_swagger',
 
     'classico_app',
+    'classico_keywords',
+    'classico_board',
 ]
 
 MIDDLEWARE = [
@@ -152,3 +154,5 @@ STATICFILES_DIRS = [
 #Media
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+
+LOGIN_URL = '/classico_app/user_login'

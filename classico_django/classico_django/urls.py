@@ -15,22 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import include, url
-from classico_app import views
+from classico_app import views as views_user
+from classico_board import views as views_board
 from rest_framework_swagger.views import get_swagger_view
 
 schema_view = get_swagger_view(title='Pastebin API')
 
 urlpatterns = [
     # Domain Main index
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views_board.board_index, name='index'),
 
     # App ADMIN URL
     url(r'^admin/', admin.site.urls),
 
-    url(r'^register/', views.register, name='register'),
-
-    # App URL include
+    # Main App URL include
     url(r'^classico_app/', include('classico_app.urls')),
+    # Board App URL include
+    url(r'^classico_board/', include('classico_board.urls')),
+    # Board App URL include
+    url(r'^classico_keywords/', include('classico_keywords.urls')),
 
 
     url(r'^rest-swagger/', schema_view, name='rest-swagger'),
