@@ -6,9 +6,10 @@
         <button class="btn-u btn-u-blue">파랭이</button>
         <h5>{{ insert_me }}</h5>
         <img src="{% static "img/yeosu.jpg" %}" alt="Oh OH" width="500" height="300">
-    </div>
-    <div>
-        {# Best Way #}
-        <a href="classico_app/index/">Index</a>
+        <div class="row">
+            <div class="col-sm-12">
+                Response : {{ board_index }}
+            </div>
+        </div>
     </div>
 {% endblock %}

@@ -18,15 +18,20 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='UserProfile',
+            name='stackObject',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('profile_site', models.URLField(blank=True)),
-                ('profile_pics', models.ImageField(blank=True, upload_to='profile_pics')),
+                ('id', models.BigAutoField(primary_key=True, serialize=False)),
+                ('name', models.CharField(max_length=200)),
+                ('text', models.TextField()),
+                ('hits', models.IntegerField(default=0)),
+                ('commentDepth', models.IntegerField(default=0)),
+                ('fileDepth', models.IntegerField(default=0)),
+                ('likes', models.IntegerField(default=0)),
+                ('hates', models.IntegerField(default=0)),
                 ('createdDate', models.DateTimeField(default=django.utils.timezone.now)),
                 ('modifiedBy', models.CharField(max_length=200, null=True)),
                 ('modifiedDate', models.DateTimeField(blank=True, null=True)),
-                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('createdBy', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]
