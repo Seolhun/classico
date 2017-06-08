@@ -13,15 +13,33 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
 from django.contrib import admin
-from django.conf.urls import include
-from classico_app import views
+from django.conf.urls import include, url
+from classico_app import views as views_app
+from classico_board import views as views_board
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(title='Pastebin API')
 
 urlpatterns = [
-    #Domain Main index
-    url(r'^$', views.index, name='index'),
-    #App URL include
-    url(r'^news/', include('classico_app.urls')),
+    # App ADMIN URL
     url(r'^admin/', admin.site.urls),
+
+    # Domain Main index
+    url(r'^$', views_app.index, name='index'),
+    url(r'^register/', views_app.register, name='register'),
+    url(r'^logout/$', views_app.user_logout, name='logout'),
+    url(r'special/', views_app.special, name='special'),
+
+
+    # Main App URL include
+    url(r'^classico_app/', include('classico_app.urls')),
+    # Board App URL include
+    url(r'^board/', include('classico_board.urls')),
+    # Board App URL include
+    url(r'^classico_keywords/', include('classico_keywords.urls')),
+
+
+    url(r'^rest-swagger/', schema_view, name='rest-swagger'),
+    url(r'^rest-api/', include('rest_framework.urls')),
 ]
