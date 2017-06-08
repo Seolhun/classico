@@ -89,3 +89,5 @@ fabric.properties
 classico_django/classico_admin/__pycache__/
 classico_django/news/__pycache__/
 classico_django/news/migrations/__pycache__/
+media/
+static/js/

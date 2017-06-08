@@ -51,8 +51,9 @@ INSTALLED_APPS = [
     'classico_app',
     'classico_keywords',
     'classico_board',
+    'classico_flask',
 ]
-
+    
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
