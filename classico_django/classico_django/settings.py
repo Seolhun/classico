@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'classico_app',
     'classico_keywords',
     'classico_board',
-    'classico_flask',
 ]
     
 MIDDLEWARE = [
@@ -94,7 +93,7 @@ DATABASES = {
         'NAME': 'classico',
         'USER': 'hooney',
         'PASSWORD': 'blue1220@',
-        'HOST': 'localhost',
+        'HOST': '127.0.0.1',
         'PORT': '',
     }
 }

@@ -32,11 +32,11 @@ urlpatterns = [
 
 
     # Main App URL include
-    url(r'^classico_app/', include('classico_app.urls')),
+    url(r'^user/', include('classico_app.urls')),
     # Board App URL include
     url(r'^board/', include('classico_board.urls')),
     # Board App URL include
-    url(r'^classico_keywords/', include('classico_keywords.urls')),
+    url(r'^stack/', include('classico_keywords.urls')),
 
 
     url(r'^rest-swagger/', schema_view, name='rest-swagger'),

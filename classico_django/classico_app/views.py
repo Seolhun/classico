@@ -51,8 +51,7 @@ def register(request):
     else:
         user_form = UserForm()
         profile_form = UserProfileForm()
-
-    return render(request, 'classico_app/user/register.html', {'user_form' : user_form, 'profile_form' : profile_form, 'registered' : registered})
+    return render(request, 'classico_app/user/register.html', {'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
 
 
 def user_login(request):

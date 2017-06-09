@@ -5,11 +5,11 @@
     <h1>Please Login</h1>
     <form action="{% url 'classico_app:user_login' %}" method="post">
         {% csrf_token %}
-        <label for="username">User Name : </label>
+        <label>User Name : </label>
         <input type="text" name="username" placeholder="Enter Username">
 
-        <label for="password">Password : </label>
-        <input type="text" name="password" placeholder="Enter Password">
+        <label>Password : </label>
+        <input type="password" name="password" placeholder="Enter Password">
 
         <input class="btn-u btn-u-green rounded" type="submit" name="login" value="Login">
     </form>
