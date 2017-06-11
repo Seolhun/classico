@@ -1,0 +1,1753 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"f595f29c1c","applicationID":"5475963","transactionName":"IA1fFUUNWQ1TFB1BVxEUWAJSERoSXglF","queueTime":2,"applicationTime":38,"agent":""}</script>
+    <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+    <title>Bootstrap | Tech Stacks | StackShare</title>
+    <meta name="description" content="Why developers like Bootstrap - Simple and flexible HTML, CSS, and JS for popular UI components and interactions">
+    <meta name="keywords" content="bootstrap" />
+    <meta property="og:image" content="https://img.stackshare.io/service/1101/C9QJ7V3X.png" />
+    <meta property="og:title" content="Bootstrap | StackShare" />
+    <meta property="og:site_name" content="StackShare" />
+    <meta property="og:url" content="https://stackshare.io/bootstrap" />
+    <meta property="og:description" content="Why developers like Bootstrap - Simple and flexible HTML, CSS, and JS for popular UI components and interactions" />
+    <meta property="og:type" content="article" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@stackshareio" />
+    <meta content='width=device-width, initial-scale=1, user-scalable=no' name='viewport'>
+    <link rel="stylesheet" media="all" href="/assets/application-59ee6e1749c388cdf16a653a0eea1c1dc7cb2128b3a18992caed0df06bab62cf.css" data-turbolinks-track="true" />
+    <link href='//stackshare.io/featured-posts.atom' rel='alternate' title='StackShare RSS Feed' type='application/rss+xml'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:300,400' rel='stylesheet' type='text/css'>
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token" content="w7nLqMWJHwH+HTOhRg7qLZqIS/DM7YnQIe49v9fM6YFvoFC21QfDLNK+1Xh9U968bY1G8nxx4WuGQrWJweK5dw==" />
+    <script>
+        //<![CDATA[
+        UPLOADCARE_PUBLIC_KEY = "ef6555c1024d5e49c403";
+        UPLOADCARE_LIVE = false;
+
+        //]]>
+    </script>
+
+</head>
+<body>
+<div id='wrap'>
+    <header id='navbar_wrap'>
+        <div class='no-select' id='navbar'>
+            <a class='navbar__logo' href='/'></a>
+            <ul id='nav_menu'>
+                <li class='hide-6'>
+                    <div class='badge'>
+                        &nbsp;
+                    </div>
+                    <a href='/news'>News</a>
+                </li>
+                <li class='hide-5'>
+                    <a href='/trending/tools'>Trending</a>
+                </li>
+                <li class='hide-4'>
+                    <a href='/stacks'>Stacks</a>
+                </li>
+                <li class='hide-3'>
+                    <a href='/categories'>Tools</a>
+                    <div class='navmenu'>
+                        <a href='/application_and_data'>Applications and Data</a>
+                        <a href='/utilities'>Utilities</a>
+                        <a href='/devops'>DevOps</a>
+                        <a href='/business_tools'>Business Tools</a>
+                    </div>
+                </li>
+                <li class='hide-2'>
+                    <a href='/match'>Jobs</a>
+                </li>
+                <li class='hide-1'>
+                    <a href='/featured-posts'>Stories</a>
+                </li>
+                <li data-click-toggle-class='show'>
+                    <svg height='5' viewBox='0 0 19 5' width='19' xmlns='http://www.w3.org/2000/svg'>
+                        <title>More</title>
+                        <g fill-rule='evenodd' fill='#D8D8D8'>
+                            <circle cx='2.5' cy='2.5' r='2.5'></circle>
+                            <circle cx='9.5' cy='2.5' r='2.5'></circle>
+                            <circle cx='16.5' cy='2.5' r='2.5'></circle>
+                        </g>
+                    </svg>
+                    <div class='navmenu'>
+                        <a class='hide show-6 badge' href='/news'>News</a>
+                        <a class='hide show-5' href='/trending/tools'>Trending</a>
+                        <a class='hide show-4' href='/stacks'>Stacks</a>
+                        <a class='hide show-3' href='/categories'>Tools</a>
+                        <a class='hide show-2' href='/match'>Job Search</a>
+                        <a class='hide show-1' href='/featured-posts'>Stories</a>
+                        <a href='/stackups'>Comparisons</a>
+                        <a href='/posts'>Blog</a>
+                        <a href='/explore'>Explore</a>
+                        <a href='http://tooltime.stackshare.io'>Tool Time</a>
+                    </div>
+                </li>
+            </ul>
+            <div class='navbar__main'>
+                <div class='search-navbar'>
+                    <script>
+                        function navbar_search() {
+                            var input = document.getElementById('header-search')
+                            var q = input.value
+                            if (q)
+                                window.location = '/search/q=' + encodeURIComponent(q)
+                            return false
+                        }
+                    </script>
+                    <div class='search-navbar'>
+                        <form class='search' id='header-search-container' onsubmit='return navbar_search()'>
+                            <input id='header-search' name='header-search' placeholder='Search'>
+                        </form>
+                        <div class='search-container search-arrow hidden'>
+                            <a class='search-page' href='/search'>
+                                <span class='octicon octicon-search dropdown-active-search'></span>
+                                <span class='query'>type your search</span>
+                            </a>
+                            <div class='group-container'>
+                                <div class='group group-services hidden'>
+                                    <div class='header'>
+                                        <span>Tools</span>
+                                        <a href='#'>More</a>
+                                    </div>
+                                </div>
+                                <div class='group group-stacks hidden'>
+                                    <div class='header'>
+                                        <span>Stacks</span>
+                                        <a href='#'>More</a>
+                                    </div>
+                                </div>
+                                <div class='group group-functions hidden'>
+                                    <div class='header'>
+                                        <span>Groups</span>
+                                        <a href='#'>More</a>
+                                    </div>
+                                </div>
+                                <div class='group group-categories hidden'>
+                                    <div class='header'>
+                                        <span>Categories</span>
+                                        <a href='#'>More</a>
+                                    </div>
+                                </div>
+                                <div class='group group-users hidden'>
+                                    <div class='header'>
+                                        <span>Users</span>
+                                        <a href='#'>More</a>
+                                    </div>
+                                </div>
+                                <div class='group group-stackups hidden'>
+                                    <div class='header'>
+                                        <span>Stackups</span>
+                                        <a href='#'>More</a>
+                                    </div>
+                                </div>
+                                <div class='group group-posts hidden'>
+                                    <div class='header'>
+                                        <span>Posts</span>
+                                        <a href='#'>More</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <a class='' data-target='#signinModal' data-toggle='modal' href='#' id='login-nav' style='display: inline-flex;padding: 6px 0 6px 12px;'>
+                    <span style="font-size: 14px;font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans !important;margin:auto 8px auto 0px;font-weight:normal">Sign up | Login</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .container{max-width: none;background-color: #FFF;}
+        body{background-color:#FFF !important}
+        #reviews-container li {border-left: 5px solid #EAEAEA;border-bottom:0}
+        #review {padding: 0px;margin-bottom:60px}
+    </style>
+    <header class='service'>
+        <div class='container'>
+            <div class='row'>
+                <ol class='breadcrumb col-md-10 col-xs-12 bread-nav' style='padding: 10px 0px 0px 15px;'>
+                    <li class='active'>
+                        <a class="btn btn-ss-g-alt btn-xs" itemprop="applicationSubCategory" href="/front-end-frameworks">Front-End Frameworks</a>
+                    </li>
+                    <li>
+                        <a itemprop="applicationCategory" href="/languages-and-frameworks">Languages &amp; Frameworks</a>
+                    </li>
+                    <li>
+                        <a href="/application_and_data">Application and Data</a>
+                    </li>
+                </ol>
+            </div>
+            <div class='row hidden-xs'>
+                <br class='visible-sm'>
+                <div class='div-center' style='display:none; margin-bottom: -30px;margin-top: 30px;'>
+<span style='color:grey'>
+StackShare helps you discover tools like
+Bootstrap
+</span>
+                    <a class='btn btn-ss-gh-alt-nav' data-target='#signinModal' data-toggle='modal' href='#' style='display: inline-flex;padding: 8px 5px;margin-left:20px;border-radius: 4px;'>
+<span class='octicon octicon-mark-github' style='margin: auto 10px;display: inline-flex;font-size:22px'>
+<span style="font-size: 14px;font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans !important;margin:auto 0 auto 10px;">Sign up / Login</span>
+</span>
+                    </a>
+                </div>
+                <br class='visible-sm'>
+            </div>
+            <div class='title-wrap' id='service-header'>
+                <div class='row'>
+                    <div class='col-md-9 col-xs-12'>
+                        <div class='sp-service-logo col-md-2 col-xs-12'>
+                            <a target="_blank" href="http://getbootstrap.com/"><img alt="image" itemprop="image" src="https://img.stackshare.io/service/1101/C9QJ7V3X.png" /></a>
+                        </div>
+                        <div class='service-wrap'>
+                            <div class='col-md-10 col-xs-12' id='service-name'>
+                                <a target="_blank" itemprop="name" href="http://getbootstrap.com/" rel="nofollow">Bootstrap</a>
+                                <a class='source-code-link' href='https://github.com/twbs/bootstrap' target='_blank'>
+<span class='hint--top' data-align='left' data-hint='Open Source'>
+<div class='octicon octicon-git-branch'></div>
+</span>
+                                </a>
+                            </div>
+                            <div class='col-md-10 col-xs-12' id='service-description-undertitle'>
+                                <span itemprop='alternativeHeadline'>Simple and flexible HTML, CSS, and JS for popular UI components and interactions</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-md-3 col-md-offset-0 col-sm-offset-4 col-sm-4 col-xs-offset-3 col-xs-6' style='margin-top:20px'>
+                        <div class='row'>
+                            <div class='service-mob col-md-3 col-md-offset-0 col-sm-3 col-sm-offset-0 col-xs-9 col-xs-offset-3'>
+                                <div class='service-trending-container' style='text-align: center;display: inline-block;'>
+                                    <div class='service-fav' data-behavior='signin_on_click' style='color:black'>
+                                        <i class='octicon octicon-star trending-star' id='fav'></i>
+                                        <div class='star-count' id='service-1101'>471</div>
+                                        <span style='color:#333;font-size:10px'>Favorite</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='col-md-9 col-sm-9 col-xs-12' style='margin-bottom:10px;'>
+                                <div>
+                                    <div id='visit-website'><a data-toggle="modal" data-target="#signinModal" class="btn btn-ss-alt btn-lg btn-block" href="#">I Use This</a></div>
+                                    <div class='div-center website-block' style='margin-top:10px'><a target="_blank" id="visit-website" class="btn-block btn btn-ss-g-alt btn-xs" href="http://getbootstrap.com/">Visit Website</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class='row'>
+        <div id='service-pills-nav'>
+            <div class='container'>
+                <ul class='nav nav-pills' role='tablist'>
+                    <li class='active'>
+                        <a data-href='/bootstrap/overview/ajax' data-target='#ajax-content' data-toggle='tabajax' href='/bootstrap/overview' id='tab-link' role='tab'>
+                            <div id='tab-label' itemprop='aggregateRating'>Votes</div>
+                            6.71K
+                        </a>
+                    </li>
+                    <li>
+                        <a data-href='/bootstrap/fans/ajax' data-target='#ajax-content' data-toggle='tabajax' href='/bootstrap/fans' id='tab-link' role='tab'>
+                            <div id='tab-label'>Fans</div>
+                            12.7K
+                        </a>
+                    </li>
+                    <li>
+                        <a data-href='/bootstrap/in-stacks/ajax' data-target='#ajax-content' data-toggle='tabajax' href='/bootstrap/in-stacks' id='tab-link' role='tab'>
+                            <div id='tab-label'>Stacks</div>
+                            12.4K
+                        </a>
+                    </li>
+                    <li>
+                        <a data-href='/bootstrap/integrations/ajax' data-target='#ajax-content' data-toggle='tabajax' href='/bootstrap/integrations' id='tab-link' role='tab'>
+                            <div id='tab-label'>Integrations</div>
+                            12
+                        </a>
+                    </li>
+                    <li>
+                        <a class='hint--top' data-align='left' data-hint='Check out jobs at companies that use Bootstrap' href='/match/bootstrap' id='tab-link' role='tab'>
+                            <span class='new-tab'>New</span>
+                            <div id='tab-label'>Jobs</div>
+                            323
+                        </a>
+                    </li>
+                    <li class='gh-metrics-service visible-md visible-lg'>
+                        <a class='stackup-gh-count' data-track-props='{"service":"bootstrap"}' data-track='service.details.github_stats.click' href='https://github.com/twbs/bootstrap'>
+                            <div class='row'>
+                                <div class='div gh-metrics-container'>
+                                    <i class='octicon octicon-mark-github' style='font-size: 35px;'></i>
+                                    <div class='hint--top stackup-gh-count' data-align='left' data-hint='GitHub Stars'>
+                                        <div class='div-center'>
+                                            <i class='octicon octicon-star'></i>
+                                        </div>
+                                        <div class='gh-metric'>
+                                            111K
+                                        </div>
+                                    </div>
+                                    <div class='hint--top stackup-gh-count' data-align='left' data-hint='GitHub Forks'>
+                                        <div class='div-center'>
+                                            <i class='octicon octicon-repo-forked'></i>
+                                        </div>
+                                        <div class='gh-metric'>
+                                            51.4K
+                                        </div>
+                                    </div>
+                                    <div class='hint--top stackup-gh-count' data-align='left' data-hint='Last commit'>
+                                        <div class='div-center'>
+                                            <i class='octicon octicon-calendar'></i>
+                                        </div>
+                                        <div class='gh-date'>
+                                            about 5 hours
+                                            ago
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class='tab-content' id='sp-stack-tab' style='margin: 30px 0 170px 0;'>
+            <div class='tab-pane in active' id='ajax-content'>
+                <div class='container'>
+                    <div class='row'>
+                        <div class='col-md-9 col-xs-12'>
+                            <div class='row clearfix'>
+                                <div class='row' style='margin:0'>
+                                    <div style='padding: 28px'>
+                                        <div id='service-description'>
+                                            <span itemprop='about'>Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.</span>
+                                        </div>
+                                        <div id='reasons'>
+                                            <div class='section-title'>
+                                                Why people like
+                                                Bootstrap
+                                            </div>
+                                            <div id='reasons-container' style='margin: 0'>
+                                                <div class='row' style='margin:0'>
+                                                    <div id='reasons-section'>
+                                                        <table style='width:100%'>
+                                                            <tr>
+                                                                <td class='row reasons-list' data-service_id='1101' id='reasons-list-tile' style='padding:15px 0'>
+                                                                    <div class='panel-group col-md-11 col-md-offset-1 col-sm-12 col-sm-offset-0'>
+                                                                        <div class='reason_item' data-reason_id='2226' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/2226/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="7EcxIwpXQOe6UKpl/vzWpL1IrDaX5kZj6K3dnJPlBI9AXqo9GtmcypbzTLzFoeI1Sk2hNCd6LthPAVWqhctUeQ==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-2226' itemprop='upvoteCount' style='text-align: center'>1349</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/317/1016365.jpeg" alt="1016365" /&gt; &lt;span&gt;gdi2290&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3277&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Responsiveness</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='2223' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/2223/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="0meOfCMTwhRB/hS+cres+JcwZJF+WBaIetlm3IqkORd+fhViM50eOW1d8mdJ6phpYDVpk87EfjPdde7qnIpp4Q==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-2223' itemprop='upvoteCount' style='text-align: center'>1012</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/317/1016365.jpeg" alt="1016365" /&gt; &lt;span&gt;gdi2290&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3277&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>UI components</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='2116' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/2116/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="sbYG3iEqTsrA/XptH6HnhcymrCAe8SDs55dokarCnWwdr53AMaSS5+xenLQk/NMUO6OhIq5tSFdAO+CnvOzNmg==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-2116' itemprop='upvoteCount' style='text-align: center'>835</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/1464/360201.jpeg" alt="360201" /&gt; &lt;span&gt;nudge&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;108&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Consistent</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='2227' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/2227/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="iEj7i/rvi8CrX7B9d7ztU7zpZmJo+H7M+yGNPUMHh9ckUWCV6mFX7Yf8VqRM4dnCS+xrYNhkFndcjQULVSnXIQ==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-2227' itemprop='upvoteCount' style='text-align: center'>673</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/317/1016365.jpeg" alt="1016365" /&gt; &lt;span&gt;gdi2290&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3277&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Great docs</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='2224' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/2224/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="dx6Z5Nax1muUEQ4TT06OytYFDwP2cKZmrqK7y55B3t/bBwL6xj8KRriy6Mp0E7pbIQACAUbszt0JDjP9iG+OKQ==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-2224' itemprop='upvoteCount' style='text-align: center'>604</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/317/1016365.jpeg" alt="1016365" /&gt; &lt;span&gt;gdi2290&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3277&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Flexible</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='3233' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/3233/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Ei1cxm+Gn/fIBksPYcgQR2XI0far0Nr1i/SYz++vSr++NMfYfwhD2uSlrdZalSTWks3c9BtMsk4sWBD5+YEaSQ==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-3233' itemprop='upvoteCount' style='text-align: center'>437</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/317/1016365.jpeg" alt="1016365" /&gt; &lt;span&gt;gdi2290&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3277&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>HTML, CSS, and JS framework</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='3159' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/3159/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="3vTkDhZkwurIPE5YuTLodt40pMEc0UbToKFAeC3hzj1y7X8QBuoex+SfqIGCb9znKTGpw6xNLmgHDchOO8+eyw==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-3159' itemprop='upvoteCount' style='text-align: center'>381</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/1418/12291908_10153793408511913_738447819807183112_o.jpg" alt="12291908 10153793408511913 738447819807183112 o" /&gt; &lt;span&gt;sahin&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;1667&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Open source</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='2221' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/2221/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="DaesgzMmiDwLjYyIlvt95TVXkfu9YLfKsCnMlz6xeQWhvjedI6hUEScualGtpkl0wlKc+Q3833EXhUShKJ8p8w==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-2221' itemprop='upvoteCount' style='text-align: center'>353</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/317/1016365.jpeg" alt="1016365" /&gt; &lt;span&gt;gdi2290&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3277&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Customizable</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='3160' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/3160/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Dnv6BVqtRbFGwSc8m2nWNfeMmPM0GD4D1JQa26xf/GqiYmEbSiOZnGpiweWgNOKkAImV8YSEVrhzOJLtunGsnA==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-3160' itemprop='upvoteCount' style='text-align: center'>349</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/1418/12291908_10153793408511913_738447819807183112_o.jpg" alt="12291908 10153793408511913 738447819807183112 o" /&gt; &lt;span&gt;sahin&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;1667&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Widely used</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='3157' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/3157/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="3d6FAIUlw7x3oMSG+I/Bya/V3ei+Q5wFGRm+Do8Jud1xxx4elasfkVsDIl/D0vVYWNDQ6g7f9L6+tTY4mSfpKw==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-3157' itemprop='upvoteCount' style='text-align: center'>223</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/1418/12291908_10153793408511913_738447819807183112_o.jpg" alt="12291908 10153793408511913 738447819807183112 o" /&gt; &lt;span&gt;sahin&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;1667&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>HTML framework</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class='col-md-11 col-md-offset-1 collapse more-reasons panel-collapse'><div class='reason_item' data-reason_id='3235' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                        <form id="reason-vote" style="margin-bottom:0px" action="/reasons/3235/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="F8HSudnKMGcdZw9dfBa25p6p3KJStGO9ZemB61awA0K72EmnyUTsSjHE6YRHS4J3aazRoOIoCwbCRQndQJ5TtA==" />
+                                                                            <label style='margin:0'>
+                                                                                <div class='reason-vote-container'>
+                                                                                    <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                    <span class='reason-count' id='reason-3235' itemprop='upvoteCount' style='text-align: center'>63</span>
+                                                                                </div>
+                                                                                <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/317/1016365.jpeg" alt="1016365" /&gt; &lt;span&gt;gdi2290&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3277&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Mobile first</span>
+</div>
+</span>
+                                                                            </label>
+                                                                        </form>
+
+                                                                    </div>
+                                                                        <div class='reason_item' data-reason_id='3234' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/3234/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="neoIq0W1pFfUmK47Fx6vIruYBiMCKVEiUi76e/BdEWYx85O1VTt4evg7SOIsQ5uzTJ0LIbK1OZn1gnJN5nNBkA==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-3234' itemprop='upvoteCount' style='text-align: center'>62</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/317/1016365.jpeg" alt="1016365" /&gt; &lt;span&gt;gdi2290&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3277&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Popular</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='3922' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/3922/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="6K+5MKtrzsulXvewlmHuNpoBcSwHmj0CkC2h1Co+zQhEtiIuu+US5on9EWmtPNqnbQR8LrcGVbk3gSniPBCd/g==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-3922' itemprop='upvoteCount' style='text-align: center'>60</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/4570/1127284.jpeg" alt="1127284" /&gt; &lt;span&gt;frostfang&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;6&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Easy setup</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='4343' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/4343/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="8upplzHiXsbUrs36pYiSsv2hz0Eiiy3v8M+xe1Q3KYZe8/KJIWyC6/gNKyOe1aYjCqTCQ5IXRVRXYzlNQhl5cA==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-4343' itemprop='upvoteCount' style='text-align: center'>45</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/5650/5739797.jpeg" alt="5739797" /&gt; &lt;span&gt;tanerakcok&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;708&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Great grid system</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='3158' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/3158/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="jsJVBObchGnae4HQUFVuan/NAEaE++VQ6+nka4+iZpgi284a9lJYRPbYZwlrCFr7iMgNRDRnjetMRWxdmYw2bg==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-3158' itemprop='upvoteCount' style='text-align: center'>41</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/1418/12291908_10153793408511913_738447819807183112_o.jpg" alt="12291908 10153793408511913 738447819807183112 o" /&gt; &lt;span&gt;sahin&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;1667&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Great community</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='2225' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/2225/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="OqygYx6JzGWLvE5lUC5T3HJ2mDEDGyWxSzwVP22YASKWtTt9DgcQSKcfqLxrc2dNhXOVM7OHTQrskJ0Je7ZR1A==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-2225' itemprop='upvoteCount' style='text-align: center'>35</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/317/1016365.jpeg" alt="1016365" /&gt; &lt;span&gt;gdi2290&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3277&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Future compatibility</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='2222' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/2222/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="aS43ViZlV9DD5+wzlF0gjmsInp668apYeRHWcTUY1BLFN6xINuuL/e9ECuqvABQfnA2TnAptwuPevV5HIzaE5A==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-2222' itemprop='upvoteCount' style='text-align: center'>34</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/317/1016365.jpeg" alt="1016365" /&gt; &lt;span&gt;gdi2290&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3277&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Integration</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='3112' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/3112/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="4+C2gADSH3c/zWy47IbVts1dVonS90yc71nwi2UtvmRP+S2eEFzDWhNuimHX2+EnOlhbi2JrJCdI9Xi9cwPukg==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-3112' itemprop='upvoteCount' style='text-align: center'>27</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/2322/500743.jpeg" alt="500743" /&gt; &lt;span&gt;pfarrar1&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;24&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Very powerful foundational front-end framework</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='3347' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/3347/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="sbo84ujs33i9qjv/hbAL4ucVPI71Tw+tUydYFiaVxPodo6f8+GIDVZEJ3Sa+7T9zEBAxjEXTZxb0i9AgMLuUDA==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-3347' itemprop='upvoteCount' style='text-align: center'>22</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/2/preview.jpeg" alt="Preview" /&gt; &lt;span&gt;yonasb&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;647&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Javascript plugins</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='3928' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/3928/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="bsGgEmMnlTPbcgW5KcNrZiSrdzy2qIFD7czvmrvvVlTC2DsMc6lJHvfR42ASnl/30656PgY06fhKYGesrcEGog==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-3928' itemprop='upvoteCount' style='text-align: center'>22</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/4592/1547202.jpeg" alt="1547202" /&gt; &lt;span&gt;matthoffner&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;30&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Standard</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='3149' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/3149/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="yi/bXSAu834G+Laiq/kDunR9AzIWGFX3d+MGy1na+m1mNkBDMKAvUypbUHuQpDcrg3gOMKaEPUzQT479T/Sqmw==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-3149' itemprop='upvoteCount' style='text-align: center'>18</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/317/1016365.jpeg" alt="1016365" /&gt; &lt;span&gt;gdi2290&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3277&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Preprocessors</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='4845' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/4845/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="HTujYNYWRd87VjenNu1BTXcGeS8G5l3XZs2K0re1V9mxIjh+xpiZ8hf10X4NsHXcgAN0LbZ6NWzBYQLkoZsHLw==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-4845' itemprop='upvoteCount' style='text-align: center'>18</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/6794/2624635.jpeg" alt="2624635" /&gt; &lt;span&gt;MMShreyas&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;9&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Build faster prototypes</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='4995' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/4995/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="HHLHt+kTNXZgq/lFsf8ewPMg3tKT8r3rBfRD0413JDmwa1yp+Z3pW0wIH5yKoipRBCXT0CNu1VCiWMvlm1l0zw==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-4995' itemprop='upvoteCount' style='text-align: center'>11</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/7296/2615179.jpeg" alt="2615179" /&gt; &lt;span&gt;dcondrey&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;54&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Grids</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='4938' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/4938/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="prnrPnM6YbXvJ/5EUbhw7oCz55nxBrjmTULfH8gdQ+8KoHAgY7S9mMOEGJ1q5UR/d7bqm0Ga0F3q7lcp3jMTGQ==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-4938' itemprop='upvoteCount' style='text-align: center'>7</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/7143/2528522.jpeg" alt="2528522" /&gt; &lt;span&gt;bjornhol&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;6&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Clean</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='5108' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/5108/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="ZntU67urwk/of0S72JF/2Mqg4DpfucJ0ffd5y5ExUMjKYs/1qyUeYsTcomLjzEtJPaXtOO8lqs/aW/H9hx8APg==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-5108' itemprop='upvoteCount' style='text-align: center'>4</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/3996/2087201.jpeg" alt="2087201" /&gt; &lt;span&gt;letsgoduke&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;24&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Good for a person who hates CSS</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='9248' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/9248/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="LjzgGbWds7uz9fwWKr2zjB94+eZOpjfiuRPNYrMrReWCJXsHpRNvlp9WGs8R4Icd6H305P46X1kev0VUpQUVEw==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-9248' itemprop='upvoteCount' style='text-align: center'>2</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/89735/1223388.png" alt="1223388" /&gt; &lt;span&gt;riki137&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;6&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Rapid development</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='10918' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/10918/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="ddhOrsHsHzYsDkbpaAY+EaeuMe48qGPAHYgdLU9dTMbZwdWw0WLDGwCtoDBTWwqAUKs87Iw0C3u6JJUbWXMcMA==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-10918' itemprop='upvoteCount' style='text-align: center'>2</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/164566/6284278.jpeg" alt="6284278" /&gt; &lt;span&gt;bisshh&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;9&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Easy to setup and learn</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='5644' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/5644/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="4XUvaDgza5jGZuogk2YsdC6PIQ8xmfGJ9K1ULxcScC1NbLR2KL23terFDPmoOxjl2YosDYEFmTJTAdwZATwg2w==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-5644' itemprop='upvoteCount' style='text-align: center'>2</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/9593/2537589.jpeg" alt="2537589" /&gt; &lt;span&gt;benjaminmbrown&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;6&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Community</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='7933' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/7933/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="+60UeGRxpM6iWSgJ/+xyAgN9uov5sP9Ul8t+T95MlHhXtI9mdP944476ztDEsUaT9Hi3iUksl+8wZ/Z5yGLEjg==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-7933' itemprop='upvoteCount' style='text-align: center'>2</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/48978/15245234.png" alt="15245234" /&gt; &lt;span&gt;MonkeyDGarp&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Great customer support</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='9703' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/9703/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="9ucuS0Jn3JvPM1kMi1eoRksa/44Rdx578WrJ5XqJO51a/rVVUukAtuOQv9WwCpzXvB/yjKHrdsBWxkHTbKdraw==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-9703' itemprop='upvoteCount' style='text-align: center'>2</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/106299/18672376.png" alt="18672376" /&gt; &lt;span&gt;longgge&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;16&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Love it</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='10674' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/10674/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="ZoT2UtMA8WhJSOFmcYNwpvGgXWcuISeIn2xFjcylCynKnW1Mw44tRWXrB79K3kQ3BqVQZZ69TzM4wM272otb3w==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-10674' itemprop='upvoteCount' style='text-align: center'>1</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/153188/20001946.png" alt="20001946" /&gt; &lt;span&gt;hussnain56&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Provide angular wrapper</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='11222' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/11222/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="jdAXHiHclpCNnWQw69CTyjiLiIIBKxA/XyC91JqddMghyYwAMVJKvaE+gunQjadbz46FgLG3eIT4jDXijLMkPg==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-11222' itemprop='upvoteCount' style='text-align: center'>1</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/169891/1631477.jpeg" alt="1631477" /&gt; &lt;span&gt;glaucia86&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;9&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Great and easy to make a responsive website</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='11826' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/11826/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="E5Tipce6SBDCD/mJP12Tuce1Tg+RBhozbTizEe3uO4i/jXm71zSUPe6sH1AEAKcoMLBDDSGacojKlDsn+8Brfg==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-11826' itemprop='upvoteCount' style='text-align: center'>1</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/190212/25950627.png" alt="25950627" /&gt; &lt;span&gt;Grzojda2203&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Sprzedam opla</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='5513' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/5513/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="YHeX4MGLMbdf7d777qwZ7Y3zg463cSc9Jncd+RZGlvnMbgz+0QXtmnNOOCLV8S18evaOjAftT4aB25XPAGjGDw==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-5513' itemprop='upvoteCount' style='text-align: center'>1</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/6775/11073464.png" alt="11073464" /&gt; &lt;span&gt;WaqasEhmed&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Powerful grid system, Rapid development, Customization!</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='12088' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/12088/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="GuEZxgCv19t6UDyMdrd10toZ1g+5YZcK4kDoP6CNWXW2+ILYECEL9lbz2lVN6kFDLRzbDQn9/7FF7GAJtqMJgw==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-12088' itemprop='upvoteCount' style='text-align: center'>1</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/193230/7841521.jpeg" alt="7841521" /&gt; &lt;span&gt;sigvardsson&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;15&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Time saving</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='7943' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/7943/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="oEkEbMGcENyBgGwR6YUeqtGioYjUFQty5vPK4pwPiukMUJ9y0RLM8a0jisjS2Co7JqesimSJY8lBX0LUiiHaHw==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-7943' itemprop='upvoteCount' style='text-align: center'>1</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/49333/15256140.png" alt="15256140" /&gt; &lt;span&gt;mmogah&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;5&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Great and easy to use</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='9025' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/9025/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="9eKBdcIcx8K+AjgUmH4XOgCSwwvbzrL4eF5nPbf+LMdZ+xpr0pIb75Kh3s2jIyOr95fOCWtS2kPf8u8LodB8MQ==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-9025' itemprop='upvoteCount' style='text-align: center'>1</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/85101/95691.jpeg" alt="95691" /&gt; &lt;span&gt;noogen&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;6&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Popularity</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='9295' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/9295/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="R+Nptv5h0oI0XTh1Msj10hBm6rZjfXyYPUBrHDP/Vf/r+vKo7u8Orxj+3qwJlcFD52PntNPhFCOa7OMqJdEFCQ==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-9295' itemprop='upvoteCount' style='text-align: center'>1</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/13063/4590062.jpeg" alt="4590062" /&gt; &lt;span&gt;Gu5tavoC&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;6&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Responsive design</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='9702' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/9702/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="wtMUkjHE7TBduGCSIpMsG92s8zBRSyOg3xkClT4JFTtuyo+MIUoxHXEbhksZzhiKKqn+MuHXSxt4tYqjKCdFzQ==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-9702' itemprop='upvoteCount' style='text-align: center'>1</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/106299/18672376.png" alt="18672376" /&gt; &lt;span&gt;longgge&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;16&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Great and easy </span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='9914' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/9914/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="JzLtj1pnF4bY2Og+j6O+XL9BMxrValOPhyyICCBTPM+LK3aRSunLq/R7Due0/orNSEQ+GGX2OzQggAA+Nn1sOQ==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-9914' itemprop='upvoteCount' style='text-align: center'>1</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/114639/6509625.png" alt="6509625" /&gt; &lt;span&gt;slangon&lt;/span&gt; &lt;span class=&#x0027#x0027;user-score-hover&#x0027;&gt;6&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Clean and quick frontend development</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class='reason_item' data-reason_id='10175' style='margin: 0px 0 6px 5px;  display: inline-block;'>
+                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/10175/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="BhJTAyDwdRB0SNnS7B2qb6DVJSocSMObkeEQMj05KfOqC8gdMH6pPVjrPwvXQJ7+V9AoKKzUqyA2TZgEKxd5BQ==" />
+                                                                                <label style='margin:0'>
+                                                                                    <div class='reason-vote-container'>
+                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
+                                                                                        <span class='reason-count' id='reason-10175' itemprop='upvoteCount' style='text-align: center'>1</span>
+                                                                                    </div>
+                                                                                    <span style='display: flex;height: 38px;'>
+<div id='reason-text' style='margin: auto 0 auto 6px;'>
+<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/30797/1841040.jpeg" alt="1841040" /&gt; &lt;span&gt;classicmike&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Design Agnostic</span>
+</div>
+</span>
+                                                                                </label>
+                                                                            </form>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class='col-md-11 col-md-offset-1 col-sm-12 col-sm-offset-0' style='margin-top:10px;padding-left:60px;'>
+                                                                        <a class='section-title show-more-reasons' data-parent='#reasons-list-tile' data-target='.more-reasons' data-text-original='Show more one-liners' data-text-swap='Show fewer one-liners' data-toggle='collapse' href='#more' id='show-less' onclick="$('.more-reasons').fadeToggle();">
+                                                                            <span class='octicon octicon-ellipsis' style='font-size: 45px;color: rgb(173, 173, 173);'></span>
+                                                                        </a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class='row'>
+                                                    <div class='add-reason col-md-6 col-md-offset-2 col-sm-offset-1 col-sm-6' style='border-right: 1px solid #ebebeb'>
+                                                        <div class='add-reason-title'>
+                                                            Add a one-liner
+                                                        </div>
+                                                        <form class="new_reason" id="new_reason" action="/reasons" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><div class='hint--top' data-align='left' data-hint='eg "Easy setup", "Great customer support", or "GitHub integration"' id='reason-input'>
+                                                            <input class="form-control" id="new-reason-text" data-behavior="signin_on_click" placeholder="Why do you like using Bootstrap?" style="width:280px" maxlength="55" size="55" type="text" name="reason[text]" />
+                                                            <br>
+                                                            <div id='btn-responsive'><input type="submit" name="commit" value="Submit" class="btn btn-ss hint--top" style="margin:15px 0 10px 0" /></div>
+                                                        </div>
+                                                            <input type="hidden" value="1101" name="reason[service_id]" id="reason_service_id" />
+                                                        </form>
+                                                    </div>
+                                                    <div class='add-reason col-md-4 col-sm-5' style='text-align:center;margin-left:0px'>
+                                                        <div style='margin-bottom:50px;margin-top:20px'>
+                                                            <div id='btn-responsive'><a data-toggle="modal" data-target="#signinModal" class="btn btn-ss hint--top" style="margin-bottom: 10px;margin-top:22px;" data-hint="Tell other developers about your experience with Bootstrap" data-align="left" href="#">Add a review</a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                        </div>
+                                    </div>
+                                    <div style='padding: 0px 15px'>
+                                        <div class='row' style='margin-bottomX:20px'>
+                                            <div style='padding: 15px 30px'>
+                                                <div class='section-title' id='stacks'>
+                                                    Companies using
+                                                    Bootstrap
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class='row' style='padding: 0 30px'>
+                                            <div class='col-md-12'>
+                                                <div class='row' style='margin-bottom: 8px;'>
+                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
+                                                        <a data-hint="Twitter" data-align="left" style="margin-bottom:10px" class="hint--top" href="/twitter/twitter"><img alt="Twitter" src="https://img.stackshare.io/stack/1/2dDdk-Uh.png" /></a>
+                                                    </div>
+                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
+                                                        <a data-hint="Best Buy" data-align="left" style="margin-bottom:10px" class="hint--top" href="/best-buy/best-buy"><img alt="Best Buy" src="https://img.stackshare.io/stack/58/a2lnZMGm.jpeg" /></a>
+                                                    </div>
+                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
+                                                        <a data-hint="AdRoll" data-align="left" style="margin-bottom:10px" class="hint--top" href="/adroll/adroll"><img alt="AdRoll" src="https://img.stackshare.io/stack/46/f75dfcf3cf533e77fa92148d9183397c.png" /></a>
+                                                    </div>
+                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
+                                                        <a data-hint="Chargify" data-align="left" style="margin-bottom:10px" class="hint--top" href="/chargify/chargify"><img alt="Chargify" src="https://img.stackshare.io/stack/72/f0P49l4t.png" /></a>
+                                                    </div>
+                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
+                                                        <a data-hint="Chartbeat" data-align="left" style="margin-bottom:10px" class="hint--top" href="/chartbeat/chartbeat"><img alt="Chartbeat" src="https://img.stackshare.io/stack/74/QoFtCZmr.png" /></a>
+                                                    </div>
+                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
+                                                        <a data-hint="bitly" data-align="left" style="margin-bottom:10px" class="hint--top" href="/bitly-merged/bitly"><img alt="bitly" src="https://img.stackshare.io/stack/60/BV-_LOKp.png" /></a>
+                                                    </div>
+                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
+                                                        <a data-hint="Rova_Io" data-align="left" style="margin-bottom:10px" class="hint--top" href="/rova-io/rova-io"><img alt="Rova_Io" src="https://img.stackshare.io/stack/42427/preview.png" /></a>
+                                                    </div>
+                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
+                                                        <a data-hint="Openfolio" data-align="left" style="margin-bottom:10px" class="hint--top" href="/openfolio/openfolio"><img alt="Openfolio" src="https://img.stackshare.io/stack/1431/EC3FkfuI.png" /></a>
+                                                    </div>
+                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
+                                                        <a data-hint="Remora" data-align="left" style="margin-bottom:10px" class="hint--top" href="/ratio/remora"><img alt="Remora" src="https://img.stackshare.io/stack/2075/Y4XvTJl1.jpeg" /></a>
+                                                    </div>
+                                                    <div class='more-stacks-sp'>
+                                                        <a href="/bootstrap/in-stacks">+ 6617 more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='similar-service-logos' style='padding: 0px 15px 0 15px;'>
+                                        <div class='row'>
+                                            <div style='padding: 15px 30px'>
+                                                <div class='section-title'>
+                                                    Bootstrap
+                                                    integrates with
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class='row' style='padding: 0 30px;'>
+                                            <div class='col-md-12'>
+                                                <div class='row' style='margin-bottom: 8px;'>
+                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
+                                                        <a data-hint="Bootstrap Studio" data-align="left" style="margin-bottom:10px" class="hint--top" href="/bootstrap-studio"><img alt="Bootstrap Studio" class="company-icon" src="https://img.stackshare.io/service/4433/le1VgMC1.png" /></a>
+                                                    </div>
+                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
+                                                        <a data-hint="Kendo UI" data-align="left" style="margin-bottom:10px" class="hint--top" href="/kendo-ui"><img alt="Kendo UI" class="company-icon" src="https://img.stackshare.io/service/2636/4TVgtx9B.png" /></a>
+                                                    </div>
+                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
+                                                        <a data-hint="Flat UI" data-align="left" style="margin-bottom:10px" class="hint--top" href="/flat-ui"><img alt="Flat UI" class="company-icon" src="https://img.stackshare.io/service/3245/Screen_Shot_2015-06-25_at_11.19.50_AM.png" /></a>
+                                                    </div>
+                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
+                                                        <a data-hint="Pingendo" data-align="left" style="margin-bottom:10px" class="hint--top" href="/pingendo"><img alt="Pingendo" class="company-icon" src="https://img.stackshare.io/company/4515/pingendocom.png" /></a>
+                                                    </div>
+                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
+                                                        <a data-hint="Durandal" data-align="left" style="margin-bottom:10px" class="hint--top" href="/durandal"><img alt="Durandal" class="company-icon" src="https://img.stackshare.io/service/2368/493740a1b17331deac18e2aa9cda1739.png" /></a>
+                                                    </div>
+                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
+                                                        <a data-hint="Bootswatch" data-align="left" style="margin-bottom:10px" class="hint--top" href="/bootswatch"><img alt="Bootswatch" class="company-icon" src="https://img.stackshare.io/service/5227/n6FsWiMQ.png" /></a>
+                                                    </div>
+                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
+                                                        <a data-hint="AngularStrap" data-align="left" style="margin-bottom:10px" class="hint--top" href="/angularstrap"><img alt="AngularStrap" class="company-icon" src="https://img.stackshare.io/service/1150/no-img-open-source.png" /></a>
+                                                    </div>
+                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
+                                                        <a data-hint="VueStrap" data-align="left" style="margin-bottom:10px" class="hint--top" href="/vuestrap"><img alt="VueStrap" class="company-icon" src="https://img.stackshare.io/service/5323/no-img-open-source.png" /></a>
+                                                    </div>
+                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
+                                                        <a data-hint="Material Kit" data-align="left" style="margin-bottom:10px" class="hint--top" href="/material-kit"><img alt="Material Kit" class="company-icon" src="https://img.stackshare.io/service/5470/no-img-open-source.png" /></a>
+                                                    </div>
+                                                    <div class='more-stacks-sp'>
+                                                        <a href="/bootstrap/integrations">+ 3 more</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class='row' style='margin:0'>
+                                        <div class='col-md-12' style='padding: 10px 30px'>
+                                            <div class='section-title'>
+                                                Bootstrap's
+                                                Features
+                                            </div>
+                                            <div id='service-features' itemprop='featureList'>
+                                                <ul>
+                                                    <li>Preprocessors: Bootstrap ships with vanilla CSS, but its source code utilizes the two most popular CSS preprocessors, Less and Sass. Quickly get started with precompiled CSS or build on the source.</li>
+                                                    <li>One framework, every device: Bootstrap easily and efficiently scales your websites and applications with a single code base, from phones to tablets to desktops with CSS media queries.</li>
+                                                    <li>Full of features: With Bootstrap, you get extensive and beautiful documentation for common HTML elements, dozens of custom HTML and CSS components, and awesome jQuery plugins.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class='row' style='margin:0'>
+                                        <div class='col-md-12' style='padding: 10px 30px'>
+                                            <div class='section-title'>
+                                                Explore other
+                                                <b>Languages &amp; Frameworks</b>
+                                                tools that are known for:
+                                            </div>
+                                            <div id='service-features'>
+                                                <ul></ul>
+                                                <li>
+                                                    <b><a href="/top-tools/languages-and-frameworks/responsiveness">Responsiveness</a></b>
+                                                </li>
+                                                <li>
+                                                    <b><a href="/top-tools/languages-and-frameworks/ui-components">UI components</a></b>
+                                                </li>
+                                                <li>
+                                                    <b><a href="/top-tools/languages-and-frameworks/consistent">Consistent</a></b>
+                                                </li>
+                                                <li>
+                                                    <b><a href="/top-tools/languages-and-frameworks/great-docs">Great docs</a></b>
+                                                </li>
+                                                <li>
+                                                    <b><a href="/top-tools/languages-and-frameworks/flexible">Flexible</a></b>
+                                                </li>
+                                                <li>
+                                                    <b><a href="/top-tools/languages-and-frameworks/open-source">Open source</a></b>
+                                                </li>
+                                                <li>
+                                                    <b><a href="/top-tools/languages-and-frameworks/customizable">Customizable</a></b>
+                                                </li>
+                                                <li>
+                                                    <b><a href="/top-tools/languages-and-frameworks/widely-used">Widely used</a></b>
+                                                </li>
+                                                <li>
+                                                    <b><a href="/top-tools/languages-and-frameworks/mobile-first">Mobile first</a></b>
+                                                </li>
+                                                <li>
+                                                    <b><a href="/top-tools/languages-and-frameworks/popular">Popular</a></b>
+                                                </li>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class='row' style='padding:20px'>
+                                    <div class='section-title similar' style='text-align:center;margin:11px 0'>
+                                        <a href="/front-end-frameworks">Similar Tools &amp; Services</a>
+                                    </div>
+                                </div>
+                                <div class='row' style='padding: 0 30px'>
+                                    <div class='col-md-12'>
+                                        <div class='row similar-services-items' style='margin-left:0'>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Foundation" data-align="left" class="hint--top" href="/foundation"><img alt="Foundation" class="company-icon" src="https://img.stackshare.io/service/1105/gIke9rjv.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/foundation">Foundation</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Semantic UI" data-align="left" class="hint--top" href="/semantic-ui"><img alt="Semantic UI" class="company-icon" src="https://img.stackshare.io/service/1106/semantic-ui.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/semantic-ui">Semantic UI</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="UIkIt" data-align="left" class="hint--top" href="/uikit"><img alt="UIkIt" class="company-icon" src="https://img.stackshare.io/service/1107/2247444e82685c05034fc296fc331472.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/uikit">UIkIt</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Pure" data-align="left" class="hint--top" href="/pure"><img alt="Pure" class="company-icon" src="https://img.stackshare.io/service/1108/pure.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/pure">Pure</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Topcoat" data-align="left" class="hint--top" href="/topcoat"><img alt="Topcoat" class="company-icon" src="https://img.stackshare.io/service/1110/fIZk-0UD.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/topcoat">Topcoat</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Skeleton" data-align="left" class="hint--top" href="/skeleton"><img alt="Skeleton" class="company-icon" src="https://img.stackshare.io/service/1111/skeleton.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/skeleton">Skeleton</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Gumby" data-align="left" class="hint--top" href="/gumby"><img alt="Gumby" class="company-icon" src="https://img.stackshare.io/service/1112/8f058fd4a4950cdbe70e0ead7ef1dc43.jpeg" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/gumby">Gumby</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Material Design for Bootstrap" data-align="left" class="hint--top" href="/material-design-for-bootstrap"><img alt="Material Design for Bootstrap" class="company-icon" src="https://img.stackshare.io/service/1516/5382443.jpeg" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/material-design-for-bootstrap">Material Design for Bootstrap</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Material Design for Angular" data-align="left" class="hint--top" href="/material-design-for-angular"><img alt="Material Design for Angular" class="company-icon" src="https://img.stackshare.io/service/1523/square.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/material-design-for-angular">Material Design for Angular</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Mozilla Brick" data-align="left" class="hint--top" href="/mozilla-brick"><img alt="Mozilla Brick" class="company-icon" src="https://img.stackshare.io/service/1576/IP6T0bo5.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/mozilla-brick">Mozilla Brick</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Material UI" data-align="left" class="hint--top" href="/material-ui"><img alt="Material UI" class="company-icon" src="https://img.stackshare.io/service/1904/material-ui.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/material-ui">Material UI</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Materialize" data-align="left" class="hint--top" href="/materialize"><img alt="Materialize" class="company-icon" src="https://img.stackshare.io/service/2015/GN559Lfb.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/materialize">Materialize</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Flakes" data-align="left" class="hint--top" href="/flakes"><img alt="Flakes" class="company-icon" src="https://img.stackshare.io/service/2093/no-img-open-source.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/flakes">Flakes</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Polymer" data-align="left" class="hint--top" href="/polymer"><img alt="Polymer" class="company-icon" src="https://img.stackshare.io/service/1934/R8YcGKHV.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/polymer">Polymer</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Primer" data-align="left" class="hint--top" href="/primer"><img alt="Primer" class="company-icon" src="https://img.stackshare.io/service/2701/7143434.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/primer">Primer</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Toolkit" data-align="left" class="hint--top" href="/toolkit"><img alt="Toolkit" class="company-icon" src="https://img.stackshare.io/service/2751/M-Ha8cpF.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/toolkit">Toolkit</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Foundation for Apps" data-align="left" class="hint--top" href="/foundation-for-apps"><img alt="Foundation for Apps" class="company-icon" src="https://img.stackshare.io/service/3013/gIke9rjv.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/foundation-for-apps">Foundation for Apps</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Milligram" data-align="left" class="hint--top" href="/milligram"><img alt="Milligram" class="company-icon" src="https://img.stackshare.io/service/4273/milligram.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/milligram">Milligram</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="SUIT CSS" data-align="left" class="hint--top" href="/suit-css"><img alt="SUIT CSS" class="company-icon" src="https://img.stackshare.io/service/3235/4564613.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/suit-css">SUIT CSS</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Flat UI" data-align="left" class="hint--top" href="/flat-ui"><img alt="Flat UI" class="company-icon" src="https://img.stackshare.io/service/3245/Screen_Shot_2015-06-25_at_11.19.50_AM.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/flat-ui">Flat UI</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Material Design Lite" data-align="left" class="hint--top" href="/material-design-lite"><img alt="Material Design Lite" class="company-icon" src="https://img.stackshare.io/service/3318/I7ZBJ4-L.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/material-design-lite">Material Design Lite</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="flexible.gs" data-align="left" class="hint--top" href="/flexible-gs"><img alt="flexible.gs" class="company-icon" src="https://img.stackshare.io/service/3364/rM2HF5c8.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/flexible-gs">flexible.gs</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Fluxxor" data-align="left" class="hint--top" href="/fluxxor"><img alt="Fluxxor" class="company-icon" src="https://img.stackshare.io/service/3566/fluxxor.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/fluxxor">Fluxxor</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Bootswatch" data-align="left" class="hint--top" href="/bootswatch"><img alt="Bootswatch" class="company-icon" src="https://img.stackshare.io/service/5227/n6FsWiMQ.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/bootswatch">Bootswatch</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="gentelella" data-align="left" class="hint--top" href="/gentelella"><img alt="gentelella" class="company-icon" src="https://img.stackshare.io/service/5363/no-img-open-source.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/gentelella">gentelella</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Avalonia" data-align="left" class="hint--top" href="/avalonia"><img alt="Avalonia" class="company-icon" src="https://img.stackshare.io/service/5423/no-img-open-source.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/avalonia">Avalonia</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Material Kit" data-align="left" class="hint--top" href="/material-kit"><img alt="Material Kit" class="company-icon" src="https://img.stackshare.io/service/5470/no-img-open-source.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/material-kit">Material Kit</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="React Native Material Design" data-align="left" class="hint--top" href="/react-native-material-design"><img alt="React Native Material Design" class="company-icon" src="https://img.stackshare.io/service/5768/16257370.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/react-native-material-design">React Native Material Design</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="mini.css" data-align="left" class="hint--top" href="/mini-css"><img alt="mini.css" class="company-icon" src="https://img.stackshare.io/service/6881/favicon.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/mini-css">mini.css</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Vuetify" data-align="left" class="hint--top" href="/vuetify"><img alt="Vuetify" class="company-icon" src="https://img.stackshare.io/service/6163/PzNbCwXH.jpg" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/vuetify">Vuetify</a>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
+                                                <a data-hint="Material Design" data-align="left" class="hint--top" href="/material-design"><img alt="Material Design" class="company-icon" src="https://img.stackshare.io/service/3994/guidelines-icon-192x192.png" /></a>
+                                                <div class='row similar-services-items'>
+                                                    <a href="/material-design">Material Design</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='row'><a class="btn btn-ss-alt" style="padding: 10px;float:right;margin-bottom:20px;margin-right:30px" href="/claim-service/bootstrap">Claim this page</a></div>
+                        </div>
+                        <div class='col-md-3 col-sm-12 col-xs-12' style='padding:0'>
+                            <div class='page-container-sp col-md-12' data-offset-bottom='845' data-offset-top='350' data-spy='affix' id='sp-sidebar' style='width:275px;z-index:0'>
+                                <div class='stack-navigator'>
+                                    <div class='row'>
+                                        <div class='row' style='padding-top:0px'>
+                                            <div style='padding:0 18px'></div>
+                                            <div id='sponsored-stack' style='padding: 20px;margin: 0 45px;border-radius: 5px;'>
+                                                <div class='sponsored-function'>
+                                                    <div class='row section-title' style='margin-bottom:7px'>
+                                                        Sponsored Tool
+                                                    </div>
+                                                    <div class='row service-logo div-center service-sponsor-img'><a id="Service: Ping Identity, Sponsor: Sentry" data-hint="Learn more about Sentry" data-align="left" class="hint hint--top" href="/sentry"><img style="width:63px;height:63px" src="https://img.stackshare.io/service/191/lzoDXqf-.png" alt="Lzodxqf " /></a></div>
+                                                    <div class='row' style='padding-top:8px;color:grey;font-size:14px;font-weight:600'>
+                                                        <a data-hint="Learn more about Sentry" data-align="left" class="hint hint--top" href="/sentry">Sentry</a>
+                                                    </div>
+                                                    <div class='row' style='padding-top:8px'>
+                                                        <div class='sponsored-function-name-post hidden-xs'>Exception Monitoring</div>
+                                                    </div>
+                                                    <div class='row'>
+                                                        <a class="btn btn-ss-g-a btn-xs hint hint--top" style="margin-top: 10px;" id="sponsored-website-url" target="_blank" data-hint="https://sentry.io/welcome/?utm_source=stackshare&amp;utm_medium=cpc&amp;utm_campaign=stackshare-september" data-align="left" href="https://sentry.io/welcome/?utm_source=stackshare&amp;utm_medium=cpc&amp;utm_campaign=stackshare-september">Visit Sentry&#39;s Website</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style='padding:0 18px'>
+                                                <hr style='margin:0'>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br>
+                                    <div class='div-center'>
+                                        <a class="btn btn-ss" style="margin-top:0" href="/front-end-frameworks/stackups">See comparisons of similar tools</a>
+                                        <a class="sp-category-stackups" href="/languages-and-frameworks/stackups">See comparisons of related tools</a>
+                                    </div>
+                                    <br>
+                                    <div class='section-title-2' style='margin-bottom:none'>
+                                        Group
+                                    </div>
+                                    <div class='div-center'>
+                                        <a class="btn btn-ss-g btn-xs" itemprop="applicationSubCategory" href="/front-end-frameworks">Front-End Frameworks</a>
+                                    </div>
+                                    <br>
+                                    <div class='section-title-2' style='margin-bottom:none'>
+                                        Layer
+                                    </div>
+                                    <div class='navigation-layers'>
+                                        <div class='current-layer'>
+                                            <div class='application_and_data stack-layer'>
+                                                <div class='stack-layer-title stack-layer-title-tag'><a href="/application_and_data">Application and Data</a></div>
+                                                <div class='row' style='margin-left:0;padding-top: 5px;'></div>
+                                            </div>
+                                        </div>
+                                        <div class='show-layer stack-layer utilities'>
+                                            <div class='stack-layer-title stack-layer-title-tag'><a href="/utilities">Utilities</a></div>
+                                            <div class='row' style='margin-left:0;padding-top: 5px;'></div>
+                                        </div>
+                                        <div class='devops show-layer stack-layer'>
+                                            <div class='stack-layer-title stack-layer-title-tag'><a href="/devops">DevOps</a></div>
+                                            <div class='row' style='margin-left:0;padding-top: 5px;'></div>
+                                        </div>
+                                        <div class='business_tools show-layer stack-layer'>
+                                            <div class='stack-layer-title stack-layer-title-tag'><a href="/business_tools">Business Tools</a></div>
+                                            <div class='row' style='margin-left:0;padding-top: 5px;'></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id='sp-sidebar-mobile'>
+                                <div class='row'>
+                                    <div class='col-sm-6 col-xs-12'>
+                                        <div class='row'>
+                                            <div class='col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10'>
+                                                <div class='stack-navigator'>
+                                                    <div class='section-title-2'>
+                                                        Stack Layer
+                                                    </div>
+                                                    <div class='navigation-layers'>
+                                                        <div class='current-layer'>
+                                                            <div class='application_and_data stack-layer'>
+                                                                <div class='stack-layer-title stack-layer-title-tag'><a href="/application_and_data">Application and Data</a></div>
+                                                                <div class='row' style='margin-left:0;padding-top: 5px;'></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class='show-layer stack-layer utilities'>
+                                                            <div class='stack-layer-title stack-layer-title-tag'><a href="/utilities">Utilities</a></div>
+                                                            <div class='row' style='margin-left:0;padding-top: 5px;'></div>
+                                                        </div>
+                                                        <div class='devops show-layer stack-layer'>
+                                                            <div class='stack-layer-title stack-layer-title-tag'><a href="/devops">DevOps</a></div>
+                                                            <div class='row' style='margin-left:0;padding-top: 5px;'></div>
+                                                        </div>
+                                                        <div class='business_tools show-layer stack-layer'>
+                                                            <div class='stack-layer-title stack-layer-title-tag'><a href="/business_tools">Business Tools</a></div>
+                                                            <div class='row' style='margin-left:0;padding-top: 5px;'></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class='section-title-2'>
+                                                        Category
+                                                    </div>
+                                                    <div class='current-category'><a href="/languages-and-frameworks">Languages &amp; Frameworks</a></div>
+                                                    <div class='section-title-2'>
+                                                        Function
+                                                    </div>
+                                                    <div class='current-category'><a href="/front-end-frameworks">Front-End Frameworks</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='col-sm-6 col-xs-12'>
+                                        <div class='row'>
+                                            <div class='col-offset-0 col-sm-10 col-xs-offset-1 col-xs-10'>
+                                                <div class='div-center' style='margin: 25px 0 0px 0;'>
+                                                    <a href='/trending/tools' style='display: inline-flex;'>
+<span class='octicon octicon-flame' style='display: inline-flex;font-size:21px;margin-bottom: 20px;'>
+<span style="font-size: 12px;font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans !important;margin:auto 0 auto 3px;">See what's trending</span>
+</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id='push'></div>
+</div>
+<footer>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 col-xs-10 col-xs-offset-1'>
+                <div class='row'>
+                    <div class='col-md-3 col-sm-3 col-xs-12'>
+                        <div class='footer-links'>
+                            <div class='row' style='margin:0;'>
+<span style='margin-bottom:10px'>
+<div class='footer-link-heading'>Tools & Services</div>
+<div><a title="Search Tools &amp; Services" href="/search">Search</a></div>
+<div><a title="Technology Stacks &amp; Tools" href="/explore">Explore</a></div>
+<div><a title="Technology Tools &amp; Services" href="/categories">Browse Categories</a></div>
+<div><a title="Application &amp; Data" href="/application_and_data">Application &amp; Data</a></div>
+<div><a title="Utilities" href="/utilities">Utilities</a></div>
+<div><a title="DevOps" href="/devops">DevOps</a></div>
+<div><a title="Business Tools" href="/business_tools">Business Tools</a></div>
+<div><a title="Submit a Tool" href="/submit">Submit A Tool</a></div>
+<div><a title="Tool Time" href="//tooltime.stackshare.io">Tool Time</a></div>
+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-md-3 col-sm-3 col-xs-12'>
+                        <div class='footer-links'>
+                            <div class='row' style='margin:0;'>
+<span style='margin-bottom:10px'>
+<div class='footer-link-heading'>Stacks</div>
+<div>
+<a title="Stack Match" href="/match">Job Search</a>
+<a href='/match.atom'>
+<i class='fa fa-rss-square' style='color: #ffffff; margin-left: 5px;'></i>
+</a>
+</div>
+<div><a title="Technology Stacks" href="/stacks">Stacks</a></div>
+<div><a title="Trending Stacks" href="/trending/stacks">Trending Stacks</a></div>
+<div><a title="Companies" href="/companies">Companies</a></div>
+<div><a title="Featured Posts" href="/featured-posts">Featured Posts</a></div>
+<div><a title="Add Your Tech Stack" href="/onboarding/scan">Add Your Stack</a></div>
+<div>
+<a href="/posts/introducing-stack-embed-display-your-stack-on-medium-linkedin-or-any-website">Stack Embed</a>
+</div>
+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-md-3 col-sm-3 col-xs-12'>
+                        <div class='footer-links'>
+                            <div class='row' style='margin:0;'>
+<span style='margin-bottom:10px'>
+<div class='footer-link-heading'>Company</div>
+<div><a title="StackShare API" href="//api.stackshare.io">API</a></div>
+<div><a title="StackShare Blog" href="/posts">Blog</a></div>
+<div>
+<a title="Careers at StackShare" href="/careers">Careers</a>
+<span class='hidden-xs hidden-sm hidden-md' style='margin-left:5px;padding: 3px 10px;font-size: 75%;font-weight: 600;color: white;border-radius: .25em;background-color: #0690fa;font-size: 12px;'>We're Hiring!</span>
+</div>
+<div><a title="Vendors" href="/vendors">Vendors</a></div>
+<div><a title="Our Stack" href="/stackshare">Our Stack</a></div>
+<div><a title="StackShare on AngelList" href="https://angel.co/stackshare">AngelList</a></div>
+<div><a title="Contact Us" href="mailto:team@stackshare.io">Contact Us</a></div>
+<div><a title="Logos &amp; Branding" href="/branding">Logos &amp; Branding</a></div>
+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-md-3 col-sm-3 col-xs-12'>
+                        <div class='footer-links'>
+                            <div class='row'>
+                                <div class='footer-link-heading'>Follow Us</div>
+                                <ul>
+                                    <li>
+                                        <a class='social-button twitter' href='https://twitter.com/stackshareio' target='_blank'>
+                                            <i class='fa fa-twitter-square fa-2x'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class='social-button facebook' href='https://facebook.com/stackshareio' target='_blank'>
+                                            <i class='fa fa-facebook-square fa-2x'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class='social-button linkedin' href='https://www.linkedin.com/company/stackshare' target_='_blank'>
+                                            <i class='fa fa-linkedin-square fa-2x'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class='social-button angellist' href='https://angel.co/stackshare' target_='_blank'>
+                                            <i class='fa fa-angellist fa-2x'></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='row div-center' style='margin-bottom:50px'>
+            <div class='div-center'><a href="/"><img alt="stackshare" style="max-width: 135px;margin-bottom:5px" src="/assets/stackshare-logo-grey-b460a99820c6d94df6b22ca5c804a10e6e0e6cb4450e820dba07b2e6bc575dfa.png" /></a></div>
+            <div class='footer-links' style='padding:0;font-size:11px;text-align:center'>
+                <a href="/terms">Terms</a>
+                /
+                <a href="/privacy">Privacy</a>
+            </div>
+            <div class='copyright'>
+                Copyright © 2017 StackShare, Inc. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div aria-hidden='true' aria-labelledby='myModalLabel' class='modal fade' id='signinModal' role='dialog' style='outline: none;z-index:10000' tabindex='-1'>
+    <div class='modal-dialog'>
+        <div class='modal-content'>
+            <div class='modal-header'>
+                <button class='close' data-dismiss='modal' type='button'>
+                    <span aria-hidden='true'>&times;</span>
+                </button>
+                <h4 id='myModalLabel'></h4>
+            </div>
+            <div class='modal-body' style='padding-top:0'>
+                <div style='display: inline-flex;display: -webkit-inline-flex;'>
+                    <div class='modal-welcome'>Welcome to</div>
+                    <div class='brand-logo'></div>
+                </div>
+                <div class='social-login-blurb' style='margin:20px 0;'>
+                    StackShare is a
+                    <b>developer-only</b>
+                    community of engineers, CTOs, VPEs, and
+                    <br>developers from some of the world's top startups and companies.</br>
+                </div>
+                <div class='oauth-button' id='login-github'>
+                    <a class='btn div-center' href='/users/auth/github'>
+                        <div class='continue-with'>
+                            Continue with Github
+                        </div>
+                        <span class='fa fa-github'></span>
+                    </a>
+                </div>
+                <br>
+                <div class='oauth-button' id='login-bitbucket'>
+                    <a class='btn div-center' href='/users/auth/bitbucket'>
+                        <div class='continue-with'>
+                            Continue with Bitbucket
+                        </div>
+                        <span class='fa fa-bitbucket'></span>
+                    </a>
+                </div>
+                <br>
+                <div class='oauth-button' id='login-gitlab'>
+                    <a class='btn div-center' href='/users/auth/gitlab'>
+                        <div class='continue-with'>
+                            Continue with Gitlab
+                        </div>
+                        <span class='fa fa-gitlab'></span>
+                    </a>
+                </div>
+                <br>
+                <div class='github-login-blurb disclaimer' style='margin:20px 0 45px 0'>
+                    By clicking the sign up button above, you agree to our
+                    <a target="_blank" href="/terms">Terms of Use</a>
+                    and
+                    <a target="_blank" href="/privacy">Privacy Policy</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    window._SENTRY_DSN = "https://2236262f9ba04066a5e149920fd6a3b7@app.getsentry.com/91238"
+    window._MATCH_COMPANIES_INDEX = "Match_companies_production"
+    window._MATCH_JOBS_INDEX = "Match_jobs_production"
+    window._ALGOLIA_ID = "KM8652F2EG"
+    window._ALGOLIA_API_KEY = "3c2f8c9f96b4218b3c5ca54731efdec0"
+    window._MATCH_WORKER_JS_PATH = "/match_job_worker.js"
+    window._SERVICES_INDEX = "Services_production"
+    window.JS_SEGMENT_KEY = ""
+    window.data = {current_user: {}}
+</script>
+<script>
+    window._PAGE = { 'name': "services.show",
+        'properties': JSON.parse("{\"label\":\"Bootstrap\",\"contentGroupPage\":\"Services\",\"contentGroupAuthenticationStatus\":\"logged_in: false\"}") }
+</script>
+
+<script src="/assets/application-1fbde40dd4798e37ceea138888d1da3e502fe82a421cb1a7bbf4a84cd38e9e05.js"></script>
+<script>
+    window._SPONSORED_LINK_BLACKLIST = ["https://rollbar.com/", "https://sentry.io/welcome/?utm_source=stackshare&utm_medium=cpc&utm_campaign=stackshare-september", "https://www.datadoghq.com/lpg/?utm_source=Advertisement&utm_medium=StackShare&utm_campaign=StackShare-Other", "https://segment.com/?utm_medium=paid-display&utm_source=stackshare&utm_campaign=analytics"]
+</script>
+
+<script src="/webpack/application-3a476ceab6fa7a73e6e3.js"></script>
+<script src="https://events.stackshare.io/setup.js"></script>
+<script>
+    //<![CDATA[
+    UPLOADCARE_PUBLIC_KEY = "ef6555c1024d5e49c403";
+    UPLOADCARE_LIVE = false;
+
+    //]]>
+</script>
+<script>
+    var trackOutboundLink = function(alink, cat, sitename) {
+        var newpage = alink.target == "_blank";
+        ga('send', 'event', cat, 'click', alink.href, {'hitCallback':
+            function () {
+                if(!newpage){
+                    document.location = alink.href;
+                }
+            }
+        });
+
+        return newpage;
+    }
+</script>
+<script>
+    $(document).ready(function(){
+        UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/S7sNG8fZBUbqOKwFKHdXQ.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
+
+        UserVoice.push(['set', {
+            accent_color: '#448dd6',
+            trigger_color: 'white',
+            trigger_background_color: '#D2D2D2'
+        }]);
+
+        UserVoice.push(['addTrigger', { mode: 'contact', trigger_position: 'bottom-right' }]);
+
+        UserVoice.push(['autoprompt', {}]);
+    });
+</script>
+<script src='https://cdn.jsdelivr.net/selectize/0.12.3/js/standalone/selectize.min.js' type='text/javascript'></script>
+</body>
+</html>
