@@ -11,3 +11,6 @@ RESTPLUS_ERROR_404_HELP = False
 # SQLAlchemy settings
 SQLALCHEMY_DATABASE_URI = 'mysql://hooney:blue1220@@localhost/classico'
 SQLALCHEMY_TRACK_MODIFICATIONS = False
+SQLALCHEMY_ECHO = True
+
+BASE_NAME="/Users/HunSeol/Desktop/"
