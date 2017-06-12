@@ -1,6 +1,7 @@
 from db import db
 
-StackSimilar = db.Table('TB_STACK_SIMILAR_REFER',
+
+stack_similar = db.Table('TB_STACK_SIMILAR_REFER',
                         db.Column('stack_id', db.BigInteger, db.ForeignKey('TB_STACK.id'), nullable=False),
                         db.Column('stack_similar_id', db.BigInteger, db.ForeignKey('TB_SIMILAR_STACK.id'), nullable=False))
 
@@ -8,8 +9,10 @@ StackSimilar = db.Table('TB_STACK_SIMILAR_REFER',
 class StackModel(db.Model):
     __tablename__ = 'TB_STACK'
     id = db.Column(db.BigInteger, primary_key=True)
-    name = db.Column(db.String(80), unique=True)
-    similar = db.relationship('SimilarStackModel', secondary=StackSimilar, backref='StackModel', lazy='dynamic')
+    stack_name = db.Column(db.String(80), unique=True, nullable=False)
+
+    stack_home_url = db.Column(db.String(200))
+    similar = db.relationship('SimilarStackModel', secondary=stack_similar, backref='StackModel', lazy='dynamic')
 
     stack_depth = db.Column(db.Integer, default=0, server_default=db.text('0'))
     comment_depth = db.Column(db.Integer, default=0, server_default=db.text('0'))
@@ -28,15 +31,19 @@ class StackModel(db.Model):
     # store = db.relationship('StoreModel')
     # items = db.relationship('ItemModel', lazy='dynamic')
 
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, stack_name):
+        self.stack_name = stack_name
 
     def __str__(self):
-        return {'name': self.name}
+        return {
+                'stack_name': self.stack_name,
+                'simliar': self.similar,
+                }
 
     @classmethod
-    def find_by_name(cls, name):
-        return cls.query.filter_by(name=name).first()
+    def find_by_stack_name(cls, stack_name):
+        stack = cls.query.filter_by(stack_name=stack_name).first()
+        return stack
 
     @classmethod
     def find_list(cls):
@@ -54,19 +61,19 @@ class StackModel(db.Model):
 class SimilarStackModel(db.Model):
     __tablename__ = 'TB_SIMILAR_STACK'
     id = db.Column(db.BigInteger, primary_key=True)
-    name = db.Column(db.String(80), nullable=False)
+    stack_name = db.Column(db.String(80), nullable=False)
 
     created_by = db.Column(db.String(100))
     created_date = db.Column(db.TIMESTAMP(True), server_default=db.text('CURRENT_TIMESTAMP'))
     modified_by = db.Column(db.String(100))
     modified_date = db.Column(db.TIMESTAMP(True), server_default=db.text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))
 
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, stack_name):
+        self.stack_name = stack_name
 
     def __str__(self):
-        return {'name': self.name}
-    
+        return {'stack_name': self.stack_name}
+
     def save_to_db(self):
         db.session.add(self)
         db.session.commit()

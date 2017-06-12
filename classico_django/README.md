@@ -17,7 +17,9 @@
     1. python3 -m venv --without-pip [VirtualenvName]
     2. source [VirtualenvName]/bin/activate
     3. cd classico_django
-    4. pip install -U -r requirements.txt 
+    4. pip install -U -r requirements.txt
+    5. cd classico_rest
+    6. python app.py
 
 
 ### Environment
