@@ -1,6 +1,6 @@
 from flask_restful import Resource, reqparse
 from models.user import UserModel
-import bcrypt
+from flask_jwt import jwt_required
 
 ROUNDS = 5  # Number of hash rounds, set low for development, increase for production
 
@@ -41,5 +41,6 @@ class UserRegister(Resource):
 
 
 class UserList(Resource):
+    @jwt_required()
     def get(self):
         return {'Users': list(map(lambda x: x.__str__(), UserModel.query.all()))}

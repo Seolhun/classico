@@ -1,5 +1,10 @@
 from db import db
 
+stack_similar = db.Table('TB_STACK_SIMILAR_REFER',
+                         db.Column('stack_id', db.BigInteger, db.ForeignKey('TB_STACK.id'), nullable=False),
+                         db.Column('stack_similar_id', db.BigInteger, db.ForeignKey('TB_SIMILAR_STACK.id'),
+                                   nullable=False))
+
 
 class StackModel(db.Model):
     __tablename__ = 'TB_STACK'
@@ -7,7 +12,7 @@ class StackModel(db.Model):
     stack_name = db.Column(db.String(80), unique=True, nullable=False)
 
     stack_home_url = db.Column(db.String(200))
-    similars = db.relationship('SimilarStackModel')
+    similars = db.relationship('SimilarStackModel', secondary=stack_similar, back_populates='stacks', lazy='dynamic')
 
     stack_depth = db.Column(db.Integer, default=0, server_default=db.text('0'))
     comment_depth = db.Column(db.Integer, default=0, server_default=db.text('0'))
@@ -26,12 +31,16 @@ class StackModel(db.Model):
         self.stack_name = stack_name
 
     def json(self):
-        return {'stack_name': self.stack_name, 'similars': [similar.json() for similar in self.similars]}
+        return {'stack_name': self.stack_name, 'similars': [similars.json() for similars in self.similars.all()]}
 
     @classmethod
     def find_by_stack_name(cls, stack_name):
         # stack = SimilarStackModel.query.filter(SimilarStackModel.stacks.any(stack_name=stack_name)).all()
         stack = cls.query.filter_by(stack_name=stack_name).first()
+        similars = SimilarStackModel.query.filter_by(stack_name=stack_name) \
+            .join(StackModel, SimilarStackModel.stacks) \
+            .order_by(SimilarStackModel.id).all()
+        stack.similars = similars
         return stack
 
     @classmethod
@@ -51,8 +60,7 @@ class SimilarStackModel(db.Model):
     __tablename__ = 'TB_SIMILAR_STACK'
     id = db.Column(db.BigInteger, primary_key=True)
     stack_name = db.Column(db.String(80), nullable=False)
-    stack_id = db.Column(db.BigInteger, db.ForeignKey('TB_STACK.id'))
-    stack = db.relationship("StackModel", back_populates="similars")
+    stacks = db.relationship("StackModel", secondary=stack_similar, back_populates="similars", lazy='dynamic')
 
     created_by = db.Column(db.String(100))
     created_date = db.Column(db.TIMESTAMP(True), server_default=db.text('CURRENT_TIMESTAMP'))

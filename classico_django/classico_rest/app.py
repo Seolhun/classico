@@ -4,11 +4,14 @@ from flask_restful import Api
 from flask_jwt import JWT
 
 from security import authenticate, identity
-from resources.user.user import UserList, UserRegister
-from resources.stack.stack import Stack, StackList
-from resources.stack.stack_scrap import StackScrap, StackScrapPost
+from api.user.user import UserList, UserRegister
+from api.stack.stack import Stack, StackList
+from api.stack.stack_scrap import StackScrap, StackScrapPost
 from flask_swagger import swagger
 
+from utils.json_encoder import AlchemyEncoder
+
+# Config Part
 app = Flask(__name__)
 app.config['FLASK_SERVER_NAME'] = settings.FLASK_SERVER_NAME
 app.config['FLASK_DEBUG'] = settings.FLASK_DEBUG
@@ -21,6 +24,8 @@ app.config['SQLALCHEMY_ECHO'] = settings.SQLALCHEMY_ECHO
 # app.config['RESTPLUS_ERROR_404_HELP'] = settings.RESTPLUS_ERROR_404_HELP
 app.secret_key = 'shooney'
 
+# Add Resources Part
+app.json_encoder = AlchemyEncoder
 api = Api(app)
 
 

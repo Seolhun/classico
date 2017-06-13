@@ -67,7 +67,7 @@ class StackScrapPost(Resource):
         for name in similar:
             similar_stack = SimilarStackModel(name)
             similar_stack.save_to_db()
-            stack.similar.append(similar_stack)
+            stack.similars.append(similar_stack)
 
         img_file_path = get_stack_img(stack_home_img_src, stack_name)
         stack.save_to_db()
