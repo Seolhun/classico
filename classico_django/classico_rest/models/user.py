@@ -19,7 +19,7 @@ class UserModel(db.Model):
         self.nickname = nickname
 
     def __str__(self):
-        return {'username': self.username, 'password': self.password}
+        return {'email': self.email, 'nickname': self.nickname, 'password': self.password}
 
     def save_to_db(self):
         db.session.add(self)

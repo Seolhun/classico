@@ -10,7 +10,7 @@ class Stack(Resource):
     def get(self, stack_name):
         stack = StackModel.find_by_stack_name(stack_name)
         if stack:
-            return stack.__str__()
+            return stack.json()
         return {'message': 'stack not found'}, 404
 
     def delete(self, stack_name):
