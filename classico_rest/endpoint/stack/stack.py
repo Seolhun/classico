@@ -1,6 +1,7 @@
 from flask_restful import Resource, reqparse
 from flask_jwt import jwt_required
-from models.stack import StackModel
+
+from models.stack import StackModel, SimilarStackModel
 
 
 class Stack(Resource):
