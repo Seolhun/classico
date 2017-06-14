@@ -4,9 +4,9 @@ from flask_restful import Api
 from flask_jwt import JWT
 
 from security import authenticate, identity
-from api.user.user import UserList, UserRegister
-from api.stack.stack import Stack, StackList
-from api.stack.stack_scrap import StackScrap, StackScrapPost
+from endpoint.user.user import UserList, UserRegister
+from endpoint.stack.stack import Stack, StackList
+from endpoint.stack.stack_scrap import StackScrap, StackScrapPost
 from flask_swagger import swagger
 
 from utils.json_encoder import AlchemyEncoder

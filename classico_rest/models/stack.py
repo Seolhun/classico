@@ -21,8 +21,6 @@ class StackModel(db.Model):
     likes = db.Column(db.Integer, default=0, server_default=db.text('0'))
     hates = db.Column(db.Integer, default=0, server_default=db.text('0'))
 
-    created_by = db.Column(db.String(100))
-    created_date = db.Column(db.TIMESTAMP(True), server_default=db.text('CURRENT_TIMESTAMP'))
     modified_by = db.Column(db.String(100))
     modified_date = db.Column(db.TIMESTAMP(True),
                               server_default=db.text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))
@@ -31,16 +29,27 @@ class StackModel(db.Model):
         self.stack_name = stack_name
 
     def json(self):
-        return {'stack_name': self.stack_name, 'similars': [similars.json() for similars in self.similars.all()]}
+        return {
+            'stack_name': self.stack_name,
+            'stack_home_url': self.stack_home_url,
+
+            'stack_depth': self.stack_depth,
+            'comment_depth': self.comment_depth,
+            'hits': self.hits,
+            'likes': self.likes,
+            'hates': self.hates,
+
+            'similars': [similars.json() for similars in self.similars]}
 
     @classmethod
     def find_by_stack_name(cls, stack_name):
         # stack = SimilarStackModel.query.filter(SimilarStackModel.stacks.any(stack_name=stack_name)).all()
         stack = cls.query.filter_by(stack_name=stack_name).first()
-        similars = SimilarStackModel.query.filter_by(stack_name=stack_name) \
-            .join(StackModel, SimilarStackModel.stacks) \
-            .order_by(SimilarStackModel.id).all()
+        print("------------------------db_stack------------------------", stack.id)
+        similars = SimilarStackModel.query.filter(SimilarStackModel.stacks.any(stack_name=stack_name)).all()
         stack.similars = similars
+        for s in stack.similars:
+            print("-------dasdsa------", s.stack_name)
         return stack
 
     @classmethod
@@ -62,8 +71,6 @@ class SimilarStackModel(db.Model):
     stack_name = db.Column(db.String(80), nullable=False)
     stacks = db.relationship("StackModel", secondary=stack_similar, back_populates="similars", lazy='dynamic')
 
-    created_by = db.Column(db.String(100))
-    created_date = db.Column(db.TIMESTAMP(True), server_default=db.text('CURRENT_TIMESTAMP'))
     modified_by = db.Column(db.String(100))
     modified_date = db.Column(db.TIMESTAMP(True),
                               server_default=db.text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))
@@ -71,21 +78,17 @@ class SimilarStackModel(db.Model):
     def __init__(self, stack_name):
         self.stack_name = stack_name
 
-    def __str__(self):
-        return {'stack_name': self.stack_name}
-
     def json(self):
         return {
-            'id': self.id,
             'stack_name': self.stack_name,
-            'created_by': self.created_by,
-            'created_date': self.created_date.__str__(),
+            # 'stacks': [stacks.json() for stacks in self.stacks.all()],
             'modified_by': self.modified_by,
             'modified_date': self.modified_date.__str__()
         }
 
-    def __json__(self):
-        return {'stack_name': self.stack_name}
+    @classmethod
+    def find_by_stack_name(cls, stack_name):
+        return cls.query.filter_by(stack_name=stack_name).first()
 
     def save_to_db(self):
         db.session.add(self)

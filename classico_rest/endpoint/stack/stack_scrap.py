@@ -14,8 +14,8 @@ class StackScrap(Resource):
     def get(self, stack_name):
         stack = StackModel.find_by_stack_name(stack_name)
         if stack:
-            stack.delete_from_db()
-        return {'message': 'stack deleted'}
+            return stack.json()
+        return {'message': 'stack not found'}, 404
 
     def delete(self, stack_name):
         stack = StackModel.find_by_stack_name(stack_name)
@@ -43,7 +43,7 @@ class StackScrapPost(Resource):
         page = requests.get('https://stackshare.io/' + url_name)
         soup = BeautifulSoup(page.content, 'html.parser')
 
-        similar = []
+        similars = []
         stack_name = soup.find("meta", attrs={"name": "keywords"})['content']
         stack_home_url = soup.select('.sp-service-logo > a')[0].get('href')
         stack_home_img_src = soup.select('.sp-service-logo > a > img')[0].get('src')
@@ -56,7 +56,7 @@ class StackScrapPost(Resource):
 
         for a in soup.select('.stack-logo > .similar-services-items > a'):
             stack_similar_name = a.get('href')[1:]
-            similar.append(stack_similar_name)
+            similars.append(stack_similar_name)
 
         stack = StackModel.find_by_stack_name(stack_name)
         if stack is not None:
@@ -64,15 +64,18 @@ class StackScrapPost(Resource):
 
         stack = StackModel(stack_name)
         stack.stack_home_url = stack_home_url
-        for name in similar:
-            similar_stack = SimilarStackModel(name)
-            similar_stack.save_to_db()
+        for name in similars:
+            similar_stack = SimilarStackModel.find_by_stack_name(name)
+            if similar_stack is None:
+                similar_stack = SimilarStackModel(name)
+                similar_stack.save_to_db()
+
             stack.similars.append(similar_stack)
 
         img_file_path = get_stack_img(stack_home_img_src, stack_name)
         stack.save_to_db()
 
-        return {"message": "Stack created successfully.", 'stack_name': stack_name, 'similar': similar}, 201
+        return {"message": "Stack created successfully.", 'stack_name': stack_name, 'similars': similars}, 201
 
 
 def get_stack_img(img_src, stack_name):
