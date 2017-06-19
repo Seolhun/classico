@@ -11,7 +11,8 @@ class UserModel(db.Model):
     created_by = db.Column(db.String(100))
     created_date = db.Column(db.TIMESTAMP(True), server_default=db.text('CURRENT_TIMESTAMP'))
     modified_by = db.Column(db.String(100))
-    modified_date = db.Column(db.TIMESTAMP(True), server_default=db.text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))
+    modified_date = db.Column(db.TIMESTAMP(True),
+                              server_default=db.text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))
 
     def __init__(self, email, password, nickname):
         self.email = email

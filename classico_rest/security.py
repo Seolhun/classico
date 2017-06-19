@@ -1,5 +1,9 @@
 from werkzeug.security import safe_str_cmp
 from models.user import UserModel
+from flask_bcrypt import Bcrypt
+
+# security
+bcrypt = Bcrypt()
 
 
 def authenticate(nickname, password):

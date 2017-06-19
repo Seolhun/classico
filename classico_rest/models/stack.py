@@ -2,8 +2,7 @@ from db import db
 
 stack_similar = db.Table('TB_STACK_SIMILAR_REFER',
                          db.Column('stack_id', db.BigInteger, db.ForeignKey('TB_STACK.id'), nullable=False),
-                         db.Column('stack_similar_id', db.BigInteger, db.ForeignKey('TB_SIMILAR_STACK.id'),
-                                   nullable=False))
+                         db.Column('stack_similar_id', db.BigInteger, db.ForeignKey('TB_SIMILAR_STACK.id'), nullable=False))
 
 
 class StackModel(db.Model):
@@ -41,15 +40,20 @@ class StackModel(db.Model):
 
             'similars': [similars.json() for similars in self.similars]}
 
+    # @classmethod
+    # def find_by_stack_name_with_similars(cls, stack_name):
+    #     # stack = SimilarStackModel.query.filter(SimilarStackModel.stacks.any(stack_name=stack_name)).all()
+    #     stack = cls.query.filter_by(stack_name=stack_name).first()
+    #     similars = SimilarStackModel.query.filter(SimilarStackModel.stacks.any(stack_name=stack_name)).all()
+    #     stack.similars = similars
+    #     for s in stack.similars:
+    #         print("-------dasdsa------", s.stack_name)
+    #     return stack
+
     @classmethod
     def find_by_stack_name(cls, stack_name):
         # stack = SimilarStackModel.query.filter(SimilarStackModel.stacks.any(stack_name=stack_name)).all()
         stack = cls.query.filter_by(stack_name=stack_name).first()
-        print("------------------------db_stack------------------------", stack.id)
-        similars = SimilarStackModel.query.filter(SimilarStackModel.stacks.any(stack_name=stack_name)).all()
-        stack.similars = similars
-        for s in stack.similars:
-            print("-------dasdsa------", s.stack_name)
         return stack
 
     @classmethod

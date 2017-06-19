@@ -1,31 +1,43 @@
 import settings
+
 from flask import Flask, jsonify
 from flask_restful import Api
 from flask_jwt import JWT
+
+# URL Because of Password '@'
+from urllib import parse
 
 from security import authenticate, identity
 from endpoint.user.user import UserList, UserRegister
 from endpoint.stack.stack import Stack, StackList
 from endpoint.stack.stack_scrap import StackScrap, StackScrapPost
+
 from flask_swagger import swagger
 
-from utils.json_encoder import AlchemyEncoder
+from db import db, mongo
+from security import bcrypt
 
 # Config Part
 app = Flask(__name__)
+
+# Swagger
+swag = swagger(app)
+
+app.secret_key = 'shooney'
+
 app.config['FLASK_SERVER_NAME'] = settings.FLASK_SERVER_NAME
 app.config['FLASK_DEBUG'] = settings.FLASK_DEBUG
 app.config['SQLALCHEMY_DATABASE_URI'] = settings.SQLALCHEMY_DATABASE_URI
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = settings.SQLALCHEMY_TRACK_MODIFICATIONS
 app.config['SQLALCHEMY_ECHO'] = settings.SQLALCHEMY_ECHO
-# app.config['RESTPLUS_SWAGGER_UI_DOC_EXPANSION'] = settings.RESTPLUS_SWAGGER_UI_DOC_EXPANSION
-# app.config['RESTPLUS_VALIDATE'] = settings.RESTPLUS_VALIDATE
-# app.config['RESTPLUS_MASK_SWAGGER'] = settings.RESTPLUS_MASK_SWAGGER
-# app.config['RESTPLUS_ERROR_404_HELP'] = settings.RESTPLUS_ERROR_404_HELP
-app.secret_key = 'shooney'
+
+app.config['MONGOALCHEMY_USER'] = settings.MONGOALCHEMY_USER
+app.config['MONGOALCHEMY_PASSWORD'] = parse.quote('blue1220@')
+app.config['MONGOALCHEMY_DATABASE'] = settings.MONGOALCHEMY_DATABASE
+app.config['MONGOALCHEMY_SERVER'] = settings.MONGOALCHEMY_SERVER
+app.config['MONGOALCHEMY_PORT'] = settings.MONGOALCHEMY_PORT
 
 # Add Resources Part
-app.json_encoder = AlchemyEncoder
 api = Api(app)
 
 
@@ -36,7 +48,7 @@ def create_tables():
 
 jwt = JWT(app, authenticate, identity)  # /auth
 
-# Stack Scrap Part
+# Stack Part
 api.add_resource(Stack, '/stack/<string:stack_name>')
 api.add_resource(StackList, '/stacks')
 
@@ -49,16 +61,22 @@ api.add_resource(UserRegister, '/register')
 api.add_resource(UserList, '/users')
 
 
+# https://pythonhosted.org/Flask-MongoAlchemy/ 참고할 것
+@app.route('/news/<string:news_id>')
+def news(news_id):
+    news = mongo.NewsData.find_one_or_404({'_id': news_id})
+    return jsonify({'news': news})
+
+
 @app.route("/spec")
 def spec():
-    swag = swagger(app)
     swag['info']['version'] = "1.0"
     swag['info']['title'] = "Classico RESTful API"
     return jsonify(swag)
 
 
 if __name__ == '__main__':
-    from db import db
-
     db.init_app(app)
+    mongo.init_app(app)
+    bcrypt.init_app(app)
     app.run(port=5000, debug=True)
