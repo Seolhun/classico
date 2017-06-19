@@ -31,11 +31,11 @@ app.config['SQLALCHEMY_DATABASE_URI'] = settings.SQLALCHEMY_DATABASE_URI
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = settings.SQLALCHEMY_TRACK_MODIFICATIONS
 app.config['SQLALCHEMY_ECHO'] = settings.SQLALCHEMY_ECHO
 
-app.config['MONGOALCHEMY_USER'] = settings.MONGOALCHEMY_USER
-app.config['MONGOALCHEMY_PASSWORD'] = parse.quote('blue1220@')
-app.config['MONGOALCHEMY_DATABASE'] = settings.MONGOALCHEMY_DATABASE
-app.config['MONGOALCHEMY_SERVER'] = settings.MONGOALCHEMY_SERVER
-app.config['MONGOALCHEMY_PORT'] = settings.MONGOALCHEMY_PORT
+# app.config['MONGOALCHEMY_USER'] = settings.MONGOALCHEMY_USER
+# app.config['MONGOALCHEMY_PASSWORD'] = parse.quote('blue1220@')
+# app.config['MONGOALCHEMY_DATABASE'] = settings.MONGOALCHEMY_DATABASE
+# app.config['MONGOALCHEMY_SERVER'] = settings.MONGOALCHEMY_SERVER
+# app.config['MONGOALCHEMY_PORT'] = settings.MONGOALCHEMY_PORT
 
 # Add Resources Part
 api = Api(app)
@@ -44,7 +44,6 @@ api = Api(app)
 @app.before_first_request
 def create_tables():
     db.create_all()
-
 
 jwt = JWT(app, authenticate, identity)  # /auth
 
@@ -77,6 +76,8 @@ def spec():
 
 if __name__ == '__main__':
     db.init_app(app)
-    mongo.init_app(app)
+    # mongo.init_app(app)
+
+    # When happends error - Bcrpyt : pip uninstall py-bcrypt => pip install py-bcrypt
     bcrypt.init_app(app)
     app.run(port=5000, debug=True)

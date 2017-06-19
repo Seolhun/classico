@@ -8,6 +8,8 @@ bcrypt = Bcrypt()
 
 def authenticate(nickname, password):
     user = UserModel.find_by_nickname(nickname)
+    # valid_login = bcrypt.check_password_hash(user.password, password)
+    # print("------------------- authenticate ------------------- ", valid_login)
     if user and safe_str_cmp(user.password, password):
         return user
 
