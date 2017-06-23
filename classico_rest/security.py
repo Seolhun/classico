@@ -8,10 +8,12 @@ bcrypt = Bcrypt()
 
 def authenticate(nickname, password):
     user = UserModel.find_by_nickname(nickname)
-    if user and safe_str_cmp(user.password, password):
+    validation = bcrypt.check_password_hash(user.password ,password)
+    # if user and safe_str_cmp(user.password, password):
+    if user and validation:
         return user
 
 
 def identity(payload):
-    user_id = payload['identity']
-    return UserModel.find_by_id(user_id)
+    user_nickname = payload['identity']
+    return UserModel.find_by_nickname(user_nickname)
