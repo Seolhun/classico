@@ -8,7 +8,7 @@ from flask_jwt import JWT
 from urllib import parse
 
 from security import authenticate, identity
-from endpoint.user.user import UserList, UserRegister
+from endpoint.user.user import UserList, UserRegister, User
 from endpoint.stack.stack import Stack, StackList
 from endpoint.stack.stack_scrap import StackScrap, StackScrapPost
 
@@ -17,13 +17,16 @@ from flask_swagger import swagger
 from db import db, mongo
 from security import bcrypt
 
+from models.mongodb.news import NewsData
+from mongoalchemy.session import Session
+
 # Config Part
 app = Flask(__name__)
 
 # Swagger
 swag = swagger(app)
 
-app.secret_key = 'shooney'
+app.secret_key = 'super-secret-shooney'
 
 app.config['FLASK_SERVER_NAME'] = settings.FLASK_SERVER_NAME
 app.config['FLASK_DEBUG'] = settings.FLASK_DEBUG
@@ -57,13 +60,20 @@ api.add_resource(StackScrapPost, '/scrap')
 
 # User Part
 api.add_resource(UserRegister, '/register')
+api.add_resource(User, '/user/<string:nickname>')
 api.add_resource(UserList, '/users')
 
 
+# MongoDB Session Test
+session = Session.connect('shooney')
+session.clear_collection(NewsData)
+
 # https://pythonhosted.org/Flask-MongoAlchemy/ 참고할 것
-@app.route('/news/<string:news_id>')
-def news(news_id):
-    news = mongo.NewsData.find_one_or_404({'_id': news_id})
+@app.route('/news/<int:NEWS_IDX>')
+def news(NEWS_IDX):
+    query = session.query(NewsData)
+    news = query.filter(NewsData.NEWS_IDX == NEWS_IDX).first()
+    # news = NewsData.query.filter(NewsData.NEWS_DEL_CHECK == 0).first()
     return jsonify({'news': news})
 
 

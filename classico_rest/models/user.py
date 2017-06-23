@@ -22,6 +22,14 @@ class UserModel(db.Model):
     def __str__(self):
         return {'email': self.email, 'nickname': self.nickname, 'password': self.password}
 
+    def json(self):
+        return {
+            'email': self.email,
+            'nickname': self.nickname,
+            'created_date': self.created_date.__str__(),
+            'modified_date': self.modified_date.__str__(),
+        }
+
     def save_to_db(self):
         db.session.add(self)
         db.session.commit()
