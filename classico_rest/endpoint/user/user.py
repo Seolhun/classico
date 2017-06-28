@@ -1,7 +1,11 @@
 from flask_restful import Resource, reqparse
-from models.user import UserModel
 from flask_jwt import jwt_required
+
+from models.user import UserModel
+
 from security import bcrypt
+
+from analysis import analysis
 
 ROUNDS = 5  # Number of hash rounds, set low for development, increase for production
 
@@ -18,11 +22,8 @@ class UserRegister(Resource):
         email = data['email']
         nickname = data['nickname']
         password = data['password']
-<<<<<<< HEAD
-=======
         pw_hash = bcrypt.generate_password_hash(password)
         # pw_hash = bcrypt.generate_password_hash(password.encode('utf-8', bcrypt.gensalt(ROUNDS)))
->>>>>>> origin
 
         if UserModel.find_by_email(email):
             return {"message": "A user with that email already exists"}, 400
@@ -45,6 +46,7 @@ class User(Resource):
     parser.add_argument('new_password', type=str, required=False)
 
     def get(self, nickname):
+        analysis.read_data_and_print()
         user = UserModel.find_by_nickname(nickname)
         if user:
             return user.json()

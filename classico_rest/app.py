@@ -2,7 +2,7 @@ import settings
 
 from flask import Flask, jsonify
 from flask_restful import Api
-from flask_jwt import JWT
+from flask_jwt import JWT, jwt_required, current_identity
 
 # URL Because of Password '@'
 from urllib import parse
@@ -14,7 +14,7 @@ from endpoint.stack.stack_scrap import StackScrap, StackScrapPost
 
 from flask_swagger import swagger
 
-from db import db, mongo
+from databases import db, mongo
 from security import bcrypt
 
 from models.mongodb.news import NewsData
@@ -22,11 +22,6 @@ from mongoalchemy.session import Session
 
 # Config Part
 app = Flask(__name__)
-
-# Swagger
-swag = swagger(app)
-
-app.secret_key = 'super-secret-shooney'
 
 app.config['FLASK_SERVER_NAME'] = settings.FLASK_SERVER_NAME
 app.config['FLASK_DEBUG'] = settings.FLASK_DEBUG
@@ -40,6 +35,17 @@ app.config['SQLALCHEMY_ECHO'] = settings.SQLALCHEMY_ECHO
 # app.config['MONGOALCHEMY_SERVER'] = settings.MONGOALCHEMY_SERVER
 # app.config['MONGOALCHEMY_PORT'] = settings.MONGOALCHEMY_PORT
 
+# JWT Setting
+app.config['SECRET_KEY'] = 'super-secret'
+app.config['JWT_AUTH_USERNAME_KEY'] = 'nickname'
+app.config['JWT_AUTH_PASSWORD_KEY'] = 'password'
+
+app.debug = True
+jwt = JWT(app, authenticate, identity)  # /auth
+
+# Swagger
+swag = swagger(app)
+
 # Add Resources Part
 api = Api(app)
 
@@ -48,7 +54,6 @@ api = Api(app)
 def create_tables():
     db.create_all()
 
-jwt = JWT(app, authenticate, identity)  # /auth
 
 # Stack Part
 api.add_resource(Stack, '/stack/<string:stack_name>')
@@ -63,18 +68,25 @@ api.add_resource(UserRegister, '/register')
 api.add_resource(User, '/user/<string:nickname>')
 api.add_resource(UserList, '/users')
 
+# # MongoDB Session Test
+# session = Session.connect('shooney')
 
-# MongoDB Session Test
-session = Session.connect('shooney')
-session.clear_collection(NewsData)
 
-# https://pythonhosted.org/Flask-MongoAlchemy/ 참고할 것
-@app.route('/news/<int:NEWS_IDX>')
-def news(NEWS_IDX):
-    query = session.query(NewsData)
-    news = query.filter(NewsData.NEWS_IDX == NEWS_IDX).first()
-    # news = NewsData.query.filter(NewsData.NEWS_DEL_CHECK == 0).first()
-    return jsonify({'news': news})
+# # https://pythonhosted.org/Flask-MongoAlchemy/ 참고할 것
+# @app.route('/news/<string:NEWS_IDX>')
+# def news(NEWS_IDX):
+#     print("------" + NEWS_IDX + "------")
+#     query = mongo.session.query(NewsData)
+#     # news = query.filter(NewsData.NEWS_IDX == NEWS_IDX).all()
+#     news = session.query(NewsData).filter(NewsData.NEWS_IDX == NEWS_IDX).first()
+#     # return session.query(Product).filter({"mongo_id": {in_: self.product_ids}})
+#     return jsonify({'news': news})
+
+
+@app.route('/protected')
+@jwt_required()
+def protected():
+    return '%s' % current_identity
 
 
 @app.route("/spec")

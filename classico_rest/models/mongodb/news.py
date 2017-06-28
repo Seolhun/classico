@@ -1,11 +1,10 @@
-from db import mongo as db
+from databases import mongo as db
 
 
 # Field(required=True, default=UNSET, default_f=None, db_field=None, allow_none=False, on_update='$set', validator=None, unwrap_validator=None, wrap_validator=None, _id=False, proxy=None, iproxy=None, ignore_missing=False)¶
 
 class NewsData(db.Document):
-    _id = db.StringField()
-    NEWS_IDX = db.IntField()
+    NEWS_IDX = db.StringField()
     news_title = db.StringField()
     news_content = db.StringField()
     news_tags = db.ListField(db.StringField())
