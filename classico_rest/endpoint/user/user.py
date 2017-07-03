@@ -1,11 +1,9 @@
-from flask_restful import Resource, reqparse
 from flask_jwt import jwt_required
-
-from models.user import UserModel
-
-from security import bcrypt
+from flask_restful import Resource, reqparse
 
 from analysis import analysis
+from models.mariadb.user import UserModel
+from security import bcrypt
 
 ROUNDS = 5  # Number of hash rounds, set low for development, increase for production
 

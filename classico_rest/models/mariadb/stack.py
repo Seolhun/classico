@@ -21,8 +21,7 @@ class StackModel(db.Model):
     hates = db.Column(db.Integer, default=0, server_default=db.text('0'))
 
     modified_by = db.Column(db.String(100))
-    modified_date = db.Column(db.TIMESTAMP(True),
-                              server_default=db.text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))
+    modified_date = db.Column(db.TIMESTAMP(True), server_default=db.text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))
 
     def __init__(self, stack_name):
         self.stack_name = stack_name
