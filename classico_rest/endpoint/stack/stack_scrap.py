@@ -1,10 +1,11 @@
-import settings
-from flask_restful import Resource, reqparse
-from models.stack import StackModel, SimilarStackModel
+import os.path
 import requests
 from bs4 import BeautifulSoup
+from flask_restful import Resource, reqparse
 from os.path import basename
-import os.path
+
+import settings
+from models.mariadb.stack import StackModel, SimilarStackModel
 
 
 class StackScrap(Resource):

@@ -1,1557 +1,586 @@
-
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7 ]>
+<html lang="ko" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>
+<html lang="ko" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>
+<html lang="ko" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>
+<html lang="ko" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="ko" class="no-js"><!--<![endif]-->
 <head>
-    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"f595f29c1c","applicationID":"5475963","transactionName":"IA1fFUUNWQ1TFB1BVxEUWAJSERoSXglF","queueTime":0,"applicationTime":31,"agent":""}</script>
-    <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
-    <title>JavaScript | Utilities | StackShare</title>
-    <meta name="description" content="Why developers like JavaScript - Lightweight, interpreted, object-oriented language with first-class functions">
-    <meta name="keywords" content="javascript lang, javascript" />
-    <meta property="og:image" content="https://img.stackshare.io/service/1209/javascript.jpeg" />
-    <meta property="og:title" content="JavaScript | StackShare" />
-    <meta property="og:site_name" content="StackShare" />
-    <meta property="og:url" content="https://stackshare.io/javascript" />
-    <meta property="og:description" content="Why developers like JavaScript - Lightweight, interpreted, object-oriented language with first-class functions" />
-    <meta property="og:type" content="article" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@stackshareio" />
-    <meta content='width=device-width, initial-scale=1, user-scalable=no' name='viewport'>
-    <link rel="stylesheet" media="all" href="/assets/application-59ee6e1749c388cdf16a653a0eea1c1dc7cb2128b3a18992caed0df06bab62cf.css" data-turbolinks-track="true" />
-    <link href='//stackshare.io/featured-posts.atom' rel='alternate' title='StackShare RSS Feed' type='application/rss+xml'>
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:300,400' rel='stylesheet' type='text/css'>
-    <meta name="csrf-param" content="authenticity_token" />
-    <meta name="csrf-token" content="KGztgeYTeHAH+a/9Ht+MW//wwgcdrgRecVyRIIa5GK3rSqCt3NwMk8L1D7Jt8xmbTYa0Wre1OexRCvFXMqEkqA==" />
-    <script>
-        //<![CDATA[
-        UPLOADCARE_PUBLIC_KEY = "ef6555c1024d5e49c403";
-        UPLOADCARE_LIVE = false;
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>OKKY - 데이터베이스 중복저장에 관하여</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="//okky.kr/assets/favicon-4ddd8035b72404da5a8c298cbaacad86.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="//okky.kr/assets/icon_57x57-5611bd33d9f2b2d84c22219e248455b6.png">
+    <link rel="apple-touch-icon" sizes="114x114"
+          href="//okky.kr/assets/icon_114x114-b2b627dfde8a040fe54fd257244ba191.png">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta property="og:image" content="//okky.kr/assets/okky_logo_fb-cea175ff727ef14a4d8be0e68cff730a.png">
+    <style type="text/css">
+        .adslot_1 {
+            width: 160px;
+            height: 600px;
+        }
 
-        //]]>
-    </script>
+        @media (max-width: 1240px) {
+            .adslot_1 {
+                display: none;
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="//okky.kr/assets/application-55284b01385673b8b153194bfb5f3d18.css"/>
+
+    <!--[if lt IE 9]>
+    <script src="//okky.kr/assets/libs/html5-ca664f64318d191265abf57fdf467aec.js" type="text/javascript"></script>
+    <![endif]-->
+
+
+    <meta name="layout" content="main_with_banner">
+
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="OKKY">
+    <meta property="og:url" content="https://okky.kr/article/401927">
+    <meta property="og:image" content="//okky.kr/assets/okky_logo_fb-cea175ff727ef14a4d8be0e68cff730a.png">
+
+    <meta property="og:description"
+          content=" 안녕하세요. 앱을 만들고 있는 뉴비입니다.ㅋㅋ  제가 개발하고 있는 앱을 간략히 말씀드리면 사용자가 로그인 후 음식일기를 씁니다.  그러면 이것을 카페24 서버의 데이터베이스에 저장하는 방법을 지금 하고 있는데요.  제가 지금 해놓은것이 일단 2개의 데이터베이스가 있습니다. 하나는 회원정보(간단히 id와 password)그리고 다른 하나의 데이터베이스에는">
+    <meta property="og:title" content="OKKY | 데이터베이스 중복저장에 관하여">
 
 </head>
 <body>
-<div id='wrap'>
-    <header id='navbar_wrap'>
-        <div class='no-select' id='navbar'>
-            <a class='navbar__logo' href='/'></a>
-            <ul id='nav_menu'>
-                <li class='hide-6'>
-                    <div class='badge'>
-                        &nbsp;
-                    </div>
-                    <a href='/news'>News</a>
-                </li>
-                <li class='hide-5'>
-                    <a href='/trending/tools'>Trending</a>
-                </li>
-                <li class='hide-4'>
-                    <a href='/stacks'>Stacks</a>
-                </li>
-                <li class='hide-3'>
-                    <a href='/categories'>Tools</a>
-                    <div class='navmenu'>
-                        <a href='/application_and_data'>Applications and Data</a>
-                        <a href='/utilities'>Utilities</a>
-                        <a href='/devops'>DevOps</a>
-                        <a href='/business_tools'>Business Tools</a>
-                    </div>
-                </li>
-                <li class='hide-2'>
-                    <a href='/match'>Jobs</a>
-                </li>
-                <li class='hide-1'>
-                    <a href='/featured-posts'>Stories</a>
-                </li>
-                <li data-click-toggle-class='show'>
-                    <svg height='5' viewBox='0 0 19 5' width='19' xmlns='http://www.w3.org/2000/svg'>
-                        <title>More</title>
-                        <g fill-rule='evenodd' fill='#D8D8D8'>
-                            <circle cx='2.5' cy='2.5' r='2.5'></circle>
-                            <circle cx='9.5' cy='2.5' r='2.5'></circle>
-                            <circle cx='16.5' cy='2.5' r='2.5'></circle>
-                        </g>
-                    </svg>
-                    <div class='navmenu'>
-                        <a class='hide show-6 badge' href='/news'>News</a>
-                        <a class='hide show-5' href='/trending/tools'>Trending</a>
-                        <a class='hide show-4' href='/stacks'>Stacks</a>
-                        <a class='hide show-3' href='/categories'>Tools</a>
-                        <a class='hide show-2' href='/match'>Job Search</a>
-                        <a class='hide show-1' href='/featured-posts'>Stories</a>
-                        <a href='/stackups'>Comparisons</a>
-                        <a href='/posts'>Blog</a>
-                        <a href='/explore'>Explore</a>
-                        <a href='http://tooltime.stackshare.io'>Tool Time</a>
-                    </div>
+<div class="layout-container">
+    <div class="main ">
+
+
+        <div class="sidebar sidebar-category">
+
+            <a href="javascript://" class="sidebar-header">
+                <i class="fa fa-bars sidebar-header-icon"></i>
+            </a>
+
+            <h1>
+                <div class="logo"><a href="/"><img
+                        src="//okky.kr/assets/okjsp_logo-467f1484e489ca1133e6320083e1fb9f.png" alt="OKKY" title="OKKY"/></a>
+                </div>
+            </h1>
+
+            <ul id="search-google-icon" class="nav nav-sidebar nav-sidebar-search-wrapper">
+                <li class="nav-sidebar-search"><a href="javascript://" class="link" id="search-google"
+                                                  data-toggle="popover" data-trigger="click"><i
+                        class="fa fa-search"></i></a></li>
+            </ul>
+
+            <form id="search-google-form" name="searchMain" class="nav-sidebar-form"
+                  action="https://www.google.com/search">
+                <div class="input-group">
+                    <input type="text" name="qt" class="form-control input-sm" placeholder="Google 검색"/>
+                    <input type="hidden" name="q"/>
+                    <span class="input-group-btn">
+                <button class="btn btn-default btn-sm" type="submit"><i class="fa fa-search"></i></button>
+            </span>
+                </div>
+            </form>
+
+            <div class="nav-user nav-sidebar">
+
+
+                <ul class="nav nav-sidebar">
+                    <li data-toggle="tooltip" data-container="body" title="로그인"><a
+                            href="/login/auth?redirectUrl=%2Farticle%2F401927" class="link"><i
+                            class="fa fa-sign-in"></i> <span class="nav-sidebar-label">로그인</span></a></li>
+                    <li data-toggle="tooltip" data-container="body" title="회원가입"><a href="/user/register"
+                                                                                    class="link"><i
+                            class="fa fa-user"></i> <span class="nav-sidebar-label">회원가입</span></a></li>
+                </ul>
+
+            </div>
+
+            <ul class="nav nav-sidebar nav-main">
+
+                <li class="active" data-toggle="tooltip" data-placement="right" data-container="body" title="Q&A"><a
+                        href="/articles/questions" class="link"><i class="nav-icon fa fa-database"></i> <span
+                        class="nav-sidebar-label nav-sidebar-category-label">Q&A</span></a></li>
+
+                <li data-toggle="tooltip" data-placement="right" data-container="body" title="Tech"><a
+                        href="/articles/tech" class="link"><i class="nav-icon fa fa-code"></i> <span
+                        class="nav-sidebar-label nav-sidebar-category-label">Tech</span></a></li>
+
+                <li data-toggle="tooltip" data-placement="right" data-container="body" title="커뮤니티"><a
+                        href="/articles/community" class="link"><i class="nav-icon fa fa-comments"></i> <span
+                        class="nav-sidebar-label nav-sidebar-category-label">커뮤니티</span></a></li>
+
+                <li data-toggle="tooltip" data-placement="right" data-container="body" title="칼럼"><a
+                        href="/articles/columns" class="link"><i class="nav-icon fa fa-quote-left"></i> <span
+                        class="nav-sidebar-label nav-sidebar-category-label">칼럼</span></a></li>
+
+                <li data-toggle="tooltip" data-placement="right" data-container="body" title="Jobs"><a
+                        href="/articles/jobs" class="link"><i class="nav-icon fa fa-group"></i> <span
+                        class="nav-sidebar-label nav-sidebar-category-label">Jobs</span></a></li>
+
+            </ul>
+
+            <ul class="nav nav-sidebar nav-bottom">
+                <li data-toggle="tooltip" data-placement="right" data-container="body" title="Github Issues"><a
+                        href="https://github.com/okjsp/okky/issues" class="link" target="_blank"><i
+                        class="fa fa-github"></i> <span class="nav-sidebar-label nav-sidebar-category-label">Github Issues</span></a>
                 </li>
             </ul>
-            <div class='navbar__main'>
-                <div class='search-navbar'>
-                    <script>
-                        function navbar_search() {
-                            var input = document.getElementById('header-search')
-                            var q = input.value
-                            if (q)
-                                window.location = '/search/q=' + encodeURIComponent(q)
-                            return false
-                        }
-                    </script>
-                    <div class='search-navbar'>
-                        <form class='search' id='header-search-container' onsubmit='return navbar_search()'>
-                            <input id='header-search' name='header-search' placeholder='Search'>
-                        </form>
-                        <div class='search-container search-arrow hidden'>
-                            <a class='search-page' href='/search'>
-                                <span class='octicon octicon-search dropdown-active-search'></span>
-                                <span class='query'>type your search</span>
-                            </a>
-                            <div class='group-container'>
-                                <div class='group group-services hidden'>
-                                    <div class='header'>
-                                        <span>Tools</span>
-                                        <a href='#'>More</a>
-                                    </div>
-                                </div>
-                                <div class='group group-stacks hidden'>
-                                    <div class='header'>
-                                        <span>Stacks</span>
-                                        <a href='#'>More</a>
-                                    </div>
-                                </div>
-                                <div class='group group-functions hidden'>
-                                    <div class='header'>
-                                        <span>Groups</span>
-                                        <a href='#'>More</a>
-                                    </div>
-                                </div>
-                                <div class='group group-categories hidden'>
-                                    <div class='header'>
-                                        <span>Categories</span>
-                                        <a href='#'>More</a>
-                                    </div>
-                                </div>
-                                <div class='group group-users hidden'>
-                                    <div class='header'>
-                                        <span>Users</span>
-                                        <a href='#'>More</a>
-                                    </div>
-                                </div>
-                                <div class='group group-stackups hidden'>
-                                    <div class='header'>
-                                        <span>Stackups</span>
-                                        <a href='#'>More</a>
-                                    </div>
-                                </div>
-                                <div class='group group-posts hidden'>
-                                    <div class='header'>
-                                        <span>Posts</span>
-                                        <a href='#'>More</a>
-                                    </div>
-                                </div>
-                            </div>
+        </div>
 
-                        </div>
-                    </div>
-                </div>
-                <a class='' data-target='#signinModal' data-toggle='modal' href='#' id='login-nav' style='display: inline-flex;padding: 6px 0 6px 12px;'>
-                    <span style="font-size: 14px;font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans !important;margin:auto 8px auto 0px;font-weight:normal">Sign up | Login</span>
-                </a>
+
+        <div class="sidebar-category-nav">
+            <h3 class="sub-title">Q&A</h3>
+            <ul class="nav">
+                <li><a href="/articles/questions" class="link"><span
+                        class="nav-sidebar-label nav-sidebar-category-label">All</span> <span
+                        class="nav-indicator nav-selected"><span class="nav-selected-dot"></span></span></a></li>
+
+            </ul>
+            <div class="special-nav">
+
             </div>
         </div>
-    </header>
 
-    <style>
-        .container{max-width: none;background-color: #FFF;}
-        body{background-color:#FFF !important}
-        #reviews-container li {border-left: 5px solid #EAEAEA;border-bottom:0}
-        #review {padding: 0px;margin-bottom:60px}
-    </style>
-    <header class='service'>
-        <div class='container'>
-            <div class='row'>
-                <ol class='breadcrumb col-md-10 col-xs-12 bread-nav' style='padding: 10px 0px 0px 15px;'>
-                    <li class='active'>
-                        <a class="btn btn-ss-g-alt btn-xs" itemprop="applicationSubCategory" href="/languages">Languages</a>
-                    </li>
-                    <li>
-                        <a itemprop="applicationCategory" href="/languages-and-frameworks">Languages &amp; Frameworks</a>
-                    </li>
-                    <li>
-                        <a href="/application_and_data">Application and Data</a>
-                    </li>
-                </ol>
+
+        <div id="article" class="content" role="main">
+            <div class="nav" role="navigation">
+                <a href="/articles/questions/create" class="create btn btn-success btn-wide pull-right"><i
+                        class="fa fa-pencil"></i> 새 글 쓰기</a>
+
+                <h4>Q&A</h4>
             </div>
-            <div class='row hidden-xs'>
-                <br class='visible-sm'>
-                <div class='div-center' style='display:none; margin-bottom: -30px;margin-top: 30px;'>
-<span style='color:grey'>
-StackShare helps you discover tools like
-JavaScript
-</span>
-                    <a class='btn btn-ss-gh-alt-nav' data-target='#signinModal' data-toggle='modal' href='#' style='display: inline-flex;padding: 8px 5px;margin-left:20px;border-radius: 4px;'>
-<span class='octicon octicon-mark-github' style='margin: auto 10px;display: inline-flex;font-size:22px'>
-<span style="font-size: 14px;font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans !important;margin:auto 0 auto 10px;">Sign up / Login</span>
-</span>
-                    </a>
+
+            <div class="panel panel-default clearfix">
+                <div class="panel-heading clearfix">
+                    <div class='avatar avatar-medium clearfix pull-left'>
+                        <a href='/user/info/56980' class='avatar-photo'>
+                            <img src='//graph.facebook.com/708037979384656/picture?width=40&height=40'/>
+                        </a>
+                    </div>
+                    <div class="avatar-info">
+                        <a class="nickname" href="/user/info/56980">가나다라마바사</a>
+                        <div class="activity">
+                            <span class="fa fa-flash"></span> 30
+                        </div>
+                        <div class="date-created">
+                            <span class="timeago" title="2017-07-03 22:14:12.0">2017-07-03 22:14:12.0</span>
+                        </div>
+                    </div>
                 </div>
-                <br class='visible-sm'>
+                <div class="content-identity pull-right">
+                    <div class="content-identity-count"><i class="fa fa-comment"></i> 3</div>
+                    <div class="content-identity-count"><i class="fa fa-eye"></i> 54</div>
+                </div>
             </div>
-            <div class='title-wrap' id='service-header'>
-                <div class='row'>
-                    <div class='col-md-9 col-xs-12'>
-                        <div class='sp-service-logo col-md-2 col-xs-12'>
-                            <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img alt="image" itemprop="image" src="https://img.stackshare.io/service/1209/javascript.jpeg" /></a>
-                        </div>
-                        <div class='service-wrap'>
-                            <div class='col-md-10 col-xs-12' id='service-name'>
-                                <a target="_blank" itemprop="name" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" rel="nofollow">JavaScript</a>
-                            </div>
-                            <div class='col-md-10 col-xs-12' id='service-description-undertitle'>
-                                <span itemprop='alternativeHeadline'>Lightweight, interpreted, object-oriented language with first-class functions</span>
-                            </div>
-                        </div>
+            <div class="content-container clearfix">
+                <div id="content-body" class="panel-body content-body pull-left">
+                    <div class="content-tags">
+                        <span class="list-group-item-text article-id">#401927</span>
+                        <a href="/articles/questions" class="list-group-item-text item-tag label label-info"><i
+                                class="fa fa-database"></i> Q&A</a>
+                        <a href="/articles/tagged/안드로이드"
+                           class="list-group-item-text item-tag label label-gray">안드로이드</a> <a
+                            href="/articles/tagged/데이터베이스"
+                            class="list-group-item-text item-tag label label-gray">데이터베이스</a>
                     </div>
-                    <div class='col-md-3 col-md-offset-0 col-sm-offset-4 col-sm-4 col-xs-offset-3 col-xs-6' style='margin-top:20px'>
-                        <div class='row'>
-                            <div class='service-mob col-md-3 col-md-offset-0 col-sm-3 col-sm-offset-0 col-xs-9 col-xs-offset-3'>
-                                <div class='service-trending-container' style='text-align: center;display: inline-block;'>
-                                    <div class='service-fav' data-behavior='signin_on_click' style='color:black'>
-                                        <i class='octicon octicon-star trending-star' id='fav'></i>
-                                        <div class='star-count' id='service-1209'>573</div>
-                                        <span style='color:#333;font-size:10px'>Favorite</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class='col-md-9 col-sm-9 col-xs-12' style='margin-bottom:10px;'>
-                                <div>
-                                    <div id='visit-website'><a data-toggle="modal" data-target="#signinModal" class="btn btn-ss-alt btn-lg btn-block" href="#">I Use This</a></div>
-                                    <div class='div-center website-block' style='margin-top:10px'><a target="_blank" id="visit-website" class="btn-block btn btn-ss-g-alt btn-xs" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Visit Website</a></div>
-                                </div>
-                            </div>
-                        </div>
+                    <h2 class="panel-title">
+
+                        데이터베이스 중복저장에 관하여
+                    </h2>
+                    <hr/>
+                    <article class="content-text">
+
+
+                        <p>안녕하세요. 앱을 만들고 있는 뉴비입니다.ㅋㅋ</p>
+                        <p>제가 개발하고 있는 앱을 간략히 말씀드리면 사용자가 로그인 후 음식일기를 씁니다.</p>
+                        <p>그러면 이것을 카페24 서버의 데이터베이스에 저장하는 방법을 지금 하고 있는데요.</p>
+                        <p>제가 지금 해놓은것이 일단 2개의 데이터베이스가 있습니다. 하나는 회원정보(간단히 id와 password)그리고 다른 하나의 데이터베이스에는 8개의 정보(id,
+                            음식이름, 음식가격 등등)이 저장되게 하려는데요</p>
+                        <p>우선 한명이 회원가입을 합니다. 그러면 회원정보가 저장되어 있는 데이터베이스에 저장이 되겠죠? 그리고 또 다른데이터베이스에는 id가 2개의 데이터베이스에서
+                            중복되어있기때문에 다른 디비에도 저장이되고 대신에 처음에는 나머지정보들이 디폴트값으로 저장이됩니다.</p>
+                        <p>이부분이 이해가 안가실수도 있는데 예를 들어 보겠습니다.</p>
+                        <p>id: test, password: 1234로 가입을 한다면,</p>
+                        <p>이건 당연히 회원정보 데이터베이스에 들어가고 다른 데이터베이스에</p>
+                        <p>test, 0,0,0,0,0,0,0 이렇게 들어간다는뜻입니다.</p>
+                        <p>그다음에 이사람이 로그인한상태에서 이제 일기를 쓰지 않겠습니까? 그러면 제가 여기서 구현하고 싶은</p>
+                        <p>방식이 일기를 썻을때</p>
+                        <p>test,0,0,0,0,0,0,0 밑에 행에 test, 라면, 1000원, 0,0,0,0,0 이렇게 들어가서 나중에 어떤 정보를 찾을때</p>
+                        <p>아이디가 test인것만 불러오고 이런식으로 하고 싶었는데 찾아보니 데이터베이스에 중복된값을 넣으면</p>
+                        <p>에러가 난다고 하더군요..ㅠㅠ(제가 아직 데이터베이스를 잘모르긴합니다.)</p>
+                        <p>그래서 생각한 다른 방법이 id_N (N은 정보를 넣을때마다 하나씩 증가)이런식으로 해서</p>
+                        <p>id 열에 저장되는 방식이 test_0, test_1, test_2이렇게 중복안되게 저장하려고 하는데 자꾸 앱이</p>
+                        <p>중지된다고 뜨네요ㅠㅠ 혹시 이방법이 잘못되었는지 아니면 다른 방법을 써야하는 건지 궁금합니다!</p>
+                        <p>긴 글 읽어 주셔서 감사합니다!</p>
+
+
+                    </article>
+
+                </div>
+
+                <div id="content-function" class="content-function pull-right text-center">
+                    <div class="content-function-group">
+                        <div class="note-evaluate-wrapper"><a href="javascript://" class="note-vote-btn" role="button"
+                                                              data-type="assent" data-eval="true" data-id="1262776"><i
+                                id="note-evaluate-assent-1262776" class="fa fa-angle-up note-evaluate-assent-assent"
+                                data-placement="left" data-toggle="tooltip" title="추천"></i></a>
+                            <div id="content-vote-count-1262776" class="content-eval-count">0</div>
+                            <a href="javascript://" class="note-vote-btn" role="button" data-type="dissent"
+                               data-eval="true" data-id="1262776"><i id="note-evaluate-dissent-1262776"
+                                                                     class="fa fa-angle-down note-evaluate-dissent-dissent"
+                                                                     data-placement="left" data-toggle="tooltip"
+                                                                     title="반대"></i></a></div>
                     </div>
+                    <div class="content-function-group article-scrap-wrapper">
+                        <a href="javascript://" id="article-scrap-btn" data-type="scrap"><i class="fa fa-bookmark "
+                                                                                            data-toggle="tooltip"
+                                                                                            data-placement="left"
+                                                                                            title="스크랩"></i></a>
+                        <div id="article-scrap-count" class="content-count">0</div>
+                    </div>
+                </div>
+                <div class="content-function-cog share-btn-wrapper">
+                    <div class="dropdown">
+                        <a href="http://www.facebook.com/sharer/sharer.php?app_id=1451111438499030&sdk=joey&u=https%3A%2F%2Fokky.kr%2Farticle%2F401927&display=popup&ref=plugin"
+                           class="btn-facebook-share"><i class="fa fa-facebook-square fa-fw" data-toggle="tooltip"
+                                                         data-placement="left" title="페이스북 공유"></i></a>
+
+                    </div>
+
+
                 </div>
             </div>
         </div>
-    </header>
 
-    <div class='row'>
-        <div id='service-pills-nav'>
-            <div class='container'>
-                <ul class='nav nav-pills' role='tablist'>
-                    <li class='active'>
-                        <a data-href='/javascript/overview/ajax' data-target='#ajax-content' data-toggle='tabajax' href='/javascript/overview' id='tab-link' role='tab'>
-                            <div id='tab-label' itemprop='aggregateRating'>Votes</div>
-                            5.82K
-                        </a>
-                    </li>
-                    <li>
-                        <a data-href='/javascript/fans/ajax' data-target='#ajax-content' data-toggle='tabajax' href='/javascript/fans' id='tab-link' role='tab'>
-                            <div id='tab-label'>Fans</div>
-                            8.99K
-                        </a>
-                    </li>
-                    <li>
-                        <a data-href='/javascript/in-stacks/ajax' data-target='#ajax-content' data-toggle='tabajax' href='/javascript/in-stacks' id='tab-link' role='tab'>
-                            <div id='tab-label'>Stacks</div>
-                            8.43K
-                        </a>
-                    </li>
-                    <li>
-                        <a data-href='/javascript/integrations/ajax' data-target='#ajax-content' data-toggle='tabajax' href='/javascript/integrations' id='tab-link' role='tab'>
-                            <div id='tab-label'>Integrations</div>
-                            29
-                        </a>
-                    </li>
-                    <li>
-                        <a class='hint--top' data-align='left' data-hint='Check out jobs at companies that use JavaScript' href='/match/javascript' id='tab-link' role='tab'>
-                            <span class='new-tab'>New</span>
-                            <div id='tab-label'>Jobs</div>
-                            3.12K
-                        </a>
-                    </li>
-                </ul>
-            </div>
+
+        <div class="sub-banner-wrapper">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle adslot_1"
+                 style="display:inline-block;width:728px;height:90px"
+                 data-ad-client="ca-pub-1191230850516122"
+                 data-ad-slot="6710356887"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </div>
-        <div class='tab-content' id='sp-stack-tab' style='margin: 30px 0 170px 0;'>
-            <div class='tab-pane in active' id='ajax-content'>
-                <div class='container'>
-                    <div class='row'>
-                        <div class='col-md-9 col-xs-12'>
-                            <div class='row clearfix'>
-                                <div class='row' style='margin:0'>
-                                    <div style='padding: 28px'>
-                                        <div id='service-description'>
-                                            <span itemprop='about'>JavaScript is most known as the scripting language for Web pages, but used in many non-browser environments as well such as node.js or Apache CouchDB. It is a prototype-based, multi-paradigm scripting language that is dynamic,and supports object-oriented, imperative, and functional programming styles. </span>
-                                        </div>
-                                        <div id='reasons'>
-                                            <div class='section-title'>
-                                                Why people like
-                                                JavaScript
-                                            </div>
-                                            <div id='reasons-container' style='margin: 0'>
-                                                <div class='row' style='margin:0'>
-                                                    <div id='reasons-section'>
-                                                        <table style='width:100%'>
-                                                            <tr>
-                                                                <td class='row reasons-list' data-service_id='1209' id='reasons-list-tile' style='padding:15px 0'>
-                                                                    <div class='panel-group col-md-11 col-md-offset-1 col-sm-12 col-sm-offset-0'>
-                                                                        <div class='reason_item' data-reason_id='2246' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/2246/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="qpLQyPSytS6STbhPcL3NouFSFLfy9lEbO6cI9lmJethptJ3kzn3BzVdBGAADkVhiUyRi6ljtbKkb8WiB7ZFG3Q==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-2246' itemprop='upvoteCount' style='text-align: center'>1214</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/317/1016365.jpeg" alt="1016365" /&gt; &lt;span&gt;gdi2290&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3277&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Can be used on frontend/backend</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
 
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='3354' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/3354/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="3O5KR8g7/+wzybG4jk8JyDxIHQaqKi4DgfHYU+O9xlkfyAdr8vSLD/bFEff9Y5wIjj5rWwAxE7Ghp7gkV6X6XA==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-3354' itemprop='upvoteCount' style='text-align: center'>1098</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/1945/117240.jpeg" alt="117240" /&gt; &lt;span&gt;eyalev&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;15&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>It's everywhere</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
+        <div class="panel panel-default clearfix">
+            <!-- List group -->
+            <ul class="list-group">
 
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='2244' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/2244/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="ja3iDyPSjxO8pmTW7FNmxFOtTgDRXYrGrxiaGvUdk+ZOi68jGR378HmqxJmff/ME4ds4XXtGt3SPTvptQQWv4w==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-2244' itemprop='upvoteCount' style='text-align: center'>882</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/317/1016365.jpeg" alt="1016365" /&gt; &lt;span&gt;gdi2290&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3277&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Lots of great frameworks</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
+                <li id="note-title" class="list-group-item note-title">
+                    <h3 class="panel-title">답변 <span id="note-count">3</span></h3>
+                </li>
 
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='2243' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/2243/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="/074QYkb1Y2l2IZ0KTwk6kPqVYXX0TFzXSfkms8Nzv08aLVts9ShbmDUJjtaELEq8Zwj2H3KDMF9cYTtexXy+A==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-2243' itemprop='upvoteCount' style='text-align: center'>687</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/317/1016365.jpeg" alt="1016365" /&gt; &lt;span&gt;gdi2290&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3277&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Fast</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
+                <li class="list-group-item note-item clearfix" id="note-1262781">
+                    <form action="/content/update/1262781" method="post" data-id="1262781" class="note-update-form">
+                        <input type="hidden" name="_method" value="PUT" id="_method"/>
+                        <div class="content-body panel-body pull-left">
 
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='2245' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/2245/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="S/6VWrWh3R4fNEXuF14y/oO02YlGRyjmijHa0GEIauKI2Nh2j26p/do45aFkcqc+McKv1OxcFVSqZ7qn1RBW5w==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-2245' itemprop='upvoteCount' style='text-align: center'>564</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/317/1016365.jpeg" alt="1016365" /&gt; &lt;span&gt;gdi2290&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3277&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Light weight</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
 
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='3664' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/3664/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="qVqnVdZD7d6GjBszG6VqyzlQYmyIT4tsNSRJh/Q8BtNqfOp57IyZPUOAu3xoif8LiyYUMSJUtt4VcinwQCQ61g==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-3664' itemprop='upvoteCount' style='text-align: center'>339</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/3775/5859120.jpeg" alt="5859120" /&gt; &lt;span&gt;vvvvalvalval&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;26&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Flexible</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
+                            <div class="note-select-indicator note-deselected">
+                                <i class="fa fa-comment"></i>
+                            </div>
 
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='2242' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/2242/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Ey5z5hR0PDVWV2qgUiGLnf3KsS5bDM277nvojcywGLvQCD7KLrtI1pNbyu8hDR5dT7zHc/EX8AnOLYj6eKgkvg==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-2242' itemprop='upvoteCount' style='text-align: center'>323</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/317/1016365.jpeg" alt="1016365" /&gt; &lt;span&gt;gdi2290&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3277&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>You can't get a device today that doesn't run js</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
 
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='3666' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/3666/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="tLKSDMwCDP30yIYH4u+lwt89ldzOFv9SZNpt6JZo3A53lN8g9s14HjHEJkiRwzACbUvjgWQNwuBEjA2fInDgCw==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-3666' itemprop='upvoteCount' style='text-align: center'>230</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/3775/5859120.jpeg" alt="5859120" /&gt; &lt;span&gt;vvvvalvalval&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;26&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Non-blocking i/o</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
-
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='3411' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/3411/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="bAPN4WhWbsi2HEn9N+R9YVSk665OD3fZ9srE/uo78WGvJYDNUpkaK3MQ6bJEyOih5tKd8+QUSmvWnKSJXiPNZA==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-3411' itemprop='upvoteCount' style='text-align: center'>197</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/2966/5512198.jpeg" alt="5512198" /&gt; &lt;span&gt;vishwajeetv&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;9&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Ubiquitousness</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
-
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='3663' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/3663/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="4NScY0pW23Gxu91Ex3P7FvCOFe54AzZBEvRG/mjeWpwj8tFPcJmvknS3fQu0X27WQvhjs9IYC/MyoiaJ3MZmmQ==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-3663' itemprop='upvoteCount' style='text-align: center'>152</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/3775/5859120.jpeg" alt="5859120" /&gt; &lt;span&gt;vvvvalvalval&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;26&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Expressive</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
-
-                                                                        </div>
-
-                                                                    </div>
-                                                                    <div class='col-md-11 col-md-offset-1 collapse more-reasons panel-collapse'><div class='reason_item' data-reason_id='4374' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                        <form id="reason-vote" style="margin-bottom:0px" action="/reasons/4374/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="vrWAfBxPrCxTX1FDlu9Q1203zGTGlPru91T9aDIytY19k81QJoDYz5ZT8Qzlw8UX30G6OWyPx1zXAp0fhiqJiA==" />
-                                                                            <label style='margin:0'>
-                                                                                <div class='reason-vote-container'>
-                                                                                    <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                    <span class='reason-count' id='reason-4374' itemprop='upvoteCount' style='text-align: center'>34</span>
-                                                                                </div>
-                                                                                <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/5650/5739797.jpeg" alt="5739797" /&gt; &lt;span&gt;tanerakcok&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;708&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Extended functionality to web pages</span>
-</div>
-</span>
-                                                                            </label>
-                                                                        </form>
-
-                                                                    </div>
-                                                                        <div class='reason_item' data-reason_id='4371' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/4371/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="BpPw3aYP+TqSRQmEZiHk0ukFFEP610aw4qcrsvxTaonFtb3xnMCN2VdJqcsVDXESW3NiHlDMewLC8UvFSEtWjA==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-4371' itemprop='upvoteCount' style='text-align: center'>29</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/5650/5739797.jpeg" alt="5739797" /&gt; &lt;span&gt;tanerakcok&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;708&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Executed on the client side</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
-
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='4372' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/4372/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="TP8lzunHZaQW5WgAzEyMUivjm3c0vopu6yfTC/7diZWP2Wji0wgRR9PpyE+/YBmSmZXtKp6lt9zLcbN8SsW1kA==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-4372' itemprop='upvoteCount' style='text-align: center'>27</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/5650/5739797.jpeg" alt="5739797" /&gt; &lt;span&gt;tanerakcok&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;708&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Relatively easy language</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
-
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='4373' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/4373/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="uw4n9+74F7zKFZybfp2RR7XpQSGiiFkKiIjd2nNL9U94KGrb1DdjXw8ZPNQNsQSHB583fAiTZLio3r2tx1PJSg==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-4373' itemprop='upvoteCount' style='text-align: center'>17</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/5650/5739797.jpeg" alt="5739797" /&gt; &lt;span&gt;tanerakcok&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;708&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Relatively fast to the end user</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
-
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='5004' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/5004/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="yC0I8wsxee7mRZXULlZnmCA+onrYA5fXmlPi9mb77JELC0XfMf4NDSNJNZtdevJYkkjUJ3IYqmW6BYKB0uPQlA==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-5004' itemprop='upvoteCount' style='text-align: center'>9</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/7296/2615179.jpeg" alt="2615179" /&gt; &lt;span&gt;dcondrey&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;54&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Pure Javascript</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
-
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='5996' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/5996/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="XYdcWJfKGiT5KChpUQHCwTUK3OHFnGMjiaKiQoKX/f6eoRF0rQVuxzwkiCYiLVcBh3yqvG+HXpGp9MI1No/B+w==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-5996' itemprop='upvoteCount' style='text-align: center'>6</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/10796/2876841.jpeg" alt="2876841" /&gt; &lt;span&gt;tetor&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;15&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Functional programming</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
-
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='11086' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/11086/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="C7EpCKqpm+FMK9rQJPIZK6NjirDwiRafqXUKt+C9iIjIl2QkkGbvAoknep9X3ozrERX87VqSKy2JI2rAVKW0jQ==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-11086' itemprop='upvoteCount' style='text-align: center'>2</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/167073/23222953.png" alt="23222953" /&gt; &lt;span&gt;iiRosie1&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;9&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Setup is easy</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
-
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='11663' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/11663/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="CQkDQIpLpyI4L2hc6oivSdU/BrT8ZzXrgvHkVm/xL9PKL05ssITTwf0jyBOZpDqJZ0lw6VZ8CFmip4Qh2+kT1g==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-11663' itemprop='upvoteCount' style='text-align: center'>2</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/185147/1810742.jpeg" alt="1810742" /&gt; &lt;span&gt;gali7221&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;6&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>For the good parts</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
-
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='6918' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/6918/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="uCJZMENaYLMHo3uQ7xj8pxIzq7OkHy1K0AZAdgUbqsR7BBQceZUUUMKv29+cNGlnoEXd7g4EEPjwUCABsQOWwQ==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-6918' itemprop='upvoteCount' style='text-align: center'>2</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/17454/560418.png" alt="560418" /&gt; &lt;span&gt;cauerego&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;47&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Evolution of C</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
-
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='10446' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/10446/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="UB28BQQI22Bi+dmIC26FP4r9t7Z10vVRcpQAvDLnbnSTO/EpPsevg6f1ecd4QhD/OIvB69/JyONSwmDLhv9ScQ==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-10446' itemprop='upvoteCount' style='text-align: center'>1</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/142861/7372511.jpeg" alt="7372511" /&gt; &lt;span&gt;cazlu8&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;6&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Expansive community</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
-
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='11155' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/11155/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="FmscSFhN6umfY2EXUIHIUUWMh1SJ/63Ke90QSJtR8vrVTVFkYoKeClpvwVgjrV2R9/rxCSPkkHhbi3A/L0nO/w==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-11155' itemprop='upvoteCount' style='text-align: center'>1</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/161896/2187139.jpeg" alt="2187139" /&gt; &lt;span&gt;Strykerraven&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;81&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Client processing</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
-
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='11157' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/11157/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="+bssLOnb9mba36BQEnWrROD2Z1VQ+MC2lQN+yftK6JM6nWEA0xSChR/TAB9hWT6EUoARCPrj/QS1VR6+T1LUlg==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-11157' itemprop='upvoteCount' style='text-align: center'>1</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/161896/2187139.jpeg" alt="2187139" /&gt; &lt;span&gt;Strykerraven&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;81&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Hard not to use</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
-
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='8094' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/8094/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="+cxfHBEJFOukEDmsv2gmZmvWzb0HD3XHQNpgPRieDnQ66hIwK8ZgCGEcmePMRLOm2aC74K0USHVgjABKrIYycQ==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-8094' itemprop='upvoteCount' style='text-align: center'>1</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/55746/3253772.png" alt="3253772" /&gt; &lt;span&gt;mavbozo&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;18&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Clojurescript</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
-
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='10170' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/10170/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="8QFzYIUDU7zrcxvp9prQkS7+TOod/XmNNMUc3gLo4LUyJz5Mv8wnXy5/u6aFtkVRnIg6t7fmRD8Uk3yptvDcsA==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-10170' itemprop='upvoteCount' style='text-align: center'>1</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/131762/606167.jpeg" alt="606167" /&gt; &lt;span&gt;suhasdeshpande&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Because I love functions</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
-
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='8410' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/8410/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="QzlViW1K1wXeuABg3gUW8/6FrkC7G01OyPDlCuxH/IaAHxilV4Wj5hu0oC+tKYMzTPPYHREAcPzopoV9WF/Agw==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-8410' itemprop='upvoteCount' style='text-align: center'>1</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/67022/5503306.jpeg" alt="5503306" /&gt; &lt;span&gt;imaginate&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;3&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Popularized Class-Less Architecture &amp; Lambdas</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
-
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='6176' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/6176/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="AiChpBSIGMiJDfRMjgowScw9RQN0UQZt6zFrIhnvjPLBBuyILkdsK0wBVAP9JqWJfkszXt5KO9/LZwtVrfew9w==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-6176' itemprop='upvoteCount' style='text-align: center'>1</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/12011/174535.jpeg" alt="174535" /&gt; &lt;span&gt;ThatGuyFromFinland&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;11&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>JavaScript is the New PHP</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
-
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='11894' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/11894/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="cOXEf3muYvRDbdfS69gZwO7QJ2ODv/evhWLQCDVbeeyzw4lTQ2EWF4Zhd52Y9IwAXKZRPimkyh2lNLB/gUNF6Q==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-11894' itemprop='upvoteCount' style='text-align: center'>1</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/192044/IMG_2877.JPG" alt="Img 2877" /&gt; &lt;span&gt;zhangruixuanchn&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;12&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Everywhere</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
-
-                                                                        </div>
-                                                                        <div class='reason_item' data-reason_id='12082' style='margin: 0px 0 6px 5px;  display: inline-block;'>
-                                                                            <form id="reason-vote" style="margin-bottom:0px" action="/reasons/12082/toggle_vote" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="rKUDups5wX3yKrl4jil9AHdLZ+GSvLGQjRZHWC8rFghvg06Wofa1njcmGTf9BejAxT0RvDinjCKtQCcvmzMqDQ==" />
-                                                                                <label style='margin:0'>
-                                                                                    <div class='reason-vote-container'>
-                                                                                        <input type="checkbox" name="vote" id="vote" value="1" data-behavior="signin_on_click" />
-                                                                                        <span class='reason-count' id='reason-12082' itemprop='upvoteCount' style='text-align: center'>1</span>
-                                                                                    </div>
-                                                                                    <span style='display: flex;height: 38px;'>
-<div id='reason-text' style='margin: auto 0 auto 6px;'>
-<span class='reason-author-pop' data-content='&lt;img src="https://img.stackshare.io/user/150028/8168533.png" alt="8168533" /&gt; &lt;span&gt;tpp6me&lt;/span&gt; &lt;span class=&#x0027;user-score-hover&#x0027;&gt;114&lt;/span&gt;' data-toggle='popover' itemprop='comment' rel='popover' role='button' style='max-width:30px !important' title='Submitted By'>Can be used in backend, frontend and DB</span>
-</div>
-</span>
-                                                                                </label>
-                                                                            </form>
-
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class='col-md-11 col-md-offset-1 col-sm-12 col-sm-offset-0' style='margin-top:10px;padding-left:60px;'>
-                                                                        <a class='section-title show-more-reasons' data-parent='#reasons-list-tile' data-target='.more-reasons' data-text-original='Show more one-liners' data-text-swap='Show fewer one-liners' data-toggle='collapse' href='#more' id='show-less' onclick="$('.more-reasons').fadeToggle();">
-                                                                            <span class='octicon octicon-ellipsis' style='font-size: 45px;color: rgb(173, 173, 173);'></span>
-                                                                        </a>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                                <div class='row'>
-                                                    <div class='add-reason col-md-6 col-md-offset-2 col-sm-offset-1 col-sm-6' style='border-right: 1px solid #ebebeb'>
-                                                        <div class='add-reason-title'>
-                                                            Add a one-liner
-                                                        </div>
-                                                        <form class="new_reason" id="new_reason" action="/reasons" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><div class='hint--top' data-align='left' data-hint='eg "Easy setup", "Great customer support", or "GitHub integration"' id='reason-input'>
-                                                            <input class="form-control" id="new-reason-text" data-behavior="signin_on_click" placeholder="Why do you like using JavaScript?" style="width:280px" maxlength="55" size="55" type="text" name="reason[text]" />
-                                                            <br>
-                                                            <div id='btn-responsive'><input type="submit" name="commit" value="Submit" class="btn btn-ss hint--top" style="margin:15px 0 10px 0" /></div>
-                                                        </div>
-                                                            <input type="hidden" value="1209" name="reason[service_id]" id="reason_service_id" />
-                                                        </form>
-                                                    </div>
-                                                    <div class='add-reason col-md-4 col-sm-5' style='text-align:center;margin-left:0px'>
-                                                        <div style='margin-bottom:50px;margin-top:20px'>
-                                                            <div id='btn-responsive'><a data-toggle="modal" data-target="#signinModal" class="btn btn-ss hint--top" style="margin-bottom: 10px;margin-top:22px;" data-hint="Tell other developers about your experience with JavaScript" data-align="left" href="#">Add a review</a></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <br>
-                                        </div>
-                                    </div>
-                                    <div style='padding: 0px 15px'>
-                                        <div class='row' style='margin-bottomX:20px'>
-                                            <div style='padding: 15px 30px'>
-                                                <div class='section-title' id='stacks'>
-                                                    Companies using
-                                                    JavaScript
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class='row' style='padding: 0 30px'>
-                                            <div class='col-md-12'>
-                                                <div class='row' style='margin-bottom: 8px;'>
-                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
-                                                        <a data-hint="Airbnb" data-align="left" style="margin-bottom:10px" class="hint--top" href="/airbnb/airbnb"><img alt="Airbnb" src="https://img.stackshare.io/stack/2/xNHpy4gB.jpeg" /></a>
-                                                    </div>
-                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
-                                                        <a data-hint="Codecademy" data-align="left" style="margin-bottom:10px" class="hint--top" href="/codecademy/codecademy"><img alt="Codecademy" src="https://img.stackshare.io/stack/4/ih2vOpDt.png" /></a>
-                                                    </div>
-                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
-                                                        <a data-hint="LiveChat" data-align="left" style="margin-bottom:10px" class="hint--top" href="/livechat/livechat"><img alt="LiveChat" src="https://img.stackshare.io/stack/175/7BpH0m-v.png" /></a>
-                                                    </div>
-                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
-                                                        <a data-hint="Austin Pair Programming Circle" data-align="left" style="margin-bottom:10px" class="hint--top" href="/austin-pair-programming-circle/austin-pair-programming-circle"><img alt="Austin Pair Programming Circle" src="https://img.stackshare.io/stack/2051/7756768.jpeg" /></a>
-                                                    </div>
-                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
-                                                        <a data-hint="Artoo" data-align="left" style="margin-bottom:10px" class="hint--top" href="/artoo/artoo"><img alt="Artoo" src="https://img.stackshare.io/stack/2052/YWke7U-D.png" /></a>
-                                                    </div>
-                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
-                                                        <a data-hint="BrightMachine" data-align="left" style="margin-bottom:10px" class="hint--top" href="/brightmachine/brightmachine"><img alt="BrightMachine" src="https://img.stackshare.io/stack/756/oXvjM-ct.png" /></a>
-                                                    </div>
-                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
-                                                        <a data-hint="Darkenu" data-align="left" style="margin-bottom:10px" class="hint--top" href="/darkenu/darkenu"><img alt="Darkenu" src="https://img.stackshare.io/stack/3078/M1gl56gd.jpeg" /></a>
-                                                    </div>
-                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
-                                                        <a data-hint="AdNear" data-align="left" style="margin-bottom:10px" class="hint--top" href="/adnear/adnear"><img alt="AdNear" src="https://img.stackshare.io/stack/2060/RXPjyodE.png" /></a>
-                                                    </div>
-                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
-                                                        <a data-hint="Rova_Io" data-align="left" style="margin-bottom:10px" class="hint--top" href="/rova-io/rova-io"><img alt="Rova_Io" src="https://img.stackshare.io/stack/42427/preview.png" /></a>
-                                                    </div>
-                                                    <div class='more-stacks-sp'>
-                                                        <a href="/javascript/in-stacks">+ 2351 more</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class='similar-service-logos' style='padding: 0px 15px 0 15px;'>
-                                        <div class='row'>
-                                            <div style='padding: 15px 30px'>
-                                                <div class='section-title'>
-                                                    JavaScript
-                                                    integrates with
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class='row' style='padding: 0 30px;'>
-                                            <div class='col-md-12'>
-                                                <div class='row' style='margin-bottom: 8px;'>
-                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
-                                                        <a data-hint="Rollbar" data-align="left" style="margin-bottom:10px" class="hint--top" href="/rollbar"><img alt="Rollbar" class="company-icon" src="https://img.stackshare.io/service/328/nBpux_k2_400x400.png" /></a>
-                                                    </div>
-                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
-                                                        <a data-hint="Bugsnag" data-align="left" style="margin-bottom:10px" class="hint--top" href="/bugsnag"><img alt="Bugsnag" class="company-icon" src="https://img.stackshare.io/service/150/DtgzNvem.png" /></a>
-                                                    </div>
-                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
-                                                        <a data-hint="Yarn" data-align="left" style="margin-bottom:10px" class="hint--top" href="/yarn"><img alt="Yarn" class="company-icon" src="https://img.stackshare.io/service/5848/44mC-kJ3.jpg" /></a>
-                                                    </div>
-                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
-                                                        <a data-hint="Airbrake" data-align="left" style="margin-bottom:10px" class="hint--top" href="/airbrake"><img alt="Airbrake" class="company-icon" src="https://img.stackshare.io/service/194/c4v8DgiK.png" /></a>
-                                                    </div>
-                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
-                                                        <a data-hint="ESLint" data-align="left" style="margin-bottom:10px" class="hint--top" href="/eslint"><img alt="ESLint" class="company-icon" src="https://img.stackshare.io/service/3337/Q4L7Jncy.jpg" /></a>
-                                                    </div>
-                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
-                                                        <a data-hint="Auth0" data-align="left" style="margin-bottom:10px" class="hint--top" href="/auth0"><img alt="Auth0" class="company-icon" src="https://img.stackshare.io/service/601/5Nm3jtVh.jpeg" /></a>
-                                                    </div>
-                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
-                                                        <a data-hint="Stormpath" data-align="left" style="margin-bottom:10px" class="hint--top" href="/stormpath"><img alt="Stormpath" class="company-icon" src="https://img.stackshare.io/service/268/t1WzGozA.png" /></a>
-                                                    </div>
-                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
-                                                        <a data-hint="Raygun" data-align="left" style="margin-bottom:10px" class="hint--top" href="/raygun"><img alt="Raygun" class="company-icon" src="https://img.stackshare.io/service/192/oAYxYjJY_400x400.jpg" /></a>
-                                                    </div>
-                                                    <div class='col-md-1 stack-logo' style='margin:0 5px'>
-                                                        <a data-hint="lodash" data-align="left" style="margin-bottom:10px" class="hint--top" href="/lodash"><img alt="lodash" class="company-icon" src="https://img.stackshare.io/service/2438/lodash.png" /></a>
-                                                    </div>
-                                                    <div class='more-stacks-sp'>
-                                                        <a href="/javascript/integrations">+ 20 more</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <br>
-                                    <div class='row' style='margin:0'>
-                                        <div class='col-md-12' style='padding: 10px 30px'>
-                                            <div class='section-title'>
-                                                Explore other
-                                                <b>Languages &amp; Frameworks</b>
-                                                tools that are known for:
-                                            </div>
-                                            <div id='service-features'>
-                                                <ul></ul>
-                                                <li>
-                                                    <b><a href="/top-tools/languages-and-frameworks/fast">Fast</a></b>
-                                                </li>
-                                                <li>
-                                                    <b><a href="/top-tools/languages-and-frameworks/light-weight">Light weight</a></b>
-                                                </li>
-                                                <li>
-                                                    <b><a href="/top-tools/languages-and-frameworks/flexible">Flexible</a></b>
-                                                </li>
-                                                <li>
-                                                    <b><a href="/top-tools/languages-and-frameworks/expressive">Expressive</a></b>
-                                                </li>
-                                                <li>
-                                                    <b><a href="/top-tools/languages-and-frameworks/pure-javascript">Pure Javascript</a></b>
-                                                </li>
-                                                <li>
-                                                    <b><a href="/top-tools/languages-and-frameworks/functional-programming">Functional programming</a></b>
-                                                </li>
-                                                <li>
-                                                    <b><a href="/top-tools/languages-and-frameworks/hard-not-to-use">Hard not to use</a></b>
-                                                </li>
-                                                <li>
-                                                    <b><a href="/top-tools/languages-and-frameworks/everywhere">Everywhere</a></b>
-                                                </li>
-                                            </div>
-                                        </div>
+                            <div class='avatar avatar-medium clearfix '><a href='/user/info/36924' class='avatar-photo'><img
+                                    src='//www.gravatar.com/avatar/5f591e112859359bfacaf5331d000d47?d=identicon&s=40'/></a>
+                                <div class="avatar-info"><a class="nickname" href="/user/info/36924">신입</a>
+                                    <div class="activity"><span class="fa fa-flash"></span> 3k</div>
+                                    <div class="date-created"><span class="timeago" title="2017-07-03 22:40:08.0">2017-07-03 22:40:08.0</span>
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                <div class='row' style='padding:20px'>
-                                    <div class='section-title similar' style='text-align:center;margin:11px 0'>
-                                        <a href="/languages">Similar Tools &amp; Services</a>
-                                    </div>
-                                </div>
-                                <div class='row' style='padding: 0 30px'>
-                                    <div class='col-md-12'>
-                                        <div class='row similar-services-items' style='margin-left:0'>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Ruby" data-align="left" class="hint--top" href="/ruby"><img alt="Ruby" class="company-icon" src="https://img.stackshare.io/service/989/ruby.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/ruby">Ruby</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="PHP" data-align="left" class="hint--top" href="/php"><img alt="PHP" class="company-icon" src="https://img.stackshare.io/service/991/php.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/php">PHP</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Python" data-align="left" class="hint--top" href="/python"><img alt="Python" class="company-icon" src="https://img.stackshare.io/service/993/pUBY5pVj.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/python">Python</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Java" data-align="left" class="hint--top" href="/java"><img alt="Java" class="company-icon" src="https://img.stackshare.io/service/995/K85ZWV2F.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/java">Java</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Groovy" data-align="left" class="hint--top" href="/groovy"><img alt="Groovy" class="company-icon" src="https://img.stackshare.io/service/997/6d180ca6647e7f690c2615a86e7c2843.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/groovy">Groovy</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Clojure" data-align="left" class="hint--top" href="/clojure"><img alt="Clojure" class="company-icon" src="https://img.stackshare.io/service/1003/Clojure_300x300.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/clojure">Clojure</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Erlang" data-align="left" class="hint--top" href="/erlang"><img alt="Erlang" class="company-icon" src="https://img.stackshare.io/service/1004/cbdf77412da183e43d41c0c0f9a7005a.jpeg" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/erlang">Erlang</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Go" data-align="left" class="hint--top" href="/go"><img alt="Go" class="company-icon" src="https://img.stackshare.io/service/1005/go.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/go">Go</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Objective-C" data-align="left" class="hint--top" href="/objective-c"><img alt="Objective-C" class="company-icon" src="https://img.stackshare.io/service/1008/xcode.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/objective-c">Objective-C</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Swift" data-align="left" class="hint--top" href="/swift"><img alt="Swift" class="company-icon" src="https://img.stackshare.io/service/1009/tuHsaI2U.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/swift">Swift</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Scala" data-align="left" class="hint--top" href="/scala"><img alt="Scala" class="company-icon" src="https://img.stackshare.io/service/1012/dc47c969494d3279783610ba3298f58b.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/scala">Scala</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Visual Basic" data-align="left" class="hint--top" href="/visual-basic"><img alt="Visual Basic" class="company-icon" src="https://img.stackshare.io/service/1016/10ffe9eda0de4670955cc9bdfa78fe9b.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/visual-basic">Visual Basic</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="C#" data-align="left" class="hint--top" href="/c-sharp"><img alt="C#" class="company-icon" src="https://img.stackshare.io/service/1015/10ffe9eda0de4670955cc9bdfa78fe9b.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/c-sharp">C#</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Perl" data-align="left" class="hint--top" href="/perl"><img alt="Perl" class="company-icon" src="https://img.stackshare.io/service/1048/perl.jpg" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/perl">Perl</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="C++" data-align="left" class="hint--top" href="/cplusplus"><img alt="C++" class="company-icon" src="https://img.stackshare.io/service/1049/cplusplus.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/cplusplus">C++</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="JRuby" data-align="left" class="hint--top" href="/jruby"><img alt="JRuby" class="company-icon" src="https://img.stackshare.io/service/1068/jruby-logo-standard-logo-stroke-large.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/jruby">JRuby</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Haskell" data-align="left" class="hint--top" href="/haskell"><img alt="Haskell" class="company-icon" src="https://img.stackshare.io/service/1069/oCgm29k9.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/haskell">Haskell</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Rust" data-align="left" class="hint--top" href="/rust"><img alt="Rust" class="company-icon" src="https://img.stackshare.io/service/1070/v7txhrjp9pdqrkdtxxp0.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/rust">Rust</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="C" data-align="left" class="hint--top" href="/c"><img alt="C" class="company-icon" src="https://img.stackshare.io/service/1081/no-img-open-source.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/c">C</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Markdown" data-align="left" class="hint--top" href="/markdown"><img alt="Markdown" class="company-icon" src="https://img.stackshare.io/service/1147/OeMUNnaE.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/markdown">Markdown</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="HAML" data-align="left" class="hint--top" href="/haml"><img alt="HAML" class="company-icon" src="https://img.stackshare.io/service/1169/Picture_2.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/haml">HAML</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="CoffeeScript" data-align="left" class="hint--top" href="/coffeescript"><img alt="CoffeeScript" class="company-icon" src="https://img.stackshare.io/service/1178/slQydAMv.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/coffeescript">CoffeeScript</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Hack" data-align="left" class="hint--top" href="/hack"><img alt="Hack" class="company-icon" src="https://img.stackshare.io/service/1208/GIWkiyGD.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/hack">Hack</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="COBOL" data-align="left" class="hint--top" href="/cobol"><img alt="COBOL" class="company-icon" src="https://img.stackshare.io/service/1210/no-img-open-source.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/cobol">COBOL</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Common Lisp" data-align="left" class="hint--top" href="/common-lisp"><img alt="Common Lisp" class="company-icon" src="https://img.stackshare.io/service/1211/lisp.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/common-lisp">Common Lisp</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Arc" data-align="left" class="hint--top" href="/arc"><img alt="Arc" class="company-icon" src="https://img.stackshare.io/service/1212/no-img-open-source.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/arc">Arc</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="R" data-align="left" class="hint--top" href="/r"><img alt="R" class="company-icon" src="https://img.stackshare.io/service/1213/r-logo.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/r">R</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="MATLAB" data-align="left" class="hint--top" href="/matlab"><img alt="MATLAB" class="company-icon" src="https://img.stackshare.io/service/1214/h5g3etjnacmazg8oq17z.jpeg" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/matlab">MATLAB</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Dart" data-align="left" class="hint--top" href="/dart"><img alt="Dart" class="company-icon" src="https://img.stackshare.io/service/1646/Twitter-02.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/dart">Dart</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="F#" data-align="left" class="hint--top" href="/f-sharp"><img alt="F#" class="company-icon" src="https://img.stackshare.io/service/2155/yRNL7yTW.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/f-sharp">F#</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Jolie" data-align="left" class="hint--top" href="/jolie"><img alt="Jolie" class="company-icon" src="https://img.stackshare.io/service/2503/cEo1tH0G.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/jolie">Jolie</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="HTML5" data-align="left" class="hint--top" href="/html5"><img alt="HTML5" class="company-icon" src="https://img.stackshare.io/service/2538/kEpgHiC9.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/html5">HTML5</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="D" data-align="left" class="hint--top" href="/d"><img alt="D" class="company-icon" src="https://img.stackshare.io/service/3117/d-5.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/d">D</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Crystal" data-align="left" class="hint--top" href="/crystal"><img alt="Crystal" class="company-icon" src="https://img.stackshare.io/service/3381/_iXHOD-1.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/crystal">Crystal</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Elixir" data-align="left" class="hint--top" href="/elixir"><img alt="Elixir" class="company-icon" src="https://img.stackshare.io/service/1974/drop.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/elixir">Elixir</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Lua" data-align="left" class="hint--top" href="/lua"><img alt="Lua" class="company-icon" src="https://img.stackshare.io/service/2118/lua.gif" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/lua">Lua</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Scala Native" data-align="left" class="hint--top" href="/scala-native"><img alt="Scala Native" class="company-icon" src="https://img.stackshare.io/service/5208/e4TKXFTn.jpg" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/scala-native">Scala Native</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Julia" data-align="left" class="hint--top" href="/julia"><img alt="Julia" class="company-icon" src="https://img.stackshare.io/service/3914/647b7cf75cb5662b96901bc521968e94.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/julia">Julia</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Elm" data-align="left" class="hint--top" href="/elm"><img alt="Elm" class="company-icon" src="https://img.stackshare.io/service/4009/cZHhsF-c_normal.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/elm">Elm</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="ES6" data-align="left" class="hint--top" href="/es6"><img alt="ES6" class="company-icon" src="https://img.stackshare.io/service/4109/16407404782_8b9c57eab3.jpg" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/es6">ES6</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Kotlin" data-align="left" class="hint--top" href="/kotlin"><img alt="Kotlin" class="company-icon" src="https://img.stackshare.io/service/3750/pCfEzr6L.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/kotlin">Kotlin</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Eve" data-align="left" class="hint--top" href="/eve"><img alt="Eve" class="company-icon" src="https://img.stackshare.io/service/5985/qbJoNuap.png" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/eve">Eve</a>
-                                                </div>
-                                            </div>
-                                            <div class='col-md-1 stack-logo' style='padding:0;margin:0 20px 20px 20px;'>
-                                                <a data-hint="Eta" data-align="left" class="hint--top" href="/eta"><img alt="Eta" class="company-icon" src="https://img.stackshare.io/service/6490/2OjlqE5m.jpg" /></a>
-                                                <div class='row similar-services-items'>
-                                                    <a href="/eta">Eta</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class='row'><a class="btn btn-ss-alt" style="padding: 10px;float:right;margin-bottom:20px;margin-right:30px" href="/claim-service/javascript">Claim this page</a></div>
+                            <fieldset class="form">
+                                <article id="note-text-1262781" class="list-group-item-text note-text">
+
+                                    <p>그거 중복되게 넣어도 됩니다</p>
+                                    <p>PK값 안 잡았나요?</p>
+                                    <p>또한 각각의 필드가 확인해보세요</p>
+
+                                </article>
+                            </fieldset>
                         </div>
-                        <div class='col-md-3 col-sm-12 col-xs-12' style='padding:0'>
-                            <div class='page-container-sp col-md-12' data-offset-bottom='845' data-offset-top='350' data-spy='affix' id='sp-sidebar' style='width:275px;z-index:0'>
-                                <div class='stack-navigator'>
-                                    <div class='row'>
-                                        <div class='row' style='padding-top:0px'>
-                                            <div style='padding:0 18px'></div>
-                                            <div id='sponsored-stack' style='padding: 20px;margin: 0 45px;border-radius: 5px;'>
-                                                <div class='sponsored-function'>
-                                                    <div class='row section-title' style='margin-bottom:7px'>
-                                                        Sponsored Tool
-                                                    </div>
-                                                    <div class='row service-logo div-center service-sponsor-img'><a id="Service: Node.js, Sponsor: Rollbar" data-hint="Learn more about Rollbar" data-align="left" class="hint hint--top" href="/rollbar"><img style="width:63px;height:63px" src="https://img.stackshare.io/service/328/nBpux_k2_400x400.png" alt="Nbpux k2 400x400" /></a></div>
-                                                    <div class='row' style='padding-top:8px;color:grey;font-size:14px;font-weight:600'>
-                                                        <a data-hint="Learn more about Rollbar" data-align="left" class="hint hint--top" href="/rollbar">Rollbar</a>
-                                                    </div>
-                                                    <div class='row' style='padding-top:8px'>
-                                                        <div class='sponsored-function-name-post hidden-xs'>Exception Monitoring</div>
-                                                    </div>
-                                                    <div class='row'>
-                                                        <a class="btn btn-ss-g-a btn-xs hint hint--top" style="margin-top: 10px;" id="sponsored-website-url" target="_blank" data-hint="https://rollbar.com/" data-align="left" href="https://rollbar.com/">Visit Rollbar&#39;s Website</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div style='padding:0 18px'>
-                                                <hr style='margin:0'>
-                                            </div>
-                                        </div>
 
-                                    </div>
-                                    <br>
-                                    <div class='div-center'>
-                                        <a class="btn btn-ss" style="margin-top:0" href="/languages/stackups">See comparisons of similar tools</a>
-                                        <a class="sp-category-stackups" href="/languages-and-frameworks/stackups">See comparisons of related tools</a>
-                                    </div>
-                                    <br>
-                                    <div class='section-title-2' style='margin-bottom:none'>
-                                        Group
-                                    </div>
-                                    <div class='div-center'>
-                                        <a class="btn btn-ss-g btn-xs" itemprop="applicationSubCategory" href="/languages">Languages</a>
-                                    </div>
-                                    <br>
-                                    <div class='section-title-2' style='margin-bottom:none'>
-                                        Layer
-                                    </div>
-                                    <div class='navigation-layers'>
-                                        <div class='current-layer'>
-                                            <div class='application_and_data stack-layer'>
-                                                <div class='stack-layer-title stack-layer-title-tag'><a href="/application_and_data">Application and Data</a></div>
-                                                <div class='row' style='margin-left:0;padding-top: 5px;'></div>
-                                            </div>
-                                        </div>
-                                        <div class='show-layer stack-layer utilities'>
-                                            <div class='stack-layer-title stack-layer-title-tag'><a href="/utilities">Utilities</a></div>
-                                            <div class='row' style='margin-left:0;padding-top: 5px;'></div>
-                                        </div>
-                                        <div class='devops show-layer stack-layer'>
-                                            <div class='stack-layer-title stack-layer-title-tag'><a href="/devops">DevOps</a></div>
-                                            <div class='row' style='margin-left:0;padding-top: 5px;'></div>
-                                        </div>
-                                        <div class='business_tools show-layer stack-layer'>
-                                            <div class='stack-layer-title stack-layer-title-tag'><a href="/business_tools">Business Tools</a></div>
-                                            <div class='row' style='margin-left:0;padding-top: 5px;'></div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="content-function pull-right text-center">
+                            <div class="content-function-group">
+                                <div class="note-evaluate-wrapper"><a href="javascript://" class="note-vote-btn"
+                                                                      role="button" data-type="assent" data-eval="true"
+                                                                      data-id="1262781"><i
+                                        id="note-evaluate-assent-1262781"
+                                        class="fa fa-angle-up note-evaluate-assent-assent" data-placement="left"
+                                        data-toggle="tooltip" title="추천"></i></a>
+                                    <div id="content-vote-count-1262781" class="content-eval-count">0</div>
+                                    <a href="javascript://" class="note-vote-btn" role="button" data-type="dissent"
+                                       data-eval="true" data-id="1262781"><i id="note-evaluate-dissent-1262781"
+                                                                             class="fa fa-angle-down note-evaluate-dissent-dissent"
+                                                                             data-placement="left" data-toggle="tooltip"
+                                                                             title="반대"></i></a></div>
                             </div>
-                            <div id='sp-sidebar-mobile'>
-                                <div class='row'>
-                                    <div class='col-sm-6 col-xs-12'>
-                                        <div class='row'>
-                                            <div class='col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10'>
-                                                <div class='stack-navigator'>
-                                                    <div class='section-title-2'>
-                                                        Stack Layer
-                                                    </div>
-                                                    <div class='navigation-layers'>
-                                                        <div class='current-layer'>
-                                                            <div class='application_and_data stack-layer'>
-                                                                <div class='stack-layer-title stack-layer-title-tag'><a href="/application_and_data">Application and Data</a></div>
-                                                                <div class='row' style='margin-left:0;padding-top: 5px;'></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class='show-layer stack-layer utilities'>
-                                                            <div class='stack-layer-title stack-layer-title-tag'><a href="/utilities">Utilities</a></div>
-                                                            <div class='row' style='margin-left:0;padding-top: 5px;'></div>
-                                                        </div>
-                                                        <div class='devops show-layer stack-layer'>
-                                                            <div class='stack-layer-title stack-layer-title-tag'><a href="/devops">DevOps</a></div>
-                                                            <div class='row' style='margin-left:0;padding-top: 5px;'></div>
-                                                        </div>
-                                                        <div class='business_tools show-layer stack-layer'>
-                                                            <div class='stack-layer-title stack-layer-title-tag'><a href="/business_tools">Business Tools</a></div>
-                                                            <div class='row' style='margin-left:0;padding-top: 5px;'></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class='section-title-2'>
-                                                        Category
-                                                    </div>
-                                                    <div class='current-category'><a href="/languages-and-frameworks">Languages &amp; Frameworks</a></div>
-                                                    <div class='section-title-2'>
-                                                        Function
-                                                    </div>
-                                                    <div class='current-category'><a href="/languages">Languages</a></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class='col-sm-6 col-xs-12'>
-                                        <div class='row'>
-                                            <div class='col-offset-0 col-sm-10 col-xs-offset-1 col-xs-10'>
-                                                <div class='div-center' style='margin: 25px 0 0px 0;'>
-                                                    <a href='/trending/tools' style='display: inline-flex;'>
-<span class='octicon octicon-flame' style='display: inline-flex;font-size:21px;margin-bottom: 20px;'>
-<span style="font-size: 12px;font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans !important;margin:auto 0 auto 3px;">See what's trending</span>
-</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
+
+
+                    </form>
+
+                    <form action="/content/delete/1262781" method="post" id="note-delete-form-1262781"><input
+                            type="hidden" name="_method" value="DELETE" id="_method"/>
+                    </form>
+                </li>
+
+                <li class="list-group-item note-item clearfix" id="note-1262784">
+                    <form action="/content/update/1262784" method="post" data-id="1262784" class="note-update-form">
+                        <input type="hidden" name="_method" value="PUT" id="_method"/>
+                        <div class="content-body panel-body pull-left">
+
+
+                            <div class="note-select-indicator note-deselected">
+                                <i class="fa fa-comment"></i>
+                            </div>
+
+
+                            <div class='avatar avatar-medium clearfix '><a href='/user/info/56980' class='avatar-photo'>
+                                <img src='//graph.facebook.com/708037979384656/picture?width=40&height=40'/></a>
+                                <div class="avatar-info">
+                                    <a class="nickname" href="/user/info/56980">가나다라마바사</a>
+                                    <div class="activity">
+                                        <span class="fa fa-flash"></span> 30
+                                    </div>
+                                    <div class="date-created">
+                                        <span class="timeago" title="2017-07-03 22:44:08.0">2017-07-03 22:44:08.0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <fieldset class="form">
+                                <article id="note-text-1262784" class="list-group-item-text note-text">
+
+                                    <p>아 네 답변 감사합니다. </p>
+                                    <p>다시 해보니까 중복되네요..ㅋㅋ</p>
+                                    <p>아마 다른 문제인듯합니다.</p>
+
+                                </article>
+                            </fieldset>
+                        </div>
+
+                        <div class="content-function pull-right text-center">
+                            <div class="content-function-group">
+                                <div class="note-evaluate-wrapper"><a href="javascript://" class="note-vote-btn"
+                                                                      role="button" data-type="assent" data-eval="true"
+                                                                      data-id="1262784"><i
+                                        id="note-evaluate-assent-1262784"
+                                        class="fa fa-angle-up note-evaluate-assent-assent" data-placement="left"
+                                        data-toggle="tooltip" title="추천"></i></a>
+                                    <div id="content-vote-count-1262784" class="content-eval-count">0</div>
+                                    <a href="javascript://" class="note-vote-btn" role="button" data-type="dissent"
+                                       data-eval="true" data-id="1262784"><i id="note-evaluate-dissent-1262784"
+                                                                             class="fa fa-angle-down note-evaluate-dissent-dissent"
+                                                                             data-placement="left" data-toggle="tooltip"
+                                                                             title="반대"></i></a></div>
+                            </div>
+                        </div>
+
+
+                    </form>
+
+                    <form action="/content/delete/1262784" method="post" id="note-delete-form-1262784"><input
+                            type="hidden" name="_method" value="DELETE" id="_method"/>
+                    </form>
+                </li>
+
+                <li class="list-group-item note-item clearfix" id="note-1262794">
+                    <form action="/content/update/1262794" method="post" data-id="1262794" class="note-update-form">
+                        <input type="hidden" name="_method" value="PUT" id="_method"/>
+                        <div class="content-body panel-body pull-left">
+
+
+                            <div class="note-select-indicator note-deselected">
+                                <i class="fa fa-comment"></i>
+                            </div>
+
+
+                            <div class='avatar avatar-medium clearfix '><a href='/user/info/36924' class='avatar-photo'><img
+                                    src='//www.gravatar.com/avatar/5f591e112859359bfacaf5331d000d47?d=identicon&s=40'/></a>
+                                <div class="avatar-info"><a class="nickname" href="/user/info/36924">신입</a>
+                                    <div class="activity"><span class="fa fa-flash"></span> 3k</div>
+                                    <div class="date-created"><span class="timeago" title="2017-07-03 23:18:08.0">2017-07-03 23:18:08.0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <fieldset class="form">
+                                <article id="note-text-1262794" class="list-group-item-text note-text">
+
+                                    <p>각 자리의 필드값이 중복이 안되게 설정되있는지 확인해보세요</p>
+
+                                </article>
+                            </fieldset>
+                        </div>
+
+                        <div class="content-function pull-right text-center">
+                            <div class="content-function-group">
+                                <div class="note-evaluate-wrapper"><a href="javascript://" class="note-vote-btn"
+                                                                      role="button" data-type="assent" data-eval="true"
+                                                                      data-id="1262794"><i
+                                        id="note-evaluate-assent-1262794"
+                                        class="fa fa-angle-up note-evaluate-assent-assent" data-placement="left"
+                                        data-toggle="tooltip" title="추천"></i></a>
+                                    <div id="content-vote-count-1262794" class="content-eval-count">0</div>
+                                    <a href="javascript://" class="note-vote-btn" role="button" data-type="dissent"
+                                       data-eval="true" data-id="1262794"><i id="note-evaluate-dissent-1262794"
+                                                                             class="fa fa-angle-down note-evaluate-dissent-dissent"
+                                                                             data-placement="left" data-toggle="tooltip"
+                                                                             title="반대"></i></a></div>
+                            </div>
+                        </div>
+
+
+                    </form>
+
+                    <form action="/content/delete/1262794" method="post" id="note-delete-form-1262794"><input
+                            type="hidden" name="_method" value="DELETE" id="_method"/>
+                    </form>
+                </li>
+
+                <li class="list-group-item note-form clearfix">
+
+
+                    <div class="panel-body">
+                        <h5 class="text-center"><a href="/login/auth?redirectUrl=%2Farticle%2F401927"
+                                                   class="link">로그인</a>을 하시면 답변을 등록할 수 있습니다.</h5>
                     </div>
-                </div>
 
-            </div>
+                </li>
+            </ul>
         </div>
     </div>
 
-    <div id='push'></div>
-</div>
-<footer>
-    <div class='container'>
-        <div class='row'>
-            <div class='col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 col-xs-10 col-xs-offset-1'>
-                <div class='row'>
-                    <div class='col-md-3 col-sm-3 col-xs-12'>
-                        <div class='footer-links'>
-                            <div class='row' style='margin:0;'>
-<span style='margin-bottom:10px'>
-<div class='footer-link-heading'>Tools & Services</div>
-<div><a title="Search Tools &amp; Services" href="/search">Search</a></div>
-<div><a title="Technology Stacks &amp; Tools" href="/explore">Explore</a></div>
-<div><a title="Technology Tools &amp; Services" href="/categories">Browse Categories</a></div>
-<div><a title="Application &amp; Data" href="/application_and_data">Application &amp; Data</a></div>
-<div><a title="Utilities" href="/utilities">Utilities</a></div>
-<div><a title="DevOps" href="/devops">DevOps</a></div>
-<div><a title="Business Tools" href="/business_tools">Business Tools</a></div>
-<div><a title="Submit a Tool" href="/submit">Submit A Tool</a></div>
-<div><a title="Tool Time" href="//tooltime.stackshare.io">Tool Time</a></div>
-</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='col-md-3 col-sm-3 col-xs-12'>
-                        <div class='footer-links'>
-                            <div class='row' style='margin:0;'>
-<span style='margin-bottom:10px'>
-<div class='footer-link-heading'>Stacks</div>
-<div>
-<a title="Stack Match" href="/match">Job Search</a>
-<a href='/match.atom'>
-<i class='fa fa-rss-square' style='color: #ffffff; margin-left: 5px;'></i>
-</a>
-</div>
-<div><a title="Technology Stacks" href="/stacks">Stacks</a></div>
-<div><a title="Trending Stacks" href="/trending/stacks">Trending Stacks</a></div>
-<div><a title="Companies" href="/companies">Companies</a></div>
-<div><a title="Featured Posts" href="/featured-posts">Featured Posts</a></div>
-<div><a title="Add Your Tech Stack" href="/onboarding/scan">Add Your Stack</a></div>
-<div>
-<a href="/posts/introducing-stack-embed-display-your-stack-on-medium-linkedin-or-any-website">Stack Embed</a>
-</div>
-</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='col-md-3 col-sm-3 col-xs-12'>
-                        <div class='footer-links'>
-                            <div class='row' style='margin:0;'>
-<span style='margin-bottom:10px'>
-<div class='footer-link-heading'>Company</div>
-<div><a title="StackShare API" href="//api.stackshare.io">API</a></div>
-<div><a title="StackShare Blog" href="/posts">Blog</a></div>
-<div>
-<a title="Careers at StackShare" href="/careers">Careers</a>
-<span class='hidden-xs hidden-sm hidden-md' style='margin-left:5px;padding: 3px 10px;font-size: 75%;font-weight: 600;color: white;border-radius: .25em;background-color: #0690fa;font-size: 12px;'>We're Hiring!</span>
-</div>
-<div><a title="Vendors" href="/vendors">Vendors</a></div>
-<div><a title="Our Stack" href="/stackshare">Our Stack</a></div>
-<div><a title="StackShare on AngelList" href="https://angel.co/stackshare">AngelList</a></div>
-<div><a title="Contact Us" href="mailto:team@stackshare.io">Contact Us</a></div>
-<div><a title="Logos &amp; Branding" href="/branding">Logos &amp; Branding</a></div>
-</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='col-md-3 col-sm-3 col-xs-12'>
-                        <div class='footer-links'>
-                            <div class='row'>
-                                <div class='footer-link-heading'>Follow Us</div>
-                                <ul>
-                                    <li>
-                                        <a class='social-button twitter' href='https://twitter.com/stackshareio' target='_blank'>
-                                            <i class='fa fa-twitter-square fa-2x'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class='social-button facebook' href='https://facebook.com/stackshareio' target='_blank'>
-                                            <i class='fa fa-facebook-square fa-2x'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class='social-button linkedin' href='https://www.linkedin.com/company/stackshare' target_='_blank'>
-                                            <i class='fa fa-linkedin-square fa-2x'></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class='social-button angellist' href='https://angel.co/stackshare' target_='_blank'>
-                                            <i class='fa fa-angellist fa-2x'></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+    <form action="/article/dissent/401927" method="post" name="note-dissent-form" id="note-dissent-form"><input
+            type="hidden" name="_method" value="PUT" id="_method"/>
+    </form>
+    <form action="/article/assent/401927" method="post" name="note-assent-form" id="note-assent-form"><input
+            type="hidden" name="_method" value="PUT" id="_method"/>
+    </form>
+
+    <form action="/article/unvote/401927" method="post" name="note-unvote-form" id="note-unvote-form"><input
+            type="hidden" name="_method" value="PUT" id="_method"/>
+    </form>
+    <form action="/article/selectNote/401927" method="post" name="note-select-form" id="note-select-form"><input
+            type="hidden" name="_method" value="PUT" id="_method"/>
+    </form>
+    <form action="/article/deselectNote/401927" method="post" name="note-deselect-form" id="note-deselect-form"><input
+            type="hidden" name="_method" value="PUT" id="_method"/>
+    </form>
+    <form action="/article/scrap/401927" method="post" name="article-scrap-form" id="article-scrap-form">
+    </form>
+
+
+    <div class="right-banner-wrapper">
+
+        <div class="right-banner">
+            <a href="/banner/stats/77" target="_ict"><img src="//file.okky.kr/banner/1497228085444.jpg"
+                                                          style="width:160px;"/></a>
         </div>
-        <div class='row div-center' style='margin-bottom:50px'>
-            <div class='div-center'><a href="/"><img alt="stackshare" style="max-width: 135px;margin-bottom:5px" src="/assets/stackshare-logo-grey-b460a99820c6d94df6b22ca5c804a10e6e0e6cb4450e820dba07b2e6bc575dfa.png" /></a></div>
-            <div class='footer-links' style='padding:0;font-size:11px;text-align:center'>
-                <a href="/terms">Terms</a>
-                /
-                <a href="/privacy">Privacy</a>
-            </div>
-            <div class='copyright'>
-                Copyright © 2017 StackShare, Inc. All rights reserved.
-            </div>
+        <div class="google-ad">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- 광고 -->
+            <ins class="adsbygoogle adslot_1"
+                 style="display:inline-block;width:160px;height:600px"
+                 data-ad-client="ca-pub-1191230850516122"
+                 data-ad-slot="9306413607"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </div>
+
     </div>
-</footer>
-
-<div aria-hidden='true' aria-labelledby='myModalLabel' class='modal fade' id='signinModal' role='dialog' style='outline: none;z-index:10000' tabindex='-1'>
-    <div class='modal-dialog'>
-        <div class='modal-content'>
-            <div class='modal-header'>
-                <button class='close' data-dismiss='modal' type='button'>
-                    <span aria-hidden='true'>&times;</span>
-                </button>
-                <h4 id='myModalLabel'></h4>
+    <div id="footer" class="footer" role="contentinfo">
+        <div class="row">
+            <div class="col-sm-7">
+                <div style="float: left;margin-right: 10px;">
+                    <img src="//okky.kr/assets/okky_logo_footer-afc30f99f303854f15a531d9089a1d50.png"/>
+                </div>
+                <div>
+                    <a href="/intro/about">About OKKY</a>
+                    | <a href="/user/privacy" data-toggle="modal" data-target="#userPrivacy">개인정보보호</a>
+                    | <a href="mailto:admin@okky.kr">Contact</a>
+                    | <a href="https://www.facebook.com/okky.sns" target="_blank">Facebook</a>
+                    | <a href="https://github.com/okjsp/okky" target="_blank">Github</a> v0.10.0
+                    <br/> @ 2017 <a href="http://www.ebrain.kr" target="_blank">eBrain Management</a>
+                </div>
             </div>
-            <div class='modal-body' style='padding-top:0'>
-                <div style='display: inline-flex;display: -webkit-inline-flex;'>
-                    <div class='modal-welcome'>Welcome to</div>
-                    <div class='brand-logo'></div>
+            <div class="sponsor-banner col-sm-5">
+                <div class="sponsor-banner-head">Sponsored by</div>
+                <div class="sponsor-banner-images">
+                    <a href="http://www.inames.co.kr" target="_blank"><img
+                            src="//okky.kr/assets/spb_inames-47b092113795fdf02b8d8b0f36f91c5f.png" alt="아이네임즈"/></a>
                 </div>
-                <div class='social-login-blurb' style='margin:20px 0;'>
-                    StackShare is a
-                    <b>developer-only</b>
-                    community of engineers, CTOs, VPEs, and
-                    <br>developers from some of the world's top startups and companies.</br>
-                </div>
-                <div class='oauth-button' id='login-github'>
-                    <a class='btn div-center' href='/users/auth/github'>
-                        <div class='continue-with'>
-                            Continue with Github
-                        </div>
-                        <span class='fa fa-github'></span>
-                    </a>
-                </div>
-                <br>
-                <div class='oauth-button' id='login-bitbucket'>
-                    <a class='btn div-center' href='/users/auth/bitbucket'>
-                        <div class='continue-with'>
-                            Continue with Bitbucket
-                        </div>
-                        <span class='fa fa-bitbucket'></span>
-                    </a>
-                </div>
-                <br>
-                <div class='oauth-button' id='login-gitlab'>
-                    <a class='btn div-center' href='/users/auth/gitlab'>
-                        <div class='continue-with'>
-                            Continue with Gitlab
-                        </div>
-                        <span class='fa fa-gitlab'></span>
-                    </a>
-                </div>
-                <br>
-                <div class='github-login-blurb disclaimer' style='margin:20px 0 45px 0'>
-                    By clicking the sign up button above, you agree to our
-                    <a target="_blank" href="/terms">Terms of Use</a>
-                    and
-                    <a target="_blank" href="/privacy">Privacy Policy</a>
-                </div>
-
             </div>
+        </div>
+
+    </div>
+</div>
+
+</div>
+<script>
+    var contextPath = "", encodedURL = "%2Farticle%2F401927";
+</script>
+<script src="//okky.kr/assets/application-f47e46beb3ee19acea5b529b8382530b.js" type="text/javascript"></script>
+<script src="//okky.kr/assets/apps/search-a672360634f56105585df31fcdb69705.js" type="text/javascript"></script>
+
+
+<div id="fb-root"></div>
+<script src="//okky.kr/assets/apps/article-80ade80e608815a6f4cc3e6f2252c9f0.js" type="text/javascript"></script>
+
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&appId=1539685662974940&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-6707625-5', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+<div id="userPrivacy" class="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
         </div>
     </div>
 </div>
 
-<script>
-    window._SENTRY_DSN = "https://2236262f9ba04066a5e149920fd6a3b7@app.getsentry.com/91238"
-    window._MATCH_COMPANIES_INDEX = "Match_companies_production"
-    window._MATCH_JOBS_INDEX = "Match_jobs_production"
-    window._ALGOLIA_ID = "KM8652F2EG"
-    window._ALGOLIA_API_KEY = "3c2f8c9f96b4218b3c5ca54731efdec0"
-    window._MATCH_WORKER_JS_PATH = "/match_job_worker.js"
-    window._SERVICES_INDEX = "Services_production"
-    window.JS_SEGMENT_KEY = ""
-    window.data = {current_user: {}}
-</script>
-<script>
-    window._PAGE = { 'name': "services.show",
-        'properties': JSON.parse("{\"label\":\"JavaScript\",\"contentGroupPage\":\"Services\",\"contentGroupAuthenticationStatus\":\"logged_in: false\"}") }
-</script>
+<div id="userAgreement" class="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
 
-<script src="/assets/application-1fbde40dd4798e37ceea138888d1da3e502fe82a421cb1a7bbf4a84cd38e9e05.js"></script>
-<script>
-    window._SPONSORED_LINK_BLACKLIST = ["https://rollbar.com/", "https://sentry.io/welcome/?utm_source=stackshare&utm_medium=cpc&utm_campaign=stackshare-september", "https://www.datadoghq.com/lpg/?utm_source=Advertisement&utm_medium=StackShare&utm_campaign=StackShare-Other", "https://segment.com/?utm_medium=paid-display&utm_source=stackshare&utm_campaign=analytics"]
-</script>
-
-<script src="/webpack/application-3a476ceab6fa7a73e6e3.js"></script>
-<script src="https://events.stackshare.io/setup.js"></script>
-<script>
-    //<![CDATA[
-    UPLOADCARE_PUBLIC_KEY = "ef6555c1024d5e49c403";
-    UPLOADCARE_LIVE = false;
-
-    //]]>
-</script>
-<script>
-    var trackOutboundLink = function(alink, cat, sitename) {
-        var newpage = alink.target == "_blank";
-        ga('send', 'event', cat, 'click', alink.href, {'hitCallback':
-            function () {
-                if(!newpage){
-                    document.location = alink.href;
-
-                }
-            }
-        });
-
-        return newpage;
-    }
-</script>
-<script>
-    $(document).ready(function(){
-        UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/S7sNG8fZBUbqOKwFKHdXQ.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
-
-        UserVoice.push(['set', {
-            accent_color: '#448dd6',
-            trigger_color: 'white',
-            trigger_background_color: '#D2D2D2'
-        }]);
-
-        UserVoice.push(['addTrigger', { mode: 'contact', trigger_position: 'bottom-right' }]);
-
-        UserVoice.push(['autoprompt', {}]);
-    });
-</script>
-<script src='https://cdn.jsdelivr.net/selectize/0.12.3/js/standalone/selectize.min.js' type='text/javascript'></script>
 </body>
 </html>

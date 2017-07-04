@@ -1,6 +1,8 @@
-from flask_restful import Resource, reqparse
-from models.user import UserModel
 from flask_jwt import jwt_required
+from flask_restful import Resource, reqparse
+
+from analysis import analysis
+from models.mariadb.user import UserModel
 from security import bcrypt
 
 ROUNDS = 5  # Number of hash rounds, set low for development, increase for production
@@ -26,6 +28,9 @@ class UserRegister(Resource):
         elif UserModel.find_by_nickname(nickname):
             return {"message": "A user with that nickname already exists"}, 400
 
+        pw_hash = bcrypt.generate_password_hash(password, ROUNDS)
+        valid_login = bcrypt.check_password_hash(pw_hash, password)
+        print("------------------- authenticate ------------------- ", valid_login)
         user = UserModel(email, pw_hash, nickname)
         user.save_to_db()
         return {"message": "User created successfully.", "email": email, "nickname": nickname}, 201
@@ -39,6 +44,7 @@ class User(Resource):
     parser.add_argument('new_password', type=str, required=False)
 
     def get(self, nickname):
+        analysis.read_data_and_print()
         user = UserModel.find_by_nickname(nickname)
         if user:
             return user.json()
