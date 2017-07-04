@@ -1,9 +1,5 @@
 from databases import db
 
-stack_similar = db.Table('TB_STACK_SIMILAR_REFER',
-                         db.Column('stack_id', db.BigInteger, db.ForeignKey('TB_STACK.id'), nullable=False),
-                         db.Column('stack_similar_id', db.BigInteger, db.ForeignKey('TB_SIMILAR_STACK.id'), nullable=False))
-
 
 class OkkyModel(db.Model):
     __tablename__ = 'TB_OKKY'
@@ -19,7 +15,8 @@ class OkkyModel(db.Model):
     scraps = db.Column(db.Integer, default=0, server_default=db.text('0'))
 
     modified_by = db.Column(db.String(100))
-    modified_date = db.Column(db.TIMESTAMP(True), server_default=db.text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))
+    modified_date = db.Column(db.TIMESTAMP(True),
+                              server_default=db.text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))
     created_by = db.Column(db.String(100))
     created_date = db.Column(db.TIMESTAMP(True), server_default=db.text('CURRENT_TIMESTAMP'))
 
@@ -44,19 +41,8 @@ class OkkyModel(db.Model):
             'created_date': self.created_date,
         }
 
-    # @classmethod
-    # def find_by_stack_name_with_similars(cls, stack_name):
-    #     # stack = SimilarStackModel.query.filter(SimilarStackModel.stacks.any(stack_name=stack_name)).all()
-    #     stack = cls.query.filter_by(stack_name=stack_name).first()
-    #     similars = SimilarStackModel.query.filter(SimilarStackModel.stacks.any(stack_name=stack_name)).all()
-    #     stack.similars = similars
-    #     for s in stack.similars:
-    #         print("-------dasdsa------", s.stack_name)
-    #     return stack
-
     @classmethod
     def find_by_id(cls, id):
-        # stack = SimilarStackModel.query.filter(SimilarStackModel.stacks.any(stack_name=stack_name)).all()
         okky = cls.query.filter_by(id=id).first()
         return okky
 

@@ -1,89 +1,76 @@
-import os.path
 import requests
+from threading import Thread
 from bs4 import BeautifulSoup
 from flask_restful import Resource, reqparse
-from os.path import basename
 
-import settings
-from models.mariadb.stack import StackModel, SimilarStackModel
+from models.mariadb.question.okky import OkkyModel
 
 
-class StackScrap(Resource):
+class OkkyScrap(Resource):
     parser = reqparse.RequestParser()
-    parser.add_argument('stack_name', type=str, required=True, help="This stack_name field cannot be left blank!")
+    parser.add_argument('id', type=str, required=True, help="This id field cannot be left blank!")
 
-    def get(self, stack_name):
-        stack = StackModel.find_by_stack_name(stack_name)
-        if stack:
-            return stack.json()
-        return {'message': 'stack not found'}, 404
+    def get(self, id):
+        okky = OkkyModel.find_by_id(id)
+        if okky:
+            return okky.json()
+        return {'message': 'okky not found'}, 404
 
-    def delete(self, stack_name):
-        stack = StackModel.find_by_stack_name(stack_name)
-        if stack:
-            stack.delete_from_db()
-        return {'message': 'stack deleted'}
+    def delete(self, id):
+        okky = OkkyModel.find_by_id(id)
+        if okky:
+            okky.delete_from_db()
+        return {'message': 'okky deleted'}
 
-    def put(self, stack_name):
-        data = StackScrap.parser.parse_args()
-        stack = StackModel.find_by_stack_name(stack_name)
-        if stack:
-            stack.stack_name = data['stack_name']
+    def put(self, id):
+        data = OkkyScrap.parser.parse_args()
+        okky = OkkyModel.find_by_id(id)
+        if okky:
+            okky.id = data['id']
         else:
-            stack = StackModel(stack_name)
+            okky = OkkyModel(id)
 
-        stack.save_to_db()
-        return {'stack': stack}
+        okky.save_to_db()
+        return {'okky': okky}
 
 
-# Stack scrap function
-class StackScrapPost(Resource):
+# okky scrap function
+class OkkyScrapPost(Resource):
+    parser = reqparse.RequestParser()
+    parser.add_argument('id', type=int, required=True, help="This id field cannot be left blank!")
+
     def post(self):
-        data = StackScrap.parser.parse_args()
-        url_name = data['stack_name']
-        page = requests.get('https://stackshare.io/' + url_name)
+        data = OkkyScrapPost.parser.parse_args()
+        id = data['id']
+        page = requests.get('https://okky.kr/article/' + id)
         soup = BeautifulSoup(page.content, 'html.parser')
 
-        similars = []
-        stack_name = soup.find("meta", attrs={"name": "keywords"})['content']
-        stack_home_url = soup.select('.sp-service-logo > a')[0].get('href')
-        stack_home_img_src = soup.select('.sp-service-logo > a > img')[0].get('src')
-
-        if stack_name != url_name:
-            stack_name = url_name
-
         if soup is None:
-            return {"message": "There is no name"}, 400
+            return {"message": "There is no Id"}, 400
 
-        for a in soup.select('.stack-logo > .similar-services-items > a'):
-            stack_similar_name = a.get('href')[1:]
-            similars.append(stack_similar_name)
+        type = soup.select_one('.sub-title').get_text()
+        print("------------------" + type + "------------------")
+        created_date = soup.select_one('.content > .date-created')
+        print("------------------" + created_date + "------------------")
+        title = soup.select_one('#content-body > .panel-title')
+        print("------------------" + title + "------------------")
+        content = soup.select_one('.content-text')
+        print("------------------" + content + "------------------")
+        comment_depth = soup.select('.content-identity-count')
+        print("------------------" + comment_depth + "------------------")
+        hits = soup.select('.content-identity-count')
+        print("------------------" + hits + "------------------")
+        likes = soup.select_one('.content > .date-created')
+        print("------------------" + likes + "------------------")
+        scraps = soup.select_one('.content > .date-created')
+        print("------------------" + scraps + "------------------")
 
-        stack = StackModel.find_by_stack_name(stack_name)
-        if stack is not None:
-            return {"message": "A stack with that name already exists"}, 400
+        # for a in soup.select('.okky-logo > .similar-services-items > a'):
+        #     okky_similar_name = a.get('href')[1:]
 
-        stack = StackModel(stack_name)
-        stack.stack_home_url = stack_home_url
-        for name in similars:
-            similar_stack = SimilarStackModel.find_by_stack_name(name)
-            if similar_stack is None:
-                similar_stack = SimilarStackModel(name)
-                similar_stack.save_to_db()
-
-            stack.similars.append(similar_stack)
-
-        img_file_path = get_stack_img(stack_home_img_src, stack_name)
-        stack.save_to_db()
-
-        return {"message": "Stack created successfully.", 'stack_name': stack_name, 'similars': similars}, 201
-
-
-def get_stack_img(img_src, stack_name):
-    img_directory = settings.BASE_NAME + "stack/" + stack_name + "/";
-    if not os.path.exists(img_directory):
-        os.makedirs(img_directory)
-    with open(img_directory+basename(img_src), "wb") as f:
-        f.write(requests.get(img_src).content)
-    return img_directory+basename(img_src)
-
+        okky = OkkyModel.find_by_id(id)
+        # if okky is not None:
+        #     return {"message": "A okky with that name already exists"}, 400
+        return {"message": "A okky with that name already exists"}, 400
+        # okky.save_to_db()
+        # return {"message": "okky created successfully.", 'id': id}, 201

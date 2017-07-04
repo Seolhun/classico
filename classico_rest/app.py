@@ -11,6 +11,7 @@ from security import authenticate, identity
 from endpoint.user.user import UserList, UserRegister, User
 from endpoint.stack.stack import Stack, StackList
 from endpoint.stack.stack_scrap import StackScrap, StackScrapPost
+from endpoint.question.okky.okky_scrap import OkkyScrap, OkkyScrapPost
 
 from flask_swagger import swagger
 
@@ -60,8 +61,12 @@ api.add_resource(Stack, '/stack/<string:stack_name>')
 api.add_resource(StackList, '/stacks')
 
 # Stack Scrap Part
-api.add_resource(StackScrap, '/scrap/<string:stack_name>')
-api.add_resource(StackScrapPost, '/scrap')
+api.add_resource(StackScrap, '/scrap/stack/<string:stack_name>')
+api.add_resource(StackScrapPost, '/scrap/stack')
+
+# Stack Scrap Part
+api.add_resource(OkkyScrap, '/scrap/okky/<int:id>')
+api.add_resource(OkkyScrapPost, '/scrap/okky')
 
 # User Part
 api.add_resource(UserRegister, '/register')

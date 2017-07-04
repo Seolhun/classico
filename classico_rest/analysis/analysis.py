@@ -2,7 +2,7 @@ import os
 import nltk
 
 from nltk import regexp_tokenize
-from konlpy.tag import Twitter;
+from konlpy.tag import Twitter
 
 t = Twitter()
 import matplotlib as mp
