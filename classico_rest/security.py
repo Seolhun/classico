@@ -18,3 +18,4 @@ def identity(payload):
     print(user_id)
     user = UserModel.find_by_nickname(user_id)
     return user
+

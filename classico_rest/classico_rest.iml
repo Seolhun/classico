@@ -13,7 +13,15 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Python 3.6.1 virtualenv at ~/virtualEnv/classico" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.6.1 (~/anaconda3/envs/classico-rest/bin/python)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="TemplatesService">
+    <option name="TEMPLATE_CONFIGURATION" value="Django" />
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$" />
+      </list>
+    </option>
   </component>
 </module>

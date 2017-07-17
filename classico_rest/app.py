@@ -88,17 +88,17 @@ api.add_resource(UserList, '/users')
 #     return jsonify({'news': news})
 
 
-@app.route('/protected')
-@jwt_required()
-def protected():
-    return '%s' % current_identity
-
-
-@app.route("/spec")
-def spec():
-    swag['info']['version'] = "1.0"
-    swag['info']['title'] = "Classico RESTful API"
-    return jsonify(swag)
+# @app.route('/protected')
+# @jwt_required()
+# def protected():
+#     return '%s' % current_identity
+#
+#
+# @app.route("/spec")
+# def spec():
+#     swag['info']['version'] = "1.0"
+#     swag['info']['title'] = "Classico RESTful API"
+#     return jsonify(swag)
 
 
 if __name__ == '__main__':

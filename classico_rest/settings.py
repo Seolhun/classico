@@ -11,7 +11,7 @@ RESTPLUS_MASK_SWAGGER = False
 RESTPLUS_ERROR_404_HELP = False
 
 # SQLAlchemy Settings
-SQLALCHEMY_DATABASE_URI = 'mysql://hooney:blue1220@@127.0.0.1/classico'
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://hooney:blue1220@@127.0.0.1/classico'
 # SQLALCHEMY_DATABASE_URI = 'mysql://hooney:blue1220@@192.168.0.2/classico'
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 SQLALCHEMY_ECHO = True
