@@ -1,4 +1,4 @@
-from databases import db
+from setting.databases import db
 
 
 class OkkyModel(db.Model):

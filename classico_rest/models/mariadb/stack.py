@@ -1,4 +1,4 @@
-from databases import db
+from setting.databases import db
 
 stack_similar = db.Table('TB_STACK_SIMILAR_REFER',
                          db.Column('stack_id', db.BigInteger, db.ForeignKey('TB_STACK.id'), nullable=False),

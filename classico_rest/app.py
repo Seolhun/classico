@@ -1,25 +1,17 @@
-import settings
-
-from flask import Flask, jsonify
+from setting.databases import db
+from flask import Flask
+from flask_jwt import JWT
 from flask_restful import Api
-from flask_jwt import JWT, jwt_required, current_identity
+from flask_swagger import swagger
+from setting.security import authenticate, identity
+from setting.security import bcrypt
 
-# URL Because of Password '@'
-from urllib import parse
-
-from security import authenticate, identity
-from endpoint.user.user import UserList, UserRegister, User
+from endpoint.question.okky.okky_scrap import OkkyScrap, OkkyScrapPost
 from endpoint.stack.stack import Stack, StackList
 from endpoint.stack.stack_scrap import StackScrap, StackScrapPost
-from endpoint.question.okky.okky_scrap import OkkyScrap, OkkyScrapPost
+from endpoint.user.user import UserList, UserRegister, User
 
-from flask_swagger import swagger
-
-from databases import db, mongo
-from security import bcrypt
-
-from models.mongodb.news import NewsData
-from mongoalchemy.session import Session
+from setting import settings
 
 # Config Part
 app = Flask(__name__)
@@ -47,14 +39,15 @@ jwt = JWT(app, authenticate, identity)  # /auth
 # Swagger
 swag = swagger(app)
 
-# Add Resources Part
-api = Api(app)
 
-
+# Create Database When generated First Request
 @app.before_first_request
 def create_tables():
     db.create_all()
 
+
+# Add Resources Part
+api = Api(app)
 
 # Stack Part
 api.add_resource(Stack, '/stack/<string:stack_name>')

@@ -1,9 +1,8 @@
 import requests
-from threading import Thread
 from bs4 import BeautifulSoup
 from flask_restful import Resource, reqparse
 
-from models.mariadb.question.okky import OkkyModel
+from models.mariadb.okky import OkkyModel
 
 
 class OkkyScrap(Resource):

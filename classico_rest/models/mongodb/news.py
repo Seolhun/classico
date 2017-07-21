@@ -1,4 +1,4 @@
-from databases import mongo as db
+from setting.databases import mongo as db
 
 
 # Field(required=True, default=UNSET, default_f=None, db_field=None, allow_none=False, on_update='$set', validator=None, unwrap_validator=None, wrap_validator=None, _id=False, proxy=None, iproxy=None, ignore_missing=False)¶

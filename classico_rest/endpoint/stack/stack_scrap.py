@@ -1,11 +1,12 @@
 import os.path
+from os.path import basename
+
 import requests
 from bs4 import BeautifulSoup
 from flask_restful import Resource, reqparse
-from os.path import basename
 
-import settings
 from models.mariadb.stack import StackModel, SimilarStackModel
+from setting import settings
 
 
 class StackScrap(Resource):
@@ -55,14 +56,15 @@ class StackScrapPost(Resource):
         if soup is None:
             return {"message": "There is no name"}, 400
 
-        for a in soup.select('.stack-logo > .similar-services-items > a'):
-            stack_similar_name = a.get('href')[1:]
+        for similar in soup.select('.stack-logo > .similar-services-items > a'):
+            stack_similar_name = similar.get('href')[1:]
             similars.append(stack_similar_name)
 
         stack = StackModel.find_by_stack_name(stack_name)
         if stack is not None:
             return {"message": "A stack with that name already exists"}, 400
 
+        # Create Stack and Set value Getting from Stack.IO
         stack = StackModel(stack_name)
         stack.stack_home_url = stack_home_url
         for name in similars:
@@ -73,6 +75,7 @@ class StackScrapPost(Resource):
 
             stack.similars.append(similar_stack)
 
+        # Need to save file path and Must be Created Database
         img_file_path = get_stack_img(stack_home_img_src, stack_name)
         stack.save_to_db()
 
@@ -83,7 +86,9 @@ def get_stack_img(img_src, stack_name):
     img_directory = settings.BASE_NAME + "stack/" + stack_name + "/";
     if not os.path.exists(img_directory):
         os.makedirs(img_directory)
-    with open(img_directory+basename(img_src), "wb") as f:
-        f.write(requests.get(img_src).content)
+
+    with open(img_directory+basename(img_src), "wb") as file:
+        file.write(requests.get(img_src).content)
+
     return img_directory+basename(img_src)
 

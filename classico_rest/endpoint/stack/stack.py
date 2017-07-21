@@ -31,7 +31,7 @@ class Stack(Resource):
 
         stack.save_to_db()
 
-        return stack.__str__()
+        return stack.json()
 
 
 class StackList(Resource):
@@ -40,4 +40,4 @@ class StackList(Resource):
         return {"message": "An error occurred inserting the stack."}, 500
 
     def get(self):
-        return {'stacks': list(map(lambda x: x.__str__(), StackModel.query.all()))}
+        return {'stacks': list(map(lambda stack: stack.json(), StackModel.query.all()))}
