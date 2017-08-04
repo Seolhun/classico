@@ -1,7 +1,7 @@
 from flask_jwt import jwt_required
 from flask_restful import Resource, reqparse
 
-from backend.models.mariadb.stack import StackModel
+from models.mariadb.stack import StackModel
 
 
 class Stack(Resource):

@@ -1,9 +1,9 @@
 from flask_jwt import jwt_required
 from flask_restful import Resource, reqparse
 
-from backend.common.analysis import analysis
-from backend.models.mariadb.user import UserModel
-from backend.setting.security import bcrypt
+from common.analysis import analysis
+from models.mariadb.user import UserModel
+from setting.security import bcrypt
 
 ROUNDS = 5  # Number of hash rounds, set low for development, increase for production
 

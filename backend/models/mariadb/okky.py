@@ -1,6 +1,5 @@
 from setting.databases import db
 
-
 class OkkyModel(db.Model):
     __tablename__ = 'TB_OKKY'
     id = db.Column(db.BigInteger, primary_key=True)

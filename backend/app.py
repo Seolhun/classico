@@ -37,11 +37,11 @@ app.config['SQLALCHEMY_DATABASE_URI'] = settings.SQLALCHEMY_DATABASE_URI
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = settings.SQLALCHEMY_TRACK_MODIFICATIONS
 app.config['SQLALCHEMY_ECHO'] = settings.SQLALCHEMY_ECHO
 
-app.config['MONGOALCHEMY_USER'] = settings.MONGOALCHEMY_USER
-app.config['MONGOALCHEMY_PASSWORD'] = settings.MONGOALCHEMY_PASSWORD
+app.config['MONGO_USERNAME'] = settings.MONGO_USERNAME
+app.config['MONGO_PASSWORD'] = settings.MONGO_PASSWORD
 app.config['MONGOALCHEMY_DATABASE'] = settings.MONGOALCHEMY_DATABASE
-app.config['MONGOALCHEMY_SERVER'] = settings.MONGOALCHEMY_SERVER
-app.config['MONGOALCHEMY_PORT'] = settings.MONGOALCHEMY_PORT
+app.config['MONGO_HOST'] = settings.MONGO_HOST
+app.config['MONGO_PORT'] = settings.MONGO_PORT
 
 # JWT Setting
 app.config['SECRET_KEY'] = 'super-secret'

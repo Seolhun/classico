@@ -5,8 +5,8 @@ import requests
 from bs4 import BeautifulSoup
 from flask_restful import Resource, reqparse
 
-from backend.models.mariadb.stack import StackModel, SimilarStackModel
-from backend.setting import settings
+from models.mariadb.stack import StackModel, SimilarStackModel
+from setting import settings
 
 
 class StackScrap(Resource):
