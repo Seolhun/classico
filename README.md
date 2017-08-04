@@ -2,27 +2,22 @@
 'Classico', big data proejct using Python, Java and ReactJS
 
 ## Environment
-  - Production Server : AWS
+  - Production Server : GCP(Google Cloud Platform)
   - IDE : IntelliJ
-  - Back-end Language : Python 3.6, Java 8
-  - Back-end Framework : Django 1.11, Spring Boot
-  - Front-end : ReactJS + Redux
+  - Back-end Language : Python 3.6
+  - Back-end Framework : Django 1.11, Flask
+  - Front-end : Vue JS
 
 ## Member 
   - Back-end(Python), Infra : Hun Seol
-  - Back-end(Java) : jay
-  - Front-end : setine
+  - Front-end : SeolHun
 
 ## History
   - start : 2017-05-04
   - AWS setting : 2017-05-14
 
-
-# Installation : Classico-SpringBoot
-
 ## What is this?
-    
-    This Module is REST API Server using spring-boot. That will perform dealing with request from client, producing data from django server.
+    This Module is REST API Server using Flask 1.11. That will perform dealing with request from client, producing data from MongoDB, Redis using GraphQL.
 
 ## Function
 `Caching`, `Security`, `User Managing`, `Swagger`
@@ -35,16 +30,16 @@
 
 ### Environment
     
-- OS : 
+- OS : Ubuntu 16.04
     
-- Docker :
+- Docker : Docker Compose
 
 
 # Installation : classico_front
 
 ## Needs
 
-`nodeJs`, `npm`, `pm2` 
+`nodeJs`, `npm`, `Webpack`
 
 ## How to run?
 
