@@ -11,6 +11,8 @@ from endpoint.stack.stack import Stack, StackList
 from endpoint.stack.stack_scrap import StackScrap, StackScrapPost
 from endpoint.user.user import UserList, UserRegister, User
 
+from endpoint.news.news import News
+
 from setting import settings
 from setting.databases import db
 from setting.databases import mongo
@@ -80,6 +82,9 @@ api.add_resource(OkkyScrapPost, '/scrap/okky')
 api.add_resource(UserRegister, '/register')
 api.add_resource(User, '/user/<string:nickname>')
 api.add_resource(UserList, '/users')
+
+# Mongo Part
+api.add_resource(News, '/news/<int:index>')
 
 if __name__ == '__main__':
     db.init_app(app)

@@ -1,32 +1,32 @@
 from flask_restful import Resource, reqparse
-from flask_jwt import jwt_required
 from flask import jsonify
 
-from app import mongo
-
+from models.mongodb.news import NewsModel
 
 class News(Resource):
     parser = reqparse.RequestParser()
-    parser.add_argument('news_id', type=str, required=True, help="This news_id field cannot be left blank!")
+    parser.add_argument('index', type=str, required=True, help="This index field cannot be left blank!")
 
-    def get(self, news_id):
-        news = mongo.db.news.find(news_id);
+    def get(self, index):
+        news = NewsModel.find_by_index(index)
+        print("------------------------")
+        print("news", news)
+        print("------------------------")
         if news:
-            return jsonify({'news': news})
+            return news
         return {'message': 'news not found'}, 404
 
-    def delete(self, news_id):
+    def delete(self, index):
         return {'message': 'news deleted'}
 
-    def put(self, news_id):
+    def put(self, index):
         return {'message': 'news deleted'}
 
 
 class NewsList(Resource):
     def get(self):
-        news = mongo.db.news.find();
+        news = NewsModel.find_all()
         return {'stacks': list(map(lambda x: x.__str__(), news))}
 
-    @jwt_required()
     def post(self):
         return {"message": "An error occurred inserting the stack."}, 500

@@ -16,12 +16,18 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
 SQLALCHEMY_ECHO = True
 
 # MongoDB Settings
-MONGO_USERNAME = 'shooney'
-MONGO_PASSWORD = 'blue1220@'
-MONGOALCHEMY_DATABASE = 'classico'
-# MONGO_HOST = '127.0.0.1'
+# MONGO_URI = "mongodb://classico:12345678@192.168.0.2/shooney"
+
+MONGO_USERNAME = 'classico'
+MONGO_PASSWORD = '12345678'
+MONGOALCHEMY_DATABASE = 'shooney'
 MONGO_HOST = '192.168.0.2'
 MONGO_PORT = 27017
+
+# MONGO_DBNAME = 'shooney'
+# MONGOALCHEMY_DATABASE = 'classico'
+# MONGO_HOST = '127.0.0.1'
+
 
 # SQLALCHEMY_BINDS = {
 #     'users':        'mysqldb://localhost/users',
