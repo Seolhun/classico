@@ -1,5 +1,6 @@
 from setting.databases import db
 
+
 class OkkyModel(db.Model):
     __tablename__ = 'TB_OKKY'
     id = db.Column(db.BigInteger, primary_key=True)
@@ -14,7 +15,8 @@ class OkkyModel(db.Model):
     scraps = db.Column(db.Integer, default=0, server_default=db.text('0'))
 
     modified_by = db.Column(db.String(100))
-    modified_date = db.Column(db.TIMESTAMP(True), server_default=db.text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))
+    modified_date = db.Column(db.TIMESTAMP(True),
+                              server_default=db.text('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'))
     created_by = db.Column(db.String(100))
     created_date = db.Column(db.TIMESTAMP(True), server_default=db.text('CURRENT_TIMESTAMP'))
 

@@ -1,30 +1,30 @@
-# frontend
+# classico-project
+> 'Classico', Big data proejct using Python and Vue JS 2
 
-> A Classico Project that serve data what you want to study Programming
+---
+## Installation : Frontend
 
-## Build Setup
+### Pre-requirement
 
-``` bash
-# install dependencies
-npm install
+`nodeJs`, `npm`, `Vue JS 2 cli`
 
-# serve with hot reload at localhost:8080
-npm run dev
+### How to run?
 
-# build for production with minification
-npm run build
+in the dev environment
+* `npm install` is download all modules
+* `npm start` is starting local server `localhost:3000`
+* `npm run watch` is watching css, scss in project folder
 
-# build for production and view the bundle analyzer report
-npm run build --report
+in the production environment
+* `npm run build` is building cmd, it will automatically make a build file in build folder
+* copy this build folder to front-end server
 
-# run unit tests
-npm run unit
+- if you want to run in production with nodejs
 
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+```
+npm install -g serve
+serve -s build
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### Environment
+- OS : just need nodejs and npm.
