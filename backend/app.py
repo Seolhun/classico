@@ -1,6 +1,7 @@
-from flask import Flask
-from flask_jwt import JWT
+import logging
 
+from flask import Flask
+from flask_jwt import JWT, jwt_required, current_identity
 from flask_restful import Api
 from flask_swagger import swagger
 # Sentry : Monitoring System
@@ -15,7 +16,7 @@ from endpoint.user.user import UserList, UserRegister, User
 from setting import settings
 from setting.databases import db, mongo
 # Classico Database Configuation
-from setting.security import authenticate, identity
+from setting.security import authenticate, identity, CONFIG_DEFAULTS
 from setting.security import bcrypt
 
 app = Flask(__name__)
@@ -39,8 +40,7 @@ app.config['MONGO_DBNAME'] = settings.MONGO_DBNAME
 
 # JWT Setting
 app.config['SECRET_KEY'] = 'super-secret'
-app.config['JWT_AUTH_USERNAME_KEY'] = 'nickname'
-app.config['JWT_AUTH_PASSWORD_KEY'] = 'password'
+app.debug = True
 
 
 # Create Database When generated First Request
@@ -49,14 +49,8 @@ def create_tables():
     db.create_all()
 
 
-app.debug = True
-jwt = JWT(app, authenticate, identity)  # /auth
-
-# Swagger
-swag = swagger(app)
-
 # Add Resources Part
-api = Api(app)
+api = Api(app, prefix="/api/v1")
 
 # Stack Part
 api.add_resource(Stack, '/stack/<string:stack_name>')
@@ -79,6 +73,24 @@ api.add_resource(UserList, '/users')
 api.add_resource(News, '/news/<string:index>')
 
 if __name__ == '__main__':
+    # Logging
+    logger = logging.getLogger(__name__)
+
+    # Swagger
+    swag = swagger(app)
+
+    # Init JWT Config
+    for key, value in CONFIG_DEFAULTS.items():
+        app.config.setdefault(key, value)
+    app.config.setdefault('JWT_SECRET_KEY', app.config['SECRET_KEY'])
+    jwt = JWT(app, authenticate, identity)  # /auth
+
+    @app.route('/protected')
+    @jwt_required()
+    def protected():
+        return '%s' % current_identity
+
+    # MariaDB Injection
     db.init_app(app)
 
     # MongoDB Injection

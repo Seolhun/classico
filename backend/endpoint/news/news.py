@@ -1,5 +1,7 @@
-from flask import request, jsonify
+from bson.json_util import dumps
+from flask import request
 from flask_restful import Resource, reqparse
+
 from setting.databases import mongo
 
 
@@ -11,6 +13,7 @@ class News(Resource):
         # # Get URI Resources : this is Index only
         # resource_data = News.parser.parse_args()
         news = mongo.db.news.find_one({"index": index})
+        news = dumps(news)
         print("---------------")
         print("index", index)
         print("news", news)
