@@ -1,18 +1,10 @@
-from sqlalchemy.ext.declarative import DeclarativeMeta
-from flask import json
+import json
+
+from bson import ObjectId
 
 
-class AlchemyEncoder(json.JSONEncoder):
+class JsonEncoder(json.JSONEncoder):
     def default(self, o):
-        if isinstance(o.__class__, DeclarativeMeta):
-            data = {}
-            fields = o.__json__() if hasattr(o, '__json__') else dir(o)
-            for field in [f for f in fields if not f.startswith('_') and f not in ['metadata', 'query', 'query_class']]:
-                value = o.__getattribute__(field)
-                try:
-                    json.dumps(value)
-                    data[field] = value
-                except TypeError:
-                    data[field] = None
-            return data
+        if isinstance(o, ObjectId):
+            return str(o)
         return json.JSONEncoder.default(self, o)

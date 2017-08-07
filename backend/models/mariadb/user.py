@@ -20,12 +20,27 @@ class UserModel(db.Model):
         self.nickname = nickname
 
     def __str__(self):
-        return {'email': self.email, 'nickname': self.nickname, 'password': self.password}
+        return {
+            'id': self.id,
+            'email': self.email,
+            'nickname': self.nickname,
+            'created_date': self.created_date.__str__(),
+            'modified_date': self.modified_date.__str__(),
+        }
 
     def json(self):
         return {
             'email': self.email,
             'nickname': self.nickname,
+            'created_date': self.created_date.__str__(),
+            'modified_date': self.modified_date.__str__(),
+        }
+
+    def json_with_pwd(self):
+        return {
+            'email': self.email,
+            'nickname': self.nickname,
+            'password': self.password,
             'created_date': self.created_date.__str__(),
             'modified_date': self.modified_date.__str__(),
         }
