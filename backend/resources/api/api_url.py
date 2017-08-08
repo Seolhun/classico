@@ -28,7 +28,7 @@ api.add_resource(OkkyScrapPost, '/scrap/okky')
 
 # User Part
 api.add_resource(UserRegister, '/register')
-api.add_resource(User, '/user/<string:nickname>')
+api.add_resource(User, '/home/<string:nickname>')
 api.add_resource(UserList, '/users')
 
 # Mongo Part

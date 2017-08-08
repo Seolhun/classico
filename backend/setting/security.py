@@ -24,7 +24,7 @@ CONFIG_DEFAULTS = {
 # Init JWT Config
 def authenticate(nickname, password):
     user = UserModel.find_by_nickname(nickname)
-    # if user and safe_str_cmp(user.password, password):
+    # if home and safe_str_cmp(home.password, password):
     if user and bcrypt.check_password_hash(user.password, password):
         return user
 

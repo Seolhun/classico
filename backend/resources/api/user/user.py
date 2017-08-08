@@ -22,9 +22,9 @@ class UserRegister(Resource):
         password = data['password']
 
         if email and UserModel.find_by_email(email):
-            return {"message": "A user with that email already exists"}, 400
+            return {"message": "A home with that email already exists"}, 400
         elif nickname and UserModel.find_by_nickname(nickname):
-            return {"message": "A user with that nickname already exists"}, 400
+            return {"message": "A home with that nickname already exists"}, 400
 
         pw_hash = bcrypt.generate_password_hash(password, ROUNDS)
         valid_login = bcrypt.check_password_hash(pw_hash, password)

@@ -1,7 +1,7 @@
 from flask_jwt import JWT
 
 from resources.api.api_url import api, cors
-from resources.render.render_url import cors, cache
+from resources.render.render_url import api as render_api, cors as render_cors, cache
 # Classico setting information
 from setting import settings
 from setting.build_app import app
@@ -13,7 +13,6 @@ from setting.security import bcrypt, authenticate, identity
 
 
 def configure_app(flask_app):
-    flask_app.config['SERVER_NAME'] = settings.SERVER_NAME
     flask_app.config['FLASK_SERVER_NAME'] = settings.FLASK_SERVER_NAME
     flask_app.config['FLASK_DEBUG'] = settings.FLASK_DEBUG
 
@@ -51,9 +50,11 @@ def initialize_app(flask_app):
 
     # Init CORS
     cors.init_app(flask_app)
+    render_cors.init_app(flask_app)
 
     # Init RESTful API
     api.init_app(flask_app)
+    render_api.init_app(flask_app)
 
     # Init JWT
     JWT(flask_app, authenticate, identity)
@@ -62,6 +63,6 @@ def initialize_app(flask_app):
 if __name__ == '__main__':
     configure_app(app)
     initialize_app(app)
-    logger.info('>>>>> Starting development server at http://{}/api/ <<<<<'.format(app.config['SERVER_NAME']))
+    logger.info('>>>>> Starting development server at http://{}/api/ <<<<<'.format(app.config['FLASK_SERVER_NAME']))
 
     app.run(port=5000, debug=True)
