@@ -1,4 +1,4 @@
-BASE_NAME="/Users/HunSeol/Desktop/"
+BASE_NAME = "/Users/HunSeol/Desktop/"
 
 # Flask Settings
 FLASK_SERVER_NAME = 'localhost:5000'
@@ -16,9 +16,3 @@ MONGO_PASSWORD = 'blue1220@'
 MONGO_HOST = '192.168.0.2'
 MONGO_PORT = 27017
 MONGO_DBNAME = 'classico'
-
-
-# SQLALCHEMY_BINDS = {
-#     'users':        'mysqldb://localhost/users',
-#     'appmeta':      'sqlite:////path/to/appmeta.db'
-# }

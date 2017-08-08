@@ -1,27 +1,28 @@
-import logging
-
-from flask import Flask
+import logging.handlers
+# Classico Dependencies
+from flask import Flask, json
 from flask_jwt import JWT, jwt_required, current_identity
 from flask_restful import Api
 from flask_swagger import swagger
-# Sentry : Monitoring System
-from raven.contrib.flask import Sentry
-
+# Classico API URL information
 from endpoint.news.news import News
 from endpoint.question.okky.okky_scrap import OkkyScrap, OkkyScrapPost
 from endpoint.stack.stack import Stack, StackList
 from endpoint.stack.stack_scrap import StackScrap, StackScrapPost
 from endpoint.user.user import UserList, UserRegister, User
-# Classico Configuation inofrmation
+# Classico setting information
 from setting import settings
+# Classico Database Config
 from setting.databases import db, mongo
-# Classico Database Configuation
+# Classico Security Config
 from setting.security import authenticate, identity, CONFIG_DEFAULTS
 from setting.security import bcrypt
 
+# Sentry : Monitoring System
+
 app = Flask(__name__)
 
-sentry = Sentry(app, dsn='https://2519ad4fac6f453b9f3d28364c9544fb:2f17efbd161243ce889d3a03a8a5eaf4@sentry.io/200070')
+# sentry = Sentry(app, dsn='https://2519ad4fac6f453b9f3d28364c9544fb:2f17efbd161243ce889d3a03a8a5eaf4@sentry.io/200070')
 
 app.config['FLASK_SERVER_NAME'] = settings.FLASK_SERVER_NAME
 app.config['FLASK_DEBUG'] = settings.FLASK_DEBUG
@@ -74,7 +75,10 @@ api.add_resource(News, '/news/<string:index>')
 
 if __name__ == '__main__':
     # Logging
-    logger = logging.getLogger(__name__)
+    with open('logging.json', 'rt') as f:
+        config = json.load(f)
+    logging.config.dictConfig(config)
+    logger = logging.getLogger()
 
     # Swagger
     swag = swagger(app)
@@ -85,10 +89,12 @@ if __name__ == '__main__':
     app.config.setdefault('JWT_SECRET_KEY', app.config['SECRET_KEY'])
     jwt = JWT(app, authenticate, identity)  # /auth
 
+
     @app.route('/protected')
     @jwt_required()
     def protected():
         return '%s' % current_identity
+
 
     # MariaDB Injection
     db.init_app(app)

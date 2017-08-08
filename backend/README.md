@@ -11,8 +11,8 @@
 ### How to run?
 * First, You must be installed pre-requirement that I wrote.
 
-* `pip install -r requirements.txt` is download all packages
-* `python app.py` is starting local server `localhost:5000`
+* `pip install -r requirements.txt`, Downloading all packages
+* `python app.py`, Starting local server `localhost:5000`
 
 ### Environment
 - OS : Ubuntu 16.04

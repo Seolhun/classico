@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "formatters": {
+    "simple": {
+      "format": "%(asctime)s %(name)-15s %(levelname)-8s %(processName)-10s %(message)s"
+    }
+  },
+  "handlers": {
+    "console": {
+      "class": "logging.StreamHandler",
+      "level": "INFO",
+      "formatter": "simple",
+      "stream": "ext://sys.stdout"
+    },
+    "info_file_handler": {
+      "class": "logging.handlers.RotatingFileHandler",
+      "level": "DEBUG",
+      "formatter": "simple",
+      "filename": "logs/classico-tracked.log",
+      "maxBytes": 10485760,
+      "backupCount": 10,
+      "encoding": "utf-8"
+    }
+  },
+  "root": {
+    "level": "DEBUG",
+    "handlers": [
+      "console",
+      "info_file_handler"
+    ]
+  }
+}
