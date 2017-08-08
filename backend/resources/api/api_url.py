@@ -13,6 +13,7 @@ cors = CORS(resources={r"/api/*": {"origins": "*"}})
 # Add Resources Part
 api = Api(prefix="/api/v1")
 
+
 # Stack Part
 api.add_resource(Stack, '/stack/<string:stack_name>')
 api.add_resource(StackList, '/stacks')

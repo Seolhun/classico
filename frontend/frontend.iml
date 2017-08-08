@@ -9,6 +9,7 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Python 3.6.1 virtualenv at ~/virtualenv/classico interpreter library" level="application" />
+    <orderEntry type="module" module-name="classico-project" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_FOLDERS">

@@ -3,9 +3,13 @@ from datetime import timedelta
 from flask_bcrypt import Bcrypt
 
 from models.mariadb.user import UserModel
+from setting.build_app import app
 
+# security
+bcrypt = Bcrypt()
+app.config['SECRET_KEY'] = 'super-secret'
 CONFIG_DEFAULTS = {
-    'JWT_AUTH_URL_RULE': '/auth',
+    'JWT_AUTH_URL_RULE': '/classico/auth',
     'JWT_AUTH_USERNAME_KEY': 'nickname',
     'JWT_AUTH_PASSWORD_KEY': 'password',
     'JWT_ALGORITHM': 'HS256',
@@ -13,12 +17,11 @@ CONFIG_DEFAULTS = {
     'JWT_AUTH_HEADER_PREFIX': 'JWT',
     'JWT_EXPIRATION_DELTA': timedelta(seconds=1800),
     'JWT_NOT_BEFORE_DELTA': timedelta(seconds=0),
+    'JWT_SECRET_KEY': app.config['SECRET_KEY']
 }
 
-# security
-bcrypt = Bcrypt()
 
-
+# Init JWT Config
 def authenticate(nickname, password):
     user = UserModel.find_by_nickname(nickname)
     # if user and safe_str_cmp(user.password, password):
@@ -33,3 +36,7 @@ def identity(payload):
     print("--------------------------------")
     user = UserModel.find_by_id(user_id)
     return user.json()
+
+
+for key, value in CONFIG_DEFAULTS.items():
+    app.config.setdefault(key, value)
