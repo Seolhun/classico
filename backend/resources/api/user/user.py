@@ -2,6 +2,7 @@ from flask_jwt import jwt_required
 from flask_restful import Resource, reqparse
 
 from models.mariadb.user import UserModel
+from setting.logging import logger
 from setting.security import bcrypt
 
 ROUNDS = 5  # Number of hash rounds, set low for development, increase for production
@@ -41,6 +42,7 @@ class User(Resource):
 
     def get(self, nickname):
         user = UserModel.find_by_nickname(nickname)
+        logger.info('[DB Result] : {}'.format(user.json()))
         if user:
             return user.json()
         return {'message': 'User not found'}, 404

@@ -54,14 +54,14 @@ class StackScrapPost(Resource):
             stack_name = url_name
 
         if soup is None:
-            return {"message": "There is no name"}, 400
+            return {"message": "There is no stack name"}, 400
 
         for similar in soup.select('.stack-logo > .similar-services-items > a'):
             stack_similar_name = similar.get('href')[1:]
             similars.append(stack_similar_name)
 
         stack = StackModel.find_by_stack_name(stack_name)
-        if stack is not None:
+        if stack:
             return {"message": "A stack with that name already exists"}, 400
 
         # Create Stack and Set value Getting from Stack.IO

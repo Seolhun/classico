@@ -92,3 +92,4 @@ classico_django/news/migrations/__pycache__/
 media/
 static/js/
 .idea/
+/backend/logs/
