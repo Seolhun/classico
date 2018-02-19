@@ -1,5 +1,5 @@
 [![Stories in Ready](https://badge.waffle.io/Seolhun/classico-project.png?label=ready&title=Ready)](https://waffle.io/Seolhun/classico-project?utm_source=badge)
-# classico-project
+# classico-project(Will be updated, Not working exactly now)
 > 'Classico', Big data proejct using Python 3.6 and Vue JS 2
 
 ## Environment
